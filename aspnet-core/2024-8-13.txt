@@ -1,0 +1,54 @@
+
+dotnet new sln -n RuiChen.AbpPro.All
+
+
+dotnet new classlib -o framework/common/RuiChen.AbpPro.Data.DbMigrator
+dotnet new classlib -o migrations/RuiChen.AbpPro.Admin.DbMigrator
+dotnet new classlib -o migrations/RuiChen.AbpPro.Admin.EntityFrameworkCore
+dotnet new classlib -o modules/identity/RuiChen.AbpPro.Identity.Application
+dotnet new web -o services/RuiChen.AbpPro.Admin.HttpApi.Host
+
+dotnet sln RuiChen.AbpPro.All.sln add framework/common/RuiChen.AbpPro.Data.DbMigrator
+dotnet sln RuiChen.AbpPro.All.sln add migrations/RuiChen.AbpPro.Admin.DbMigrator
+dotnet sln RuiChen.AbpPro.All.sln add migrations/RuiChen.AbpPro.Admin.EntityFrameworkCore
+dotnet sln RuiChen.AbpPro.All.sln add modules/identity/RuiChen.AbpPro.Identity.Application
+dotnet sln RuiChen.AbpPro.All.sln add services/RuiChen.AbpPro.Admin.HttpApi.Host
+
+
+
+dotnet new classlib -o modules/identity/RuiChen.AbpPro.Identity.Application
+dotnet new classlib -o modules/identity/RuiChen.AbpPro.Identity.Application.Contracts
+dotnet new classlib -o modules/identity/RuiChen.AbpPro.Identity.Domain
+dotnet new classlib -o modules/identity/RuiChen.AbpPro.Identity.Domain.Shared
+dotnet new classlib -o modules/identity/RuiChen.AbpPro.Identity.EntityFrameworkCore
+dotnet new classlib -o modules/identity/RuiChen.AbpPro.Identity.HttpApi
+
+dotnet sln RuiChen.AbpPro.All.sln add modules/identity/RuiChen.AbpPro.Identity.Application
+dotnet sln RuiChen.AbpPro.All.sln add modules/identity/RuiChen.AbpPro.Identity.Application.Contracts
+dotnet sln RuiChen.AbpPro.All.sln add modules/identity/RuiChen.AbpPro.Identity.Domain
+dotnet sln RuiChen.AbpPro.All.sln add modules/identity/RuiChen.AbpPro.Identity.Domain.Shared
+dotnet sln RuiChen.AbpPro.All.sln add modules/identity/RuiChen.AbpPro.Identity.EntityFrameworkCore
+dotnet sln RuiChen.AbpPro.All.sln add modules/identity/RuiChen.AbpPro.Identity.HttpApi
+
+
+dotnet new classlib -o framework/tenants/RuiChen.AbpPro.MultiTenancy.Editions
+
+dotnet sln RuiChen.AbpPro.All.sln add framework/tenants/RuiChen.AbpPro.MultiTenancy.Editions
+
+
+
+dotnet new classlib -o modules/openiddict/RuiChen.AbpPro.OpenIddict.Application
+dotnet new classlib -o modules/openiddict/RuiChen.AbpPro.OpenIddict.Application.Contracts
+dotnet new classlib -o modules/openiddict/RuiChen.AbpPro.OpenIddict.AspNetCore
+dotnet new classlib -o modules/openiddict/RuiChen.AbpPro.OpenIddict.HttpApi
+dotnet new classlib -o modules/openiddict/RuiChen.AbpPro.OpenIddict.LinkUser
+dotnet new classlib -o modules/openiddict/RuiChen.AbpPro.OpenIddict.Portal
+dotnet new classlib -o modules/openiddict/RuiChen.AbpPro.OpenIddict.Sms
+
+dotnet sln RuiChen.AbpPro.All.sln add modules/openiddict/RuiChen.AbpPro.OpenIddict.Application
+dotnet sln RuiChen.AbpPro.All.sln add modules/openiddict/RuiChen.AbpPro.OpenIddict.Application.Contracts
+dotnet sln RuiChen.AbpPro.All.sln add modules/openiddict/RuiChen.AbpPro.OpenIddict.AspNetCore
+dotnet sln RuiChen.AbpPro.All.sln add modules/openiddict/RuiChen.AbpPro.OpenIddict.HttpApi
+dotnet sln RuiChen.AbpPro.All.sln add modules/openiddict/RuiChen.AbpPro.OpenIddict.LinkUser
+dotnet sln RuiChen.AbpPro.All.sln add modules/openiddict/RuiChen.AbpPro.OpenIddict.Portal
+dotnet sln RuiChen.AbpPro.All.sln add modules/openiddict/RuiChen.AbpPro.OpenIddict.Sms

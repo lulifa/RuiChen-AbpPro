@@ -1,0 +1,56 @@
+﻿<Project>
+  <!-- 引入其他 props 文件 -->
+  <Import Project="Directory.Build.Other.props" />
+  <Import Project="Directory.Build.Volo.props" />
+
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Version>8.1.0</Version>
+    <Authors>lulifa</Authors>
+    <NoWarn>$(NoWarn);CS1591;CS0436;CS8618;NU1803</NoWarn>
+    <PackageProjectUrl>https://github.com/lulifa/RuiChen-AbpPro</PackageProjectUrl>
+    <PackageOutputPath>$(ProjectDir)LocalNuget</PackageOutputPath>
+    <PackageVersion>8.1.0</PackageVersion>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>package-readme.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/lulifa/RuiChen-AbpPro</RepositoryUrl>
+    <GeneratePackageOnBuild Condition="$(AssemblyName.StartsWith('RuiChen'))">true</GeneratePackageOnBuild>
+
+    <!-- Define versions for referenced packages -->
+    <VoloAbpPackageVersion>8.1.0</VoloAbpPackageVersion>
+    <MicrosoftExtensionsPackageVersion>8.0.0</MicrosoftExtensionsPackageVersion>
+    <MicrosoftAspNetCorePackageVersion>8.0.0</MicrosoftAspNetCorePackageVersion>
+    <MicrosoftEntityFrameworkCorePackageVersion>8.0.0</MicrosoftEntityFrameworkCorePackageVersion>
+    <DotNetCoreCAPPackageVersion>8.1.1</DotNetCoreCAPPackageVersion>
+    <ElsaPackageVersion>2.14.1</ElsaPackageVersion>
+    
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="ConfigureAwait.Fody" Version="3.3.2" PrivateAssets="All"/>
+    <PackageReference Include="Fody" Version="6.8.0" PrivateAssets="All">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)icon.png" Pack="true" PackagePath="" />
+    <None Include="$(MSBuildThisFileDirectory)package-readme.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- 移除指定文件夹下的编译项、嵌入资源和无关项 -->
+    <Compile Remove="LocalNuget\**;Logs\**;Modules\**" />
+    <EmbeddedResource Remove="LocalNuget\**;Logs\**;Modules\**" />
+    <None Remove="LocalNuget\**;Logs\**;Modules\**" />
+    <Content Remove="$(UserProfile)\.nuget\packages\*\*\contentFiles\any\*\*.abppkg*.json" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>$(ProjectDir)LocalNuget</OutputPath>
+  </PropertyGroup>
+
+</Project>
+
