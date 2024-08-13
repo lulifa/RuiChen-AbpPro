@@ -8,14 +8,14 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
     public class TenantHeaderParamter : IOperationFilter
     {
-        private readonly IOptions<AbpMultiTenancyOptions> multiTenancyOptions;
-        private readonly IOptions<AbpAspNetCoreMultiTenancyOptions> aspNetCoreMultiTenancyOptions;
+        private readonly AbpMultiTenancyOptions multiTenancyOptions;
+        private readonly AbpAspNetCoreMultiTenancyOptions aspNetCoreMultiTenancyOptions;
 
         public TenantHeaderParamter(IOptions<AbpMultiTenancyOptions> multiTenancyOptions,
         IOptions<AbpAspNetCoreMultiTenancyOptions> aspNetCoreMultiTenancyOptions)
         {
-            this.multiTenancyOptions = multiTenancyOptions;
-            this.aspNetCoreMultiTenancyOptions = aspNetCoreMultiTenancyOptions;
+            this.multiTenancyOptions = multiTenancyOptions.Value;
+            this.aspNetCoreMultiTenancyOptions = aspNetCoreMultiTenancyOptions.Value;
         }
         public void Apply(OpenApiOperation operation, OperationFilterContext context)
         {

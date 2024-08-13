@@ -47,4 +47,12 @@
 
   </ItemGroup>
 
+  <ItemGroup>
+
+    <ProjectReference Include="..\..\modules\openIddict\RuiChen.AbpPro.OpenIddict.Application.Contracts\RuiChen.AbpPro.OpenIddict.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\openIddict\RuiChen.AbpPro.OpenIddict.Application\RuiChen.AbpPro.OpenIddict.Application.csproj" />
+    <ProjectReference Include="..\..\modules\openIddict\RuiChen.AbpPro.OpenIddict.HttpApi\RuiChen.AbpPro.OpenIddict.HttpApi.csproj" />
+
+  </ItemGroup>
+
 </Project>

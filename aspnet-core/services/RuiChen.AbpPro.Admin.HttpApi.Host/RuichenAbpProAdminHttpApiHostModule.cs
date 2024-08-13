@@ -2,10 +2,20 @@
 using Volo.Abp;
 using Volo.Abp.Autofac;
 using Volo.Abp.Modularity;
+using Volo.Abp.OpenIddict.EntityFrameworkCore;
+using Volo.Abp.OpenIddict;
+using RuiChen.AbpPro.OpenIddict;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
     [DependsOn(
+
+        //认证服务器模块
+        typeof(AbpProOpenIddictHttpApiModule),
+        //typeof(AbpProOpenIddictApplicationModule),
+        //typeof(AbpOpenIddictDomainModule),
+        //typeof(AbpOpenIddictEntityFrameworkCoreModule),
+
         typeof(AbpAutofacModule)
         )]
     public partial class RuichenAbpProAdminHttpApiHostModule : AbpModule
