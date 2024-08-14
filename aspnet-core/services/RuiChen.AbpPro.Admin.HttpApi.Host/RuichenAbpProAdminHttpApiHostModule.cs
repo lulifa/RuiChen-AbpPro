@@ -12,9 +12,9 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 
         //认证服务器模块
         typeof(AbpProOpenIddictHttpApiModule),
-        //typeof(AbpProOpenIddictApplicationModule),
-        //typeof(AbpOpenIddictDomainModule),
-        //typeof(AbpOpenIddictEntityFrameworkCoreModule),
+        typeof(AbpProOpenIddictApplicationModule),
+        typeof(AbpOpenIddictDomainModule),
+        typeof(AbpOpenIddictEntityFrameworkCoreModule),
 
         typeof(AbpAutofacModule)
         )]
