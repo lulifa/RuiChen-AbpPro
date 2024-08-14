@@ -13,6 +13,7 @@ using Volo.Abp.Json.SystemTextJson;
 using Volo.Abp.Json;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Features;
+using Microsoft.AspNetCore.Identity;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -25,6 +26,27 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 
         private static readonly OneTimeRunner OneTimeRunner = new OneTimeRunner();
 
+
+        private void PreConfigureIdentity()
+        {
+            PreConfigure<IdentityBuilder>(builder =>
+            {
+                builder.AddDefaultTokenProviders();
+            });
+        }
+
+        private void PreConfigureAuthServer(IConfiguration configuration)
+        {
+            PreConfigure<OpenIddictBuilder>(builder =>
+            {
+                builder.AddValidation(options =>
+                {
+                    options.AddAudiences("ruichen-abppro-application");
+                    options.UseLocalServer();
+                    options.UseAspNetCore();
+                });
+            });
+        }
 
         /// <summary>
         /// 配置 ABP 框架中的审计功能
@@ -130,7 +152,6 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
                     options.OperationFilter<TenantHeaderParamter>();
                 });
         }
-
 
         /// <summary>
         /// 多租户 配置选项

@@ -5,6 +5,8 @@ using Volo.Abp.Modularity;
 using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.OpenIddict;
 using RuiChen.AbpPro.OpenIddict;
+using Volo.Abp.AspNetCore.MultiTenancy;
+using Volo.Abp.AspNetCore.Serilog;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -13,8 +15,10 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         //认证服务器模块
         typeof(AbpProOpenIddictHttpApiModule),
         typeof(AbpProOpenIddictApplicationModule),
-        typeof(AbpOpenIddictDomainModule),
         typeof(AbpOpenIddictEntityFrameworkCoreModule),
+
+        typeof(AbpAspNetCoreMultiTenancyModule),
+        typeof(AbpAspNetCoreSerilogModule),
 
         typeof(AbpAutofacModule)
         )]
@@ -23,7 +27,10 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
-            base.PreConfigureServices(context);
+            var configuration = context.Services.GetConfiguration();
+
+            PreConfigureIdentity();
+            PreConfigureAuthServer(configuration);
         }
 
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -36,6 +43,9 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             ConfigureDbContext();
             ConfigureKestrelServer();
             ConfigureAuthServer(configuration);
+            ConfigureSwagger(services);
+            ConfigureMultiTenancy(configuration);
+            ConfigureJsonSerializer(configuration);
         }
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
