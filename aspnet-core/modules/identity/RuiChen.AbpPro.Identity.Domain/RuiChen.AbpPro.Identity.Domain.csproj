@@ -3,7 +3,16 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
+    <RootNamespace />
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Identity.Domain" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuiChen.AbpPro.Identity.Domain.Shared\RuiChen.AbpPro.Identity.Domain.Shared.csproj" />
+  </ItemGroup>
 
 </Project>

@@ -7,10 +7,22 @@ using Volo.Abp.OpenIddict;
 using RuiChen.AbpPro.OpenIddict;
 using Volo.Abp.AspNetCore.MultiTenancy;
 using Volo.Abp.AspNetCore.Serilog;
+using Volo.Abp.Identity.AspNetCore;
+using Volo.Abp.Identity.EntityFrameworkCore;
+using Volo.Abp.Identity;
+using RuiChen.AbpPro.Identity;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
     [DependsOn(
+
+        //认证模块
+        typeof(AbpIdentityAspNetCoreModule),
+        typeof(AbpProIdentityHttpApiModule),
+        typeof(AbpProIdentityApplicationModule),
+        typeof(AbpProIdentityDomainModule),
+        typeof(AbpProIdentityEntityFrameworkCoreModule),
+        //typeof(AbpIdentityOrganizaztionUnitsModule),
 
         //认证服务器模块
         typeof(AbpProOpenIddictHttpApiModule),
@@ -42,8 +54,10 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             ConfigureAuditing();
             ConfigureDbContext();
             ConfigureKestrelServer();
+            ConfigureIdentity(configuration);
             ConfigureAuthServer(configuration);
             ConfigureSwagger(services);
+            ConfigureEndpoints(services);
             ConfigureMultiTenancy(configuration);
             ConfigureJsonSerializer(configuration);
         }

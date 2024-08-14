@@ -14,6 +14,9 @@ using Volo.Abp.Json;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Features;
 using Microsoft.AspNetCore.Identity;
+using Volo.Abp.GlobalFeatures;
+using Volo.Abp.Security.Claims;
+using Volo.Abp.AspNetCore.Mvc;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -93,6 +96,23 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             });
         }
 
+        private void ConfigureIdentity(IConfiguration configuration)
+        {
+            // 增加配置文件定义,在新建租户时需要
+            Configure<IdentityOptions>(options =>
+            {
+                var identityConfiguration = configuration.GetSection("Identity");
+                if (identityConfiguration.Exists())
+                {
+                    identityConfiguration.Bind(options);
+                }
+            });
+            Configure<AbpClaimsPrincipalFactoryOptions>(options =>
+            {
+                options.IsDynamicClaimsEnabled = true;
+            });
+        }
+
         /// <summary>
         /// OpenIddict 配置选项
         /// </summary>
@@ -151,6 +171,21 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
                     // 添加操作过滤器，用于向每个操作添加特定的头参数
                     options.OperationFilter<TenantHeaderParamter>();
                 });
+        }
+
+        private void ConfigureEndpoints(IServiceCollection services)
+        {
+            var preActions = services.GetPreConfigureActions<AbpAspNetCoreMvcOptions>();
+
+            services.AddAbpApiVersioning(options =>
+            {
+                options.ReportApiVersions = true;
+                options.AssumeDefaultVersionWhenUnspecified = true;
+            },
+            mvcOptions =>
+            {
+                mvcOptions.ConfigureAbp(preActions.Configure());
+            });
         }
 
         /// <summary>
