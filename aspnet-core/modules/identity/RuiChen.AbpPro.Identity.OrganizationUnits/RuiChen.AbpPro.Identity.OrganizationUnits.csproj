@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace/>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\authorization\RuiChen.AbpPro.Authorization.OrganizationUnits\RuiChen.AbpPro.Authorization.OrganizationUnits.csproj" />
+    <ProjectReference Include="..\..\..\modules\identity\RuiChen.AbpPro.Identity.Domain\RuiChen.AbpPro.Identity.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

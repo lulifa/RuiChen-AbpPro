@@ -29,7 +29,13 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 
         private static readonly OneTimeRunner OneTimeRunner = new OneTimeRunner();
 
-
+        /// <summary>
+        /// 确保在身份验证系统的配置阶段添加默认的令牌提供程序
+        /// 密码重置令牌：用于在用户请求重置密码时生成和验证的令牌。
+        /// 电子邮件确认令牌：用于在用户注册时验证电子邮件地址的令牌。
+        /// 更改邮箱令牌：用于在用户更改电子邮件地址时验证的令牌。
+        /// 更改密码令牌：用于在用户请求更改密码时生成和验证的令牌。
+        /// </summary>
         private void PreConfigureIdentity()
         {
             PreConfigure<IdentityBuilder>(builder =>
@@ -38,6 +44,15 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             });
         }
 
+        /// <summary>
+        /// 通过 OpenIddict 配置令牌验证的相关选项，以支持 OpenID Connect 和 OAuth 2.0 协议
+        /// 用于指定授权服务器允许哪些受众（audiences）。受众是用于识别授权服务器颁发的令牌的一个重要参数。
+        /// 这里的 "ruichen-abppro-application" 是一个示例受众标识，表示你的应用程序或客户端
+        /// 配置 OpenIddict 以使用本地的授权服务器。这个选项指示 OpenIddict 将验证令牌的请求发送到同一应用程序中的本地授权服务器
+        /// 配置 OpenIddict 以使用 ASP.NET Core 的中间件来处理身份验证请求。
+        /// 这意味着 OpenIddict 将利用 ASP.NET Core 的身份验证系统来处理和验证令牌
+        /// </summary>
+        /// <param name="configuration"></param>
         private void PreConfigureAuthServer(IConfiguration configuration)
         {
             PreConfigure<OpenIddictBuilder>(builder =>
@@ -173,6 +188,12 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
                 });
         }
 
+        /// <summary>
+        /// 配置 API 版本控制和 ABP 框架的 MVC 选项。它通过 AddAbpApiVersioning 方法设置了 API 版本控制的行为，
+        /// 并通过 ConfigureAbp 方法将 ABP 框架的预配置应用到 MVC 选项中。这种配置方式有助于确保 API 的版本管理和框架配置的一致性
+        /// 为 API 提供版本控制支持，并且确保 MVC 设置能够与 ABP 框架的需求保持一致
+        /// </summary>
+        /// <param name="services"></param>
         private void ConfigureEndpoints(IServiceCollection services)
         {
             var preActions = services.GetPreConfigureActions<AbpAspNetCoreMvcOptions>();

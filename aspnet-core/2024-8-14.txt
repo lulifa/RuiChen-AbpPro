@@ -4,6 +4,6 @@ dotnet new classlib -o framework/authorization/RuiChen.AbpPro.Authorization.Orga
 
 dotnet sln RuiChen.AbpPro.All.sln add framework/authorization/RuiChen.AbpPro.Authorization.OrganizationUnits
 
-dotnet new classlib -o framework/authorization/RuiChen.AbpPro.Identity.OrganizationUnits
+dotnet new classlib -o modules/identity/RuiChen.AbpPro.Identity.OrganizationUnits
 
-dotnet sln RuiChen.AbpPro.All.sln add framework/authorization/RuiChen.AbpPro.Identity.OrganizationUnits
+dotnet sln RuiChen.AbpPro.All.sln add modules/identity/RuiChen.AbpPro.Identity.OrganizationUnits

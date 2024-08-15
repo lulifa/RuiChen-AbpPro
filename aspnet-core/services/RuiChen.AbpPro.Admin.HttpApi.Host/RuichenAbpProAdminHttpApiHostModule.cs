@@ -1,16 +1,15 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Volo.Abp;
-using Volo.Abp.Autofac;
-using Volo.Abp.Modularity;
-using Volo.Abp.OpenIddict.EntityFrameworkCore;
-using Volo.Abp.OpenIddict;
+﻿using RuiChen.AbpPro.Identity;
 using RuiChen.AbpPro.OpenIddict;
+using Volo.Abp;
 using Volo.Abp.AspNetCore.MultiTenancy;
 using Volo.Abp.AspNetCore.Serilog;
+using Volo.Abp.Autofac;
 using Volo.Abp.Identity.AspNetCore;
-using Volo.Abp.Identity.EntityFrameworkCore;
-using Volo.Abp.Identity;
-using RuiChen.AbpPro.Identity;
+using Volo.Abp.Modularity;
+using Volo.Abp.OpenIddict.EntityFrameworkCore;
+using Volo.Abp.PermissionManagement;
+using Volo.Abp.PermissionManagement.EntityFrameworkCore;
+using Volo.Abp.PermissionManagement.HttpApi;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -22,13 +21,17 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         typeof(AbpProIdentityApplicationModule),
         typeof(AbpProIdentityDomainModule),
         typeof(AbpProIdentityEntityFrameworkCoreModule),
-        //typeof(AbpIdentityOrganizaztionUnitsModule),
+        typeof(AbpProIdentityOrganizaztionUnitsModule),
 
         //认证服务器模块
         typeof(AbpProOpenIddictHttpApiModule),
         typeof(AbpProOpenIddictApplicationModule),
         typeof(AbpOpenIddictEntityFrameworkCoreModule),
 
+        typeof(AbpPermissionManagementHttpApiModule),
+        typeof(AbpPermissionManagementApplicationModule),
+        typeof(AbpPermissionManagementDomainModule),
+        typeof(AbpPermissionManagementEntityFrameworkCoreModule),
         typeof(AbpAspNetCoreMultiTenancyModule),
         typeof(AbpAspNetCoreSerilogModule),
 

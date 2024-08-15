@@ -49,12 +49,18 @@
 
   <ItemGroup>
 
+  </ItemGroup>
+
+
+  <ItemGroup>
+
     <ProjectReference Include="..\..\modules\identity\RuiChen.AbpPro.Identity.Application.Contracts\RuiChen.AbpPro.Identity.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\identity\RuiChen.AbpPro.Identity.Application\RuiChen.AbpPro.Identity.Application.csproj" />
     <ProjectReference Include="..\..\modules\identity\RuiChen.AbpPro.Identity.Domain.Shared\RuiChen.AbpPro.Identity.Domain.Shared.csproj" />
     <ProjectReference Include="..\..\modules\identity\RuiChen.AbpPro.Identity.Domain\RuiChen.AbpPro.Identity.Domain.csproj" />
     <ProjectReference Include="..\..\modules\identity\RuiChen.AbpPro.Identity.EntityFrameworkCore\RuiChen.AbpPro.Identity.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\modules\identity\RuiChen.AbpPro.Identity.HttpApi\RuiChen.AbpPro.Identity.HttpApi.csproj" />
+    <ProjectReference Include="..\..\modules\identity\RuiChen.AbpPro.Identity.OrganizationUnits\RuiChen.AbpPro.Identity.OrganizationUnits.csproj" />
 
     <ProjectReference Include="..\..\modules\openIddict\RuiChen.AbpPro.OpenIddict.Application.Contracts\RuiChen.AbpPro.OpenIddict.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\openIddict\RuiChen.AbpPro.OpenIddict.Application\RuiChen.AbpPro.OpenIddict.Application.csproj" />

@@ -50,25 +50,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.Solution Items", "0.Solut
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "openiddict", "openiddict", "{BB29032A-FA55-48A6-8083-EF0C38383A52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.OpenIddict.Application", "modules\openiddict\RuiChen.AbpPro.OpenIddict.Application\RuiChen.AbpPro.OpenIddict.Application.csproj", "{E09F6421-5972-4331-AF40-2ECD3A71C1D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.OpenIddict.Application", "modules\openiddict\RuiChen.AbpPro.OpenIddict.Application\RuiChen.AbpPro.OpenIddict.Application.csproj", "{E09F6421-5972-4331-AF40-2ECD3A71C1D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.OpenIddict.Application.Contracts", "modules\openiddict\RuiChen.AbpPro.OpenIddict.Application.Contracts\RuiChen.AbpPro.OpenIddict.Application.Contracts.csproj", "{C0F79CB7-1BFB-42DC-8AB3-B557F60E239A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.OpenIddict.Application.Contracts", "modules\openiddict\RuiChen.AbpPro.OpenIddict.Application.Contracts\RuiChen.AbpPro.OpenIddict.Application.Contracts.csproj", "{C0F79CB7-1BFB-42DC-8AB3-B557F60E239A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.OpenIddict.AspNetCore", "modules\openiddict\RuiChen.AbpPro.OpenIddict.AspNetCore\RuiChen.AbpPro.OpenIddict.AspNetCore.csproj", "{A4C98047-CD0C-41A0-B4DC-C2892FBEDB84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.OpenIddict.AspNetCore", "modules\openiddict\RuiChen.AbpPro.OpenIddict.AspNetCore\RuiChen.AbpPro.OpenIddict.AspNetCore.csproj", "{A4C98047-CD0C-41A0-B4DC-C2892FBEDB84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.OpenIddict.HttpApi", "modules\openiddict\RuiChen.AbpPro.OpenIddict.HttpApi\RuiChen.AbpPro.OpenIddict.HttpApi.csproj", "{7E0589F8-3242-414C-B807-BA99FAB6F640}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.OpenIddict.HttpApi", "modules\openiddict\RuiChen.AbpPro.OpenIddict.HttpApi\RuiChen.AbpPro.OpenIddict.HttpApi.csproj", "{7E0589F8-3242-414C-B807-BA99FAB6F640}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.OpenIddict.LinkUser", "modules\openiddict\RuiChen.AbpPro.OpenIddict.LinkUser\RuiChen.AbpPro.OpenIddict.LinkUser.csproj", "{35265CDB-994A-45A9-B143-ED93D208CF70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.OpenIddict.LinkUser", "modules\openiddict\RuiChen.AbpPro.OpenIddict.LinkUser\RuiChen.AbpPro.OpenIddict.LinkUser.csproj", "{35265CDB-994A-45A9-B143-ED93D208CF70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.OpenIddict.Portal", "modules\openiddict\RuiChen.AbpPro.OpenIddict.Portal\RuiChen.AbpPro.OpenIddict.Portal.csproj", "{887250CC-6C9F-4C6A-8302-CB8E903BE150}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.OpenIddict.Portal", "modules\openiddict\RuiChen.AbpPro.OpenIddict.Portal\RuiChen.AbpPro.OpenIddict.Portal.csproj", "{887250CC-6C9F-4C6A-8302-CB8E903BE150}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.OpenIddict.Sms", "modules\openiddict\RuiChen.AbpPro.OpenIddict.Sms\RuiChen.AbpPro.OpenIddict.Sms.csproj", "{5D761369-0326-444B-B7DF-BACD512C6E1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.OpenIddict.Sms", "modules\openiddict\RuiChen.AbpPro.OpenIddict.Sms\RuiChen.AbpPro.OpenIddict.Sms.csproj", "{5D761369-0326-444B-B7DF-BACD512C6E1B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "authorization", "authorization", "{2033019A-9047-4FEC-80A4-3D32B1973CB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Authorization.OrganizationUnits", "framework\authorization\RuiChen.AbpPro.Authorization.OrganizationUnits\RuiChen.AbpPro.Authorization.OrganizationUnits.csproj", "{1F5C3966-B32F-4504-8D90-66830C9CEB42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Authorization.OrganizationUnits", "framework\authorization\RuiChen.AbpPro.Authorization.OrganizationUnits\RuiChen.AbpPro.Authorization.OrganizationUnits.csproj", "{1F5C3966-B32F-4504-8D90-66830C9CEB42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Identity.OrganizationUnits", "framework\authorization\RuiChen.AbpPro.Identity.OrganizationUnits\RuiChen.AbpPro.Identity.OrganizationUnits.csproj", "{6AD48DD0-E448-443A-9E56-564698B90379}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Identity.OrganizationUnits", "modules\identity\RuiChen.AbpPro.Identity.OrganizationUnits\RuiChen.AbpPro.Identity.OrganizationUnits.csproj", "{6824537B-7895-48B3-9A5E-12752B5A0A37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -152,10 +152,10 @@ Global
 		{1F5C3966-B32F-4504-8D90-66830C9CEB42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F5C3966-B32F-4504-8D90-66830C9CEB42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F5C3966-B32F-4504-8D90-66830C9CEB42}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6AD48DD0-E448-443A-9E56-564698B90379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6AD48DD0-E448-443A-9E56-564698B90379}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6AD48DD0-E448-443A-9E56-564698B90379}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6AD48DD0-E448-443A-9E56-564698B90379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6824537B-7895-48B3-9A5E-12752B5A0A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6824537B-7895-48B3-9A5E-12752B5A0A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6824537B-7895-48B3-9A5E-12752B5A0A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6824537B-7895-48B3-9A5E-12752B5A0A37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -185,6 +185,6 @@ Global
 		{5D761369-0326-444B-B7DF-BACD512C6E1B} = {BB29032A-FA55-48A6-8083-EF0C38383A52}
 		{2033019A-9047-4FEC-80A4-3D32B1973CB6} = {CF51C53E-65AC-482A-9C58-B0EBC199E6E7}
 		{1F5C3966-B32F-4504-8D90-66830C9CEB42} = {2033019A-9047-4FEC-80A4-3D32B1973CB6}
-		{6AD48DD0-E448-443A-9E56-564698B90379} = {2033019A-9047-4FEC-80A4-3D32B1973CB6}
+		{6824537B-7895-48B3-9A5E-12752B5A0A37} = {C296606B-4756-4025-8566-A170D8148AE7}
 	EndGlobalSection
 EndGlobal
