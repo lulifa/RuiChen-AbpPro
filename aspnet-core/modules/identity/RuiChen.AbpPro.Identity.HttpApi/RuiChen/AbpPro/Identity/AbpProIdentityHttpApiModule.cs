@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AspNetCore.Mvc.Localization;
+using Volo.Abp.Identity.AspNetCore;
 using Volo.Abp.Identity.Localization;
 using Volo.Abp.Modularity;
 using VoloAbpIdentityApplicationContractsModule = Volo.Abp.Identity.AbpIdentityApplicationContractsModule;
@@ -9,7 +10,8 @@ namespace RuiChen.AbpPro.Identity
 {
     [DependsOn(
         typeof(VoloAbpIdentityHttpApiModule),
-        typeof(AbpProIdentityApplicationContractsModule)
+        typeof(AbpProIdentityApplicationContractsModule),
+        typeof(AbpIdentityAspNetCoreModule)
         )]
     public class AbpProIdentityHttpApiModule : AbpModule
     {

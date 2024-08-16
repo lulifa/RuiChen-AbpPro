@@ -5,6 +5,9 @@ using Volo.Abp.ObjectExtending;
 
 namespace RuiChen.AbpPro.Identity
 {
+    /// <summary>
+    /// 组织单元的应用服务
+    /// </summary>
     public class OrganizationUnitAppService : IdentityAppServiceBase, IOrganizationUnitAppService
     {
         private readonly IdentityUserManager userManager;
@@ -22,6 +25,11 @@ namespace RuiChen.AbpPro.Identity
             this.organizationUnitRepository = organizationUnitRepository;
         }
 
+        /// <summary>
+        /// 创建新的组织单元
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         [Authorize(IdentityPermissions.OrganizationUnits.Create)]
         public async virtual Task<OrganizationUnitDto> CreateAsync(OrganizationUnitCreateDto input)
         {
@@ -38,6 +46,11 @@ namespace RuiChen.AbpPro.Identity
             return ObjectMapper.Map<OrganizationUnit, OrganizationUnitDto>(origanizationUnit);
         }
 
+        /// <summary>
+        /// 删除指定的组织单元
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Authorize(IdentityPermissions.OrganizationUnits.Delete)]
         public async virtual Task DeleteAsync(Guid id)
         {
@@ -50,6 +63,10 @@ namespace RuiChen.AbpPro.Identity
             await organizationUnitManager.DeleteAsync(id);
         }
 
+        /// <summary>
+        /// 获取根组织单元列表
+        /// </summary>
+        /// <returns></returns>
         public async virtual Task<ListResultDto<OrganizationUnitDto>> GetRootAsync()
         {
             var rootOriganizationUnits = await organizationUnitManager.FindChildrenAsync(null, recursive: false);
@@ -59,6 +76,11 @@ namespace RuiChen.AbpPro.Identity
             return new ListResultDto<OrganizationUnitDto>(items);
         }
 
+        /// <summary>
+        /// 获取指定的组织单元子集列表
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public async virtual Task<ListResultDto<OrganizationUnitDto>> FindChildrenAsync(OrganizationUnitGetChildrenDto input)
         {
             var origanizationUnitChildren = await organizationUnitManager.FindChildrenAsync(input.Id, input.Recursive);
@@ -68,6 +90,11 @@ namespace RuiChen.AbpPro.Identity
             return new ListResultDto<OrganizationUnitDto>(items);
         }
 
+        /// <summary>
+        /// 根据唯一标识符获取组织单元
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async virtual Task<OrganizationUnitDto> GetAsync(Guid id)
         {
             var origanizationUnit = await organizationUnitRepository.FindAsync(id);
@@ -75,6 +102,11 @@ namespace RuiChen.AbpPro.Identity
             return ObjectMapper.Map<OrganizationUnit, OrganizationUnitDto>(origanizationUnit);
         }
 
+        /// <summary>
+        /// 获取组织单元子集中的最后一个
+        /// </summary>
+        /// <param name="parentId"></param>
+        /// <returns></returns>
         public async virtual Task<OrganizationUnitDto> GetLastChildOrNullAsync(Guid? parentId)
         {
             var origanizationUnitLastChildren = await organizationUnitManager.GetLastChildOrNullAsync(parentId);
@@ -82,6 +114,10 @@ namespace RuiChen.AbpPro.Identity
             return ObjectMapper.Map<OrganizationUnit, OrganizationUnitDto>(origanizationUnitLastChildren);
         }
 
+        /// <summary>
+        /// 获取所有的组织单元列表
+        /// </summary>
+        /// <returns></returns>
         public async virtual Task<ListResultDto<OrganizationUnitDto>> GetAllListAsync()
         {
             var origanizationUnits = await organizationUnitRepository.GetListAsync(false);
@@ -91,6 +127,11 @@ namespace RuiChen.AbpPro.Identity
             return new ListResultDto<OrganizationUnitDto>(items);
         }
 
+        /// <summary>
+        /// 分页获取组织单元类型列表
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public async virtual Task<PagedResultDto<OrganizationUnitDto>> GetListAsync(OrganizationUnitGetByPagedDto input)
         {
             var specification = new OrganizationUnitGetListSpecification(input);
@@ -104,6 +145,11 @@ namespace RuiChen.AbpPro.Identity
             return new PagedResultDto<OrganizationUnitDto>(origanizationUnitCount, items);
         }
 
+        /// <summary>
+        /// 获取组织单元角色名称列表
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Authorize(IdentityPermissions.OrganizationUnits.ManageRoles)]
         public async virtual Task<ListResultDto<string>> GetRoleNamesAsync(Guid id)
         {
@@ -112,6 +158,12 @@ namespace RuiChen.AbpPro.Identity
             return new ListResultDto<string>(inOrignizationUnitRoleNames);
         }
 
+        /// <summary>
+        /// 获取组织单元未添加的角色列表
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
         [Authorize(IdentityPermissions.OrganizationUnits.ManageRoles)]
         public async virtual Task<PagedResultDto<IdentityRoleDto>> GetUnaddedRolesAsync(Guid id, OrganizationUnitGetUnaddedRoleByPagedDto input)
         {
@@ -126,6 +178,12 @@ namespace RuiChen.AbpPro.Identity
             return new PagedResultDto<IdentityRoleDto>(origanizationUnitRoleCount, items);
         }
 
+        /// <summary>
+        /// 分页获取组织单元的角色列表
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
         [Authorize(IdentityPermissions.OrganizationUnits.ManageRoles)]
         public async virtual Task<PagedResultDto<IdentityRoleDto>> GetRolesAsync(Guid id, PagedAndSortedResultRequestDto input)
         {
@@ -141,6 +199,12 @@ namespace RuiChen.AbpPro.Identity
         }
 
 
+        /// <summary>
+        /// 分页获取组织单元未添加的用户列表
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
         [Authorize(IdentityPermissions.OrganizationUnits.ManageUsers)]
         public async virtual Task<PagedResultDto<IdentityUserDto>> GetUnaddedUsersAsync(Guid id, OrganizationUnitGetUnaddedUserByPagedDto input)
         {
@@ -155,6 +219,12 @@ namespace RuiChen.AbpPro.Identity
             return new PagedResultDto<IdentityUserDto>(origanizationUnitUserCount, items);
         }
 
+        /// <summary>
+        /// 分页获取组织单元的用户列表
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
         [Authorize(IdentityPermissions.OrganizationUnits.ManageUsers)]
         public async virtual Task<PagedResultDto<IdentityUserDto>> GetUsersAsync(Guid id, GetIdentityUsersInput input)
         {
@@ -170,12 +240,24 @@ namespace RuiChen.AbpPro.Identity
             return new PagedResultDto<IdentityUserDto>(origanizationUnitUserCount, items);
         }
 
+        /// <summary>
+        /// 移动组织单元
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
         [Authorize(IdentityPermissions.OrganizationUnits.Update)]
         public async virtual Task MoveAsync(Guid id, OrganizationUnitMoveDto input)
         {
             await organizationUnitManager.MoveAsync(id, input.ParentId);
         }
 
+        /// <summary>
+        /// 更新指定的组织单元
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
         [Authorize(IdentityPermissions.OrganizationUnits.Update)]
         public async virtual Task<OrganizationUnitDto> UpdateAsync(Guid id, OrganizationUnitUpdateDto input)
         {
@@ -192,6 +274,12 @@ namespace RuiChen.AbpPro.Identity
             return ObjectMapper.Map<OrganizationUnit, OrganizationUnitDto>(origanizationUnit);
         }
 
+        /// <summary>
+        /// 新增组织单元用户
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
         [Authorize(IdentityPermissions.OrganizationUnits.ManageUsers)]
         public async virtual Task AddUsersAsync(Guid id, OrganizationUnitAddUserDto input)
         {
@@ -208,6 +296,12 @@ namespace RuiChen.AbpPro.Identity
             await CurrentUnitOfWork.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// 新增组织单元角色
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
         [Authorize(IdentityPermissions.OrganizationUnits.ManageRoles)]
         public async virtual Task AddRolesAsync(Guid id, OrganizationUnitAddRoleDto input)
         {

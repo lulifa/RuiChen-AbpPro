@@ -38,12 +38,16 @@
     <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi" />
     <PackageReference Include="Volo.Abp.PermissionManagement.Application" />
     <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.IdentityServer" />
     <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi" />
-    <PackageReference Include="Volo.Abp.Identity.AspNetCore" />
+    <PackageReference Include="Volo.Abp.SettingManagement.HttpApi" />
     <PackageReference Include="Volo.Abp.SettingManagement.EntityFrameworkCore" />
     <PackageReference Include="Volo.Abp.PermissionManagement.EntityFrameworkCore" />
     <PackageReference Include="Volo.Abp.OpenIddict.EntityFrameworkCore" />
+
+
+    <PackageReference Include="Volo.Abp.Account.HttpApi" />
+    <PackageReference Include="Volo.Abp.Account.Application" />
+    
 
   </ItemGroup>
 

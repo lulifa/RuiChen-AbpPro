@@ -7,6 +7,9 @@ using Volo.Abp.OpenIddict.Authorizations;
 
 namespace RuiChen.AbpPro.OpenIddict
 {
+    /// <summary>
+    /// Openiddict授权管理
+    /// </summary>
     public class OpenIddictAuthorizationAppService : OpenIddictApplicationServiceBase, IOpenIddictAuthorizationAppService
     {
         private readonly IOpenIddictAuthorizationManager authorizationManager;
@@ -20,6 +23,11 @@ namespace RuiChen.AbpPro.OpenIddict
             this.identifierConverter = identifierConverter;
         }
 
+        /// <summary>
+        /// 删除指定的OpenIddict授权
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async virtual Task DeleteAsync(Guid id)
         {
             var authorization = await authorizationManager.FindByIdAsync(identifierConverter.ToString(id));
@@ -28,6 +36,11 @@ namespace RuiChen.AbpPro.OpenIddict
 
         }
 
+        /// <summary>
+        /// 获取指定的OpenIddict授权
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async virtual Task<OpenIddictAuthorizationDto> GetAsync(Guid id)
         {
             var authorization = await authorizationRepository.GetAsync(id);
@@ -36,6 +49,11 @@ namespace RuiChen.AbpPro.OpenIddict
 
         }
 
+        /// <summary>
+        /// 分页获取OpenIddict授权
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public async virtual Task<PagedResultDto<OpenIddictAuthorizationDto>> GetListAsync(OpenIddictAuthorizationGetListInput input)
         {
             var queryable = await authorizationRepository.GetQueryableAsync();

@@ -17,6 +17,9 @@ using Microsoft.AspNetCore.Identity;
 using Volo.Abp.GlobalFeatures;
 using Volo.Abp.Security.Claims;
 using Volo.Abp.AspNetCore.Mvc;
+using RuiChen.AbpPro.Identity;
+using System.Reflection;
+using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -96,6 +99,21 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             });
         }
 
+
+        private void ConfigureMvcUiTheme()
+        {
+            Configure<AbpBundlingOptions>(options =>
+            {
+                //options.StyleBundles.Configure(
+                //    LeptonXLiteThemeBundles.Styles.Global,
+                //    bundle =>
+                //    {
+                //        bundle.AddFiles("/global-styles.css");
+                //    }
+                //);
+            });
+        }
+
         /// <summary>
         /// 配置 Kestrel 服务器的选项
         /// </summary>
@@ -159,6 +177,24 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 
                     // 自定义模式 ID 生成规则，使用类型的全名作为模式 ID
                     options.CustomSchemaIds(type => type.FullName);
+
+                    var assemblies = AppDomain.CurrentDomain.GetAssemblies().Where(item=>item.FullName.Contains("RuiChen")).ToArray();
+
+                    // 遍历当前程序集中加载的所有模块
+                    foreach (var assembly in assemblies)
+                    {
+                        // 根据程序集名称生成 XML 文件名
+                        var xmlFile = $"{assembly.GetName().Name}.xml";
+
+                        // 生成 XML 文件的完整路径
+                        var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+
+                        // 检查 XML 文件是否存在，存在则添加到 Swagger 配置中
+                        if (File.Exists(xmlPath))
+                        {
+                            options.IncludeXmlComments(xmlPath, true);
+                        }
+                    }
 
                     // 定义 Bearer 认证方案
                     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme

@@ -7,6 +7,9 @@ using Volo.Abp.OpenIddict.Scopes;
 
 namespace RuiChen.AbpPro.OpenIddict
 {
+    /// <summary>
+    /// Openiddict作用域
+    /// </summary>
     public class OpenIddictScopeAppService : OpenIddictApplicationServiceBase, IOpenIddictScopeAppService
     {
         private readonly IOpenIddictScopeManager scopeManager;
@@ -20,6 +23,11 @@ namespace RuiChen.AbpPro.OpenIddict
             this.identifierConverter = identifierConverter;
         }
 
+        /// <summary>
+        /// 创建新的OpenIddict作用域
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public async virtual Task<OpenIddictScopeDto> CreateAsync(OpenIddictScopeCreateDto input)
         {
             if (await scopeManager.FindByNameAsync(input.Name) != null)
@@ -40,6 +48,11 @@ namespace RuiChen.AbpPro.OpenIddict
 
         }
 
+        /// <summary>
+        /// 删除指定的OpenIddict作用域
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async virtual Task DeleteAsync(Guid id)
         {
             var scope = await scopeManager.FindByIdAsync(identifierConverter.ToString(id));
@@ -48,25 +61,12 @@ namespace RuiChen.AbpPro.OpenIddict
 
         }
 
-        public async virtual Task<OpenIddictScopeDto> GetAsync(Guid id)
-        {
-            var scope = await scopeRepository.GetAsync(id);
-
-            return scope.ToDto(JsonSerializer);
-        }
-
-        public async virtual Task<PagedResultDto<OpenIddictScopeDto>> GetListAsync(OpenIddictScopeGetListInput input)
-        {
-            var totalCount = await scopeRepository.GetCountAsync(input.Filter);
-
-            var entities = await scopeRepository.GetListAsync(input.Sorting, input.SkipCount, input.MaxResultCount, input.Filter);
-
-            var items = entities.Select(item => item.ToDto(JsonSerializer)).ToList();
-
-            return new PagedResultDto<OpenIddictScopeDto>(totalCount, items);
-
-        }
-
+        /// <summary>
+        /// 更新指定的OpenIddict作用域
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public async virtual Task<OpenIddictScopeDto> UpdateAsync(Guid id, OpenIddictScopeUpdateDto input)
         {
             var scope = await scopeRepository.GetAsync(id);
@@ -88,5 +88,36 @@ namespace RuiChen.AbpPro.OpenIddict
             return scope.ToDto(JsonSerializer);
 
         }
+
+        /// <summary>
+        /// 获取指定的OpenIddict作用域
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async virtual Task<OpenIddictScopeDto> GetAsync(Guid id)
+        {
+            var scope = await scopeRepository.GetAsync(id);
+
+            return scope.ToDto(JsonSerializer);
+        }
+
+        /// <summary>
+        /// 分页获取OpenIddict的作用域列表
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public async virtual Task<PagedResultDto<OpenIddictScopeDto>> GetListAsync(OpenIddictScopeGetListInput input)
+        {
+            var totalCount = await scopeRepository.GetCountAsync(input.Filter);
+
+            var entities = await scopeRepository.GetListAsync(input.Sorting, input.SkipCount, input.MaxResultCount, input.Filter);
+
+            var items = entities.Select(item => item.ToDto(JsonSerializer)).ToList();
+
+            return new PagedResultDto<OpenIddictScopeDto>(totalCount, items);
+
+        }
+
+        
     }
 }

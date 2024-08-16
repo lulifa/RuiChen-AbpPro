@@ -6,6 +6,9 @@ using Volo.Abp.OpenIddict.Applications;
 
 namespace RuiChen.AbpPro.OpenIddict
 {
+    /// <summary>
+    /// Openiddict应用管理
+    /// </summary>
     public class OpenIddictApplicationAppService : OpenIddictApplicationServiceBase, IOpenIddictApplicationAppService
     {
         private readonly IAbpApplicationManager applicationManager;
@@ -19,6 +22,11 @@ namespace RuiChen.AbpPro.OpenIddict
             this.identifierConverter = identifierConverter;
         }
 
+        /// <summary>
+        /// 创建新的OpenIddict应用
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public async virtual Task<OpenIddictApplicationDto> CreateAsync(OpenIddictApplicationCreateDto input)
         {
             if (await applicationManager.FindByClientIdAsync(input.ClientId) != null)
@@ -42,6 +50,11 @@ namespace RuiChen.AbpPro.OpenIddict
 
         }
 
+        /// <summary>
+        /// 删除指定的OpenIddict应用
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async virtual Task DeleteAsync(Guid id)
         {
             var application = await applicationManager.FindByIdAsync(identifierConverter.ToString(id));
@@ -49,25 +62,12 @@ namespace RuiChen.AbpPro.OpenIddict
             await applicationManager.DeleteAsync(application);
         }
 
-        public async virtual Task<OpenIddictApplicationDto> GetAsync(Guid id)
-        {
-            var application = await applicationRepository.GetAsync(id);
-
-            return application.ToDto(JsonSerializer);
-        }
-
-        public async virtual Task<PagedResultDto<OpenIddictApplicationDto>> GetListAsync(OpenIddictApplicationGetListInput input)
-        {
-            var totalCount = await applicationRepository.GetCountAsync(input.Filter);
-
-            var entities = await applicationRepository.GetListAsync(input.Sorting, input.SkipCount, input.MaxResultCount, input.Filter);
-
-            var items = entities.Select(item => item.ToDto(JsonSerializer)).ToList();
-
-            return new PagedResultDto<OpenIddictApplicationDto>(totalCount, items);
-
-        }
-
+        /// <summary>
+        /// 更新指定的OpenIddict应用
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public async virtual Task<OpenIddictApplicationDto> UpdateAsync(Guid id, OpenIddictApplicationUpdateDto input)
         {
             var application = await applicationRepository.GetAsync(id);
@@ -90,5 +90,36 @@ namespace RuiChen.AbpPro.OpenIddict
             return application.ToDto(JsonSerializer);
 
         }
+
+        /// <summary>
+        /// 获取指定的OpenIddict应用
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async virtual Task<OpenIddictApplicationDto> GetAsync(Guid id)
+        {
+            var application = await applicationRepository.GetAsync(id);
+
+            return application.ToDto(JsonSerializer);
+        }
+
+        /// <summary>
+        /// 分页获取OpenIddict的应用列表
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public async virtual Task<PagedResultDto<OpenIddictApplicationDto>> GetListAsync(OpenIddictApplicationGetListInput input)
+        {
+            var totalCount = await applicationRepository.GetCountAsync(input.Filter);
+
+            var entities = await applicationRepository.GetListAsync(input.Sorting, input.SkipCount, input.MaxResultCount, input.Filter);
+
+            var items = entities.Select(item => item.ToDto(JsonSerializer)).ToList();
+
+            return new PagedResultDto<OpenIddictApplicationDto>(totalCount, items);
+
+        }
+
+        
     }
 }

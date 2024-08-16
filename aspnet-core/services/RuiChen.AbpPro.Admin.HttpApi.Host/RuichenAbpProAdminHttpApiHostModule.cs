@@ -1,7 +1,10 @@
 ﻿using RuiChen.AbpPro.Identity;
 using RuiChen.AbpPro.OpenIddict;
 using Volo.Abp;
+using Volo.Abp.Account;
+using Volo.Abp.Account.Web;
 using Volo.Abp.AspNetCore.MultiTenancy;
+using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
 using Volo.Abp.Identity.AspNetCore;
@@ -10,16 +13,15 @@ using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.HttpApi;
+using Volo.Abp.SettingManagement;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
     [DependsOn(
 
         //认证模块
-        typeof(AbpIdentityAspNetCoreModule),
         typeof(AbpProIdentityHttpApiModule),
         typeof(AbpProIdentityApplicationModule),
-        typeof(AbpProIdentityDomainModule),
         typeof(AbpProIdentityEntityFrameworkCoreModule),
         typeof(AbpProIdentityOrganizaztionUnitsModule),
 
@@ -33,6 +35,12 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         typeof(AbpPermissionManagementDomainModule),
         typeof(AbpPermissionManagementEntityFrameworkCoreModule),
         typeof(AbpAspNetCoreMultiTenancyModule),
+
+        typeof(AbpAccountHttpApiModule),
+        typeof(AbpAccountApplicationModule),
+        typeof(AbpAccountWebOpenIddictModule),
+        typeof(AbpAspNetCoreMvcUiBasicThemeModule),
+
         typeof(AbpAspNetCoreSerilogModule),
 
         typeof(AbpAutofacModule)
@@ -56,6 +64,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 
             ConfigureAuditing();
             ConfigureDbContext();
+            ConfigureMvcUiTheme();
             ConfigureKestrelServer();
             ConfigureIdentity(configuration);
             ConfigureAuthServer(configuration);
@@ -95,7 +104,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             // Swagger可视化界面
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Admin API");
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "RuiChenAbpProAdmin API");
             });
             // 审计日志
             app.UseAuditing();

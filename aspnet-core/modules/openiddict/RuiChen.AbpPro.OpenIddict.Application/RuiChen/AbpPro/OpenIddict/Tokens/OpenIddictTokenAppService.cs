@@ -7,6 +7,9 @@ using Volo.Abp.OpenIddict.Tokens;
 
 namespace RuiChen.AbpPro.OpenIddict
 {
+    /// <summary>
+    /// Openiddict令牌
+    /// </summary>
     public class OpenIddictTokenAppService : OpenIddictApplicationServiceBase, IOpenIddictTokenAppService
     {
         private readonly IOpenIddictTokenManager tokenManager;
@@ -20,6 +23,11 @@ namespace RuiChen.AbpPro.OpenIddict
             this.identifierConverter = identifierConverter;
         }
 
+        /// <summary>
+        /// 删除指定的OpenIddict令牌
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async virtual Task DeleteAsync(Guid id)
         {
             var token = await tokenManager.FindByIdAsync(identifierConverter.ToString(id));
@@ -28,6 +36,11 @@ namespace RuiChen.AbpPro.OpenIddict
 
         }
 
+        /// <summary>
+        /// 获取指定的OpenIddict令牌
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async virtual Task<OpenIddictTokenDto> GetAsync(Guid id)
         {
             var token = await tokenRepository.GetAsync(id);
@@ -35,6 +48,11 @@ namespace RuiChen.AbpPro.OpenIddict
             return token.ToDto();
         }
 
+        /// <summary>
+        /// 分页获取OpenIddict的令牌列表
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public async virtual Task<PagedResultDto<OpenIddictTokenDto>> GetListAsync(OpenIddictTokenGetListInput input)
         {
             var queryable = await tokenRepository.GetQueryableAsync();

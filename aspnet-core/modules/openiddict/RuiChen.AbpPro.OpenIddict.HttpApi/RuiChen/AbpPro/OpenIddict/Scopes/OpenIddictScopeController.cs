@@ -1,85 +1,86 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 
 namespace RuiChen.AbpPro.OpenIddict
 {
     /// <summary>
-    /// Openiddict应用
+    /// Openiddict作用域
     /// </summary>
-    [Route("api/openiddict/applications")]
-    public class OpenIddictApplicationController : OpenIddictControllerBase, IOpenIddictApplicationAppService
+    public class OpenIddictScopeController : OpenIddictControllerBase, IOpenIddictScopeAppService
     {
-        private readonly IOpenIddictApplicationAppService service;
+        private readonly IOpenIddictScopeAppService service;
 
-        public OpenIddictApplicationController(IOpenIddictApplicationAppService service)
+        public OpenIddictScopeController(IOpenIddictScopeAppService service)
         {
             this.service = service;
         }
 
         /// <summary>
-        /// 创建新的OpenIddict应用
+        /// 创建新的OpenIddict作用域
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
         [HttpPost]
-        [Authorize(AbpProOpenIddictPermissions.Applications.Create)]
-        public virtual Task<OpenIddictApplicationDto> CreateAsync(OpenIddictApplicationCreateDto input)
+        [Authorize(AbpProOpenIddictPermissions.Scopes.Create)]
+        public Task<OpenIddictScopeDto> CreateAsync(OpenIddictScopeCreateDto input)
         {
             return service.CreateAsync(input);
         }
 
         /// <summary>
-        /// 删除指定的OpenIddict应用
+        /// 删除指定的OpenIddict作用域
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete]
         [Route("{id}")]
-        [Authorize(AbpProOpenIddictPermissions.Applications.Delete)]
-        public virtual Task DeleteAsync(Guid id)
+        [Authorize(AbpProOpenIddictPermissions.Scopes.Delete)]
+        public Task DeleteAsync(Guid id)
         {
             return service.DeleteAsync(id);
         }
 
         /// <summary>
-        /// 更新指定的OpenIddict应用
+        /// 更新指定的OpenIddict作用域
         /// </summary>
         /// <param name="id"></param>
         /// <param name="input"></param>
         /// <returns></returns>
         [HttpPut]
         [Route("{id}")]
-        [Authorize(AbpProOpenIddictPermissions.Applications.Update)]
-        public virtual Task<OpenIddictApplicationDto> UpdateAsync(Guid id, OpenIddictApplicationUpdateDto input)
+        [Authorize(AbpProOpenIddictPermissions.Scopes.Update)]
+        public Task<OpenIddictScopeDto> UpdateAsync(Guid id, OpenIddictScopeUpdateDto input)
         {
             return service.UpdateAsync(id, input);
         }
 
         /// <summary>
-        /// 获取指定的OpenIddict应用
+        /// 获取指定的OpenIddict作用域
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
         [Route("{id}")]
-        //[Authorize(AbpProOpenIddictPermissions.Applications.Default)]
-        public virtual Task<OpenIddictApplicationDto> GetAsync(Guid id)
+        public Task<OpenIddictScopeDto> GetAsync(Guid id)
         {
             return service.GetAsync(id);
         }
 
         /// <summary>
-        /// 分页获取OpenIddict的应用列表
+        /// 分页获取OpenIddict的作用域列表
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
         [HttpGet]
-        [Authorize(AbpProOpenIddictPermissions.Applications.Default)]
-        public virtual Task<PagedResultDto<OpenIddictApplicationDto>> GetListAsync(OpenIddictApplicationGetListInput input)
+        public Task<PagedResultDto<OpenIddictScopeDto>> GetListAsync(OpenIddictScopeGetListInput input)
         {
             return service.GetListAsync(input);
         }
-       
     }
 }

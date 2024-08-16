@@ -5,6 +5,9 @@ using Volo.Abp.Identity;
 
 namespace RuiChen.AbpPro.Identity
 {
+    /// <summary>
+    /// 身份声明类型应用服务
+    /// </summary>
     [Authorize(IdentityPermissions.IdentityClaimType.Default)]
     public class IdentityClaimTypeAppService : IdentityAppServiceBase, IIdentityClaimTypeAppService
     {
@@ -17,6 +20,12 @@ namespace RuiChen.AbpPro.Identity
             this.identityClaimTypeRepository = identityClaimTypeRepository;
         }
 
+        /// <summary>
+        /// 创建新的身份声明类型
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        /// <exception cref="UserFriendlyException"></exception>
         public async virtual Task<IdentityClaimTypeDto> CreateAsync(IdentityClaimTypeCreateDto input)
         {
             if (await identityClaimTypeRepository.AnyAsync(input.Name))
@@ -42,6 +51,11 @@ namespace RuiChen.AbpPro.Identity
             return ObjectMapper.Map<IdentityClaimType, IdentityClaimTypeDto>(identityClaimType);
         }
 
+        /// <summary>
+        ///  删除指定的身份声明类型
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async virtual Task DeleteAsync(Guid id)
         {
             var identityClaimType = await identityClaimTypeRepository.FindAsync(id);
@@ -56,6 +70,10 @@ namespace RuiChen.AbpPro.Identity
             await identityClaimTypeRepository.DeleteAsync(identityClaimType);
         }
 
+        /// <summary>
+        ///  获取所有身份声明类型的列表
+        /// </summary>
+        /// <returns></returns>
         public async virtual Task<ListResultDto<IdentityClaimTypeDto>> GetAllListAsync()
         {
             var identityClaimTypes = await identityClaimTypeRepository.GetListAsync();
@@ -65,6 +83,11 @@ namespace RuiChen.AbpPro.Identity
             return new ListResultDto<IdentityClaimTypeDto>(items);
         }
 
+        /// <summary>
+        /// 根据唯一标识符获取身份声明类型
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async virtual Task<IdentityClaimTypeDto> GetAsync(Guid id)
         {
             var identityClaimType = await identityClaimTypeRepository.FindAsync(id);
@@ -72,6 +95,11 @@ namespace RuiChen.AbpPro.Identity
             return ObjectMapper.Map<IdentityClaimType, IdentityClaimTypeDto>(identityClaimType);
         }
 
+        /// <summary>
+        /// 分页获取身份声明类型列表
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public async virtual Task<PagedResultDto<IdentityClaimTypeDto>> GetListAsync(IdentityClaimTypeGetByPagedDto input)
         {
             var identityClaimTypeCount = await identityClaimTypeRepository.GetCountAsync(input.Filter);
@@ -83,6 +111,12 @@ namespace RuiChen.AbpPro.Identity
             return new PagedResultDto<IdentityClaimTypeDto>(identityClaimTypeCount, items);
         }
 
+        /// <summary>
+        /// 更新指定的身份声明类型
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public async virtual Task<IdentityClaimTypeDto> UpdateAsync(Guid id, IdentityClaimTypeUpdateDto input)
         {
             var identityClaimType = await identityClaimTypeRepository.GetAsync(id);
@@ -113,6 +147,11 @@ namespace RuiChen.AbpPro.Identity
             return ObjectMapper.Map<IdentityClaimType, IdentityClaimTypeDto>(identityClaimType);
         }
 
+        /// <summary>
+        /// 检查是否允许更改指定的声明类型
+        /// </summary>
+        /// <param name="claimType"></param>
+        /// <exception cref="BusinessException"></exception>
         protected virtual void CheckChangingClaimType(IdentityClaimType claimType)
         {
             if (claimType.IsStatic)
@@ -121,6 +160,11 @@ namespace RuiChen.AbpPro.Identity
             }
         }
 
+        /// <summary>
+        /// 检查是否允许删除指定的声明类型
+        /// </summary>
+        /// <param name="claimType"></param>
+        /// <exception cref="BusinessException"></exception>
         protected virtual void CheckDeletionClaimType(IdentityClaimType claimType)
         {
             if (claimType.IsStatic)
