@@ -70,6 +70,26 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Authorizatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Identity.OrganizationUnits", "modules\identity\RuiChen.AbpPro.Identity.OrganizationUnits\RuiChen.AbpPro.Identity.OrganizationUnits.csproj", "{6824537B-7895-48B3-9A5E-12752B5A0A37}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "account", "account", "{0CDFAA00-14CB-43FB-AF04-83C896B0D459}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Account.Application", "modules\account\RuiChen.AbpPro.Account.Application\RuiChen.AbpPro.Account.Application.csproj", "{1DB966EB-94CB-44B5-8483-30BE5C8F91F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Account.Application.Contracts", "modules\account\RuiChen.AbpPro.Account.Application.Contracts\RuiChen.AbpPro.Account.Application.Contracts.csproj", "{EE491539-8F7F-43EC-8872-B9C06EBC9CB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Account.HttpApi", "modules\account\RuiChen.AbpPro.Account.HttpApi\RuiChen.AbpPro.Account.HttpApi.csproj", "{BF8DF66E-78A2-4EBB-B618-7A6CAA0CC16A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Account.Templates", "modules\account\RuiChen.AbpPro.Account.Templates\RuiChen.AbpPro.Account.Templates.csproj", "{B9C3D1CA-21BD-48C6-88D5-067A9C523CDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cloud-aliyun", "cloud-aliyun", "{0ADFD9DD-8B3A-4936-BC60-5A5B15D13B19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Aliyun", "framework\cloud-aliyun\RuiChen.AbpPro.Aliyun\RuiChen.AbpPro.Aliyun.csproj", "{52B4D761-CCC2-4F79-8CE4-D504C6BA9FDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Aliyun.SettingManagement", "framework\cloud-aliyun\RuiChen.AbpPro.Aliyun.SettingManagement\RuiChen.AbpPro.Aliyun.SettingManagement.csproj", "{B424D773-6D40-46A0-9D8F-18D59D4C9D00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.BlobStoring.Aliyun", "framework\cloud-aliyun\RuiChen.AbpPro.BlobStoring.Aliyun\RuiChen.AbpPro.BlobStoring.Aliyun.csproj", "{4B9572BB-49C1-4550-A520-362ADFF0D84A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Sms.Aliyun", "framework\cloud-aliyun\RuiChen.AbpPro.Sms.Aliyun\RuiChen.AbpPro.Sms.Aliyun.csproj", "{021EF48B-C8ED-439F-B539-45332B3B8AFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -156,6 +176,38 @@ Global
 		{6824537B-7895-48B3-9A5E-12752B5A0A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6824537B-7895-48B3-9A5E-12752B5A0A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6824537B-7895-48B3-9A5E-12752B5A0A37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DB966EB-94CB-44B5-8483-30BE5C8F91F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DB966EB-94CB-44B5-8483-30BE5C8F91F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DB966EB-94CB-44B5-8483-30BE5C8F91F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DB966EB-94CB-44B5-8483-30BE5C8F91F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE491539-8F7F-43EC-8872-B9C06EBC9CB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE491539-8F7F-43EC-8872-B9C06EBC9CB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE491539-8F7F-43EC-8872-B9C06EBC9CB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE491539-8F7F-43EC-8872-B9C06EBC9CB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF8DF66E-78A2-4EBB-B618-7A6CAA0CC16A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF8DF66E-78A2-4EBB-B618-7A6CAA0CC16A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF8DF66E-78A2-4EBB-B618-7A6CAA0CC16A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF8DF66E-78A2-4EBB-B618-7A6CAA0CC16A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9C3D1CA-21BD-48C6-88D5-067A9C523CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9C3D1CA-21BD-48C6-88D5-067A9C523CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9C3D1CA-21BD-48C6-88D5-067A9C523CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9C3D1CA-21BD-48C6-88D5-067A9C523CDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52B4D761-CCC2-4F79-8CE4-D504C6BA9FDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52B4D761-CCC2-4F79-8CE4-D504C6BA9FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52B4D761-CCC2-4F79-8CE4-D504C6BA9FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52B4D761-CCC2-4F79-8CE4-D504C6BA9FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B424D773-6D40-46A0-9D8F-18D59D4C9D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B424D773-6D40-46A0-9D8F-18D59D4C9D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B424D773-6D40-46A0-9D8F-18D59D4C9D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B424D773-6D40-46A0-9D8F-18D59D4C9D00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B9572BB-49C1-4550-A520-362ADFF0D84A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B9572BB-49C1-4550-A520-362ADFF0D84A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B9572BB-49C1-4550-A520-362ADFF0D84A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B9572BB-49C1-4550-A520-362ADFF0D84A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{021EF48B-C8ED-439F-B539-45332B3B8AFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{021EF48B-C8ED-439F-B539-45332B3B8AFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{021EF48B-C8ED-439F-B539-45332B3B8AFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{021EF48B-C8ED-439F-B539-45332B3B8AFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -186,5 +238,15 @@ Global
 		{2033019A-9047-4FEC-80A4-3D32B1973CB6} = {CF51C53E-65AC-482A-9C58-B0EBC199E6E7}
 		{1F5C3966-B32F-4504-8D90-66830C9CEB42} = {2033019A-9047-4FEC-80A4-3D32B1973CB6}
 		{6824537B-7895-48B3-9A5E-12752B5A0A37} = {C296606B-4756-4025-8566-A170D8148AE7}
+		{0CDFAA00-14CB-43FB-AF04-83C896B0D459} = {3FBD9712-D4D2-4FB8-A03B-B9E21EA7910A}
+		{1DB966EB-94CB-44B5-8483-30BE5C8F91F1} = {0CDFAA00-14CB-43FB-AF04-83C896B0D459}
+		{EE491539-8F7F-43EC-8872-B9C06EBC9CB2} = {0CDFAA00-14CB-43FB-AF04-83C896B0D459}
+		{BF8DF66E-78A2-4EBB-B618-7A6CAA0CC16A} = {0CDFAA00-14CB-43FB-AF04-83C896B0D459}
+		{B9C3D1CA-21BD-48C6-88D5-067A9C523CDD} = {0CDFAA00-14CB-43FB-AF04-83C896B0D459}
+		{0ADFD9DD-8B3A-4936-BC60-5A5B15D13B19} = {CF51C53E-65AC-482A-9C58-B0EBC199E6E7}
+		{52B4D761-CCC2-4F79-8CE4-D504C6BA9FDA} = {0ADFD9DD-8B3A-4936-BC60-5A5B15D13B19}
+		{B424D773-6D40-46A0-9D8F-18D59D4C9D00} = {0ADFD9DD-8B3A-4936-BC60-5A5B15D13B19}
+		{4B9572BB-49C1-4550-A520-362ADFF0D84A} = {0ADFD9DD-8B3A-4936-BC60-5A5B15D13B19}
+		{021EF48B-C8ED-439F-B539-45332B3B8AFB} = {0ADFD9DD-8B3A-4936-BC60-5A5B15D13B19}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,24 @@
+
+
+dotnet new classlib -o modules/account/RuiChen.AbpPro.Account.Application
+dotnet new classlib -o modules/account/RuiChen.AbpPro.Account.Application.Contracts
+dotnet new classlib -o modules/account/RuiChen.AbpPro.Account.HttpApi
+dotnet new classlib -o modules/account/RuiChen.AbpPro.Account.Templates
+
+dotnet sln RuiChen.AbpPro.All.sln add modules/account/RuiChen.AbpPro.Account.Application
+dotnet sln RuiChen.AbpPro.All.sln add modules/account/RuiChen.AbpPro.Account.Application.Contracts
+dotnet sln RuiChen.AbpPro.All.sln add modules/account/RuiChen.AbpPro.Account.HttpApi
+dotnet sln RuiChen.AbpPro.All.sln add modules/account/RuiChen.AbpPro.Account.Templates
+
+
+
+dotnet new classlib -o framework/cloud-aliyun/RuiChen.AbpPro.Aliyun
+dotnet new classlib -o framework/cloud-aliyun/RuiChen.AbpPro.Aliyun.SettingManagement
+dotnet new classlib -o framework/cloud-aliyun/RuiChen.AbpPro.BlobStoring.Aliyun
+dotnet new classlib -o framework/cloud-aliyun/RuiChen.AbpPro.Sms.Aliyun
+
+
+dotnet sln RuiChen.AbpPro.All.sln add framework/cloud-aliyun/RuiChen.AbpPro.Aliyun
+dotnet sln RuiChen.AbpPro.All.sln add framework/cloud-aliyun/RuiChen.AbpPro.Aliyun.SettingManagement
+dotnet sln RuiChen.AbpPro.All.sln add framework/cloud-aliyun/RuiChen.AbpPro.BlobStoring.Aliyun
+dotnet sln RuiChen.AbpPro.All.sln add framework/cloud-aliyun/RuiChen.AbpPro.Sms.Aliyun
