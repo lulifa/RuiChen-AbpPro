@@ -5,7 +5,6 @@ using OpenIddict.Server.AspNetCore;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
 using Volo.Abp.AspNetCore.Mvc;
-using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
 using Volo.Abp.Auditing;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Json;

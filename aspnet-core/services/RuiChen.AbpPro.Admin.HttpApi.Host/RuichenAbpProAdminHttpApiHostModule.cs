@@ -2,19 +2,15 @@
 using RuiChen.AbpPro.Identity;
 using RuiChen.AbpPro.OpenIddict;
 using Volo.Abp;
-using Volo.Abp.Account;
 using Volo.Abp.Account.Web;
 using Volo.Abp.AspNetCore.MultiTenancy;
-using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
-using Volo.Abp.Identity.AspNetCore;
 using Volo.Abp.Modularity;
 using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.HttpApi;
-using Volo.Abp.SettingManagement;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -23,8 +19,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         typeof(AbpProAccountHttpApiModule),
         typeof(AbpProAccountApplicationModule),
         typeof(AbpProAccountTemplatesModule),
-        //typeof(AbpAccountWebOpenIddictModule),
-        //typeof(AbpAspNetCoreMvcUiBasicThemeModule),
+        typeof(AbpAccountWebOpenIddictModule),
 
         typeof(AbpProIdentityHttpApiModule),
         typeof(AbpProIdentityApplicationModule),
