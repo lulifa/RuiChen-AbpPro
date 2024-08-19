@@ -1,25 +1,18 @@
-﻿
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
-using OpenIddict.Server.AspNetCore;
-using OpenIddict.Server;
-using Volo.Abp.Auditing;
-using Volo.Abp.EntityFrameworkCore;
-using Volo.Abp.Threading;
 using Microsoft.OpenApi.Models;
-using Volo.Abp.MultiTenancy;
+using OpenIddict.Server.AspNetCore;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
-using Volo.Abp.Json.SystemTextJson;
-using Volo.Abp.Json;
-using Volo.Abp.FeatureManagement;
-using Volo.Abp.Features;
-using Microsoft.AspNetCore.Identity;
-using Volo.Abp.GlobalFeatures;
-using Volo.Abp.Security.Claims;
 using Volo.Abp.AspNetCore.Mvc;
-using RuiChen.AbpPro.Identity;
-using System.Reflection;
 using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
+using Volo.Abp.Auditing;
+using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.Json;
+using Volo.Abp.Json.SystemTextJson;
+using Volo.Abp.MultiTenancy;
+using Volo.Abp.Security.Claims;
+using Volo.Abp.Threading;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -99,20 +92,6 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             });
         }
 
-
-        private void ConfigureMvcUiTheme()
-        {
-            Configure<AbpBundlingOptions>(options =>
-            {
-                //options.StyleBundles.Configure(
-                //    LeptonXLiteThemeBundles.Styles.Global,
-                //    bundle =>
-                //    {
-                //        bundle.AddFiles("/global-styles.css");
-                //    }
-                //);
-            });
-        }
 
         /// <summary>
         /// 配置 Kestrel 服务器的选项

@@ -63,7 +63,7 @@ namespace RuiChen.AbpPro.OpenIddict
         /// <returns></returns>
         [HttpGet]
         [Route("{id}")]
-        //[Authorize(AbpProOpenIddictPermissions.Applications.Default)]
+        [Authorize(AbpProOpenIddictPermissions.Applications.Default)]
         public virtual Task<OpenIddictApplicationDto> GetAsync(Guid id)
         {
             return service.GetAsync(id);
@@ -75,7 +75,8 @@ namespace RuiChen.AbpPro.OpenIddict
         /// <param name="input"></param>
         /// <returns></returns>
         [HttpGet]
-        [Authorize(AbpProOpenIddictPermissions.Applications.Default)]
+        //[Authorize(AbpProOpenIddictPermissions.Applications.Default)]
+        [AllowAnonymous]
         public virtual Task<PagedResultDto<OpenIddictApplicationDto>> GetListAsync(OpenIddictApplicationGetListInput input)
         {
             return service.GetListAsync(input);

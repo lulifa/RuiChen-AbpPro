@@ -1,4 +1,5 @@
-﻿using RuiChen.AbpPro.Identity;
+﻿using RuiChen.AbpPro.Account;
+using RuiChen.AbpPro.Identity;
 using RuiChen.AbpPro.OpenIddict;
 using Volo.Abp;
 using Volo.Abp.Account;
@@ -19,13 +20,17 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
     [DependsOn(
 
-        //认证模块
+        typeof(AbpProAccountHttpApiModule),
+        typeof(AbpProAccountApplicationModule),
+        typeof(AbpProAccountTemplatesModule),
+        //typeof(AbpAccountWebOpenIddictModule),
+        //typeof(AbpAspNetCoreMvcUiBasicThemeModule),
+
         typeof(AbpProIdentityHttpApiModule),
         typeof(AbpProIdentityApplicationModule),
         typeof(AbpProIdentityEntityFrameworkCoreModule),
         typeof(AbpProIdentityOrganizaztionUnitsModule),
 
-        //认证服务器模块
         typeof(AbpProOpenIddictHttpApiModule),
         typeof(AbpProOpenIddictApplicationModule),
         typeof(AbpOpenIddictEntityFrameworkCoreModule),
@@ -35,11 +40,6 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         typeof(AbpPermissionManagementDomainModule),
         typeof(AbpPermissionManagementEntityFrameworkCoreModule),
         typeof(AbpAspNetCoreMultiTenancyModule),
-
-        typeof(AbpAccountHttpApiModule),
-        typeof(AbpAccountApplicationModule),
-        typeof(AbpAccountWebOpenIddictModule),
-        typeof(AbpAspNetCoreMvcUiBasicThemeModule),
 
         typeof(AbpAspNetCoreSerilogModule),
 
@@ -64,7 +64,6 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 
             ConfigureAuditing();
             ConfigureDbContext();
-            ConfigureMvcUiTheme();
             ConfigureKestrelServer();
             ConfigureIdentity(configuration);
             ConfigureAuthServer(configuration);

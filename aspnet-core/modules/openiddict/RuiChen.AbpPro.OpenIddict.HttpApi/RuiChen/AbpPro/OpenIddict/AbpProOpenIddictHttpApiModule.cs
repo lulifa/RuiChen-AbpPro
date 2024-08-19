@@ -15,7 +15,8 @@ namespace RuiChen.AbpPro.OpenIddict
 {
     [DependsOn(
         typeof(AbpProOpenIddictApplicationContractsModule),
-        typeof(AbpAspNetCoreMvcModule))]
+        typeof(AbpAspNetCoreMvcModule)
+        )]
     public class AbpProOpenIddictHttpApiModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
