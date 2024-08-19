@@ -4,6 +4,18 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace />
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Account.Application" />
+    <PackageReference Include="Volo.Abp.Sms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\identity\RuiChen.AbpPro.Identity.Domain\RuiChen.AbpPro.Identity.Domain.csproj" />
+    <ProjectReference Include="..\RuiChen.AbpPro.Account.Application.Contracts\RuiChen.AbpPro.Account.Application.Contracts.csproj" />
+    <ProjectReference Include="..\RuiChen.AbpPro.Account.Templates\RuiChen.AbpPro.Account.Templates.csproj" />
+  </ItemGroup>
 
 </Project>
