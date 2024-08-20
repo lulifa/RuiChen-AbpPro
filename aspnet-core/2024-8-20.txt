@@ -7,3 +7,15 @@ dotnet new classlib -o modules/feature/RuiChen.AbpPro.FeatureManagement.HttpApi
 dotnet sln RuiChen.AbpPro.All.sln add modules/feature/RuiChen.AbpPro.FeatureManagement.Application
 dotnet sln RuiChen.AbpPro.All.sln add modules/feature/RuiChen.AbpPro.FeatureManagement.Application.Contracts
 dotnet sln RuiChen.AbpPro.All.sln add modules/feature/RuiChen.AbpPro.FeatureManagement.HttpApi
+
+
+
+dotnet new classlib -o modules/permission/RuiChen.AbpPro.PermissionManagement.Application
+dotnet new classlib -o modules/permission/RuiChen.AbpPro.PermissionManagement.Application.Contracts
+dotnet new classlib -o modules/permission/RuiChen.AbpPro.PermissionManagement.Domain.OrganizationUnits
+dotnet new classlib -o modules/permission/RuiChen.AbpPro.PermissionManagement.HttpApi
+
+dotnet sln RuiChen.AbpPro.All.sln add modules/permission/RuiChen.AbpPro.PermissionManagement.Application
+dotnet sln RuiChen.AbpPro.All.sln add modules/permission/RuiChen.AbpPro.PermissionManagement.Application.Contracts
+dotnet sln RuiChen.AbpPro.All.sln add modules/permission/RuiChen.AbpPro.PermissionManagement.Domain.OrganizationUnits
+dotnet sln RuiChen.AbpPro.All.sln add modules/permission/RuiChen.AbpPro.PermissionManagement.HttpApi

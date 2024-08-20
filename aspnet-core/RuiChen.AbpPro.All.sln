@@ -98,6 +98,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.FeatureManag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.FeatureManagement.HttpApi", "modules\feature\RuiChen.AbpPro.FeatureManagement.HttpApi\RuiChen.AbpPro.FeatureManagement.HttpApi.csproj", "{0640DFE9-6F1C-4A86-B831-F81DC310FF99}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "permission", "permission", "{84CE6C16-CC79-471B-92E7-52CD190E3BB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.PermissionManagement.Application", "modules\permission\RuiChen.AbpPro.PermissionManagement.Application\RuiChen.AbpPro.PermissionManagement.Application.csproj", "{F12BE785-0CEB-439D-AF78-5DFF1C3A7848}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.PermissionManagement.Application.Contracts", "modules\permission\RuiChen.AbpPro.PermissionManagement.Application.Contracts\RuiChen.AbpPro.PermissionManagement.Application.Contracts.csproj", "{53E65203-1793-410E-879A-C514214CBFB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.PermissionManagement.Domain.OrganizationUnits", "modules\permission\RuiChen.AbpPro.PermissionManagement.Domain.OrganizationUnits\RuiChen.AbpPro.PermissionManagement.Domain.OrganizationUnits.csproj", "{E223749E-FD20-4602-B14E-87CB961C4227}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.PermissionManagement.HttpApi", "modules\permission\RuiChen.AbpPro.PermissionManagement.HttpApi\RuiChen.AbpPro.PermissionManagement.HttpApi.csproj", "{1240D91B-0EF4-45D6-B764-04FF49D23C66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -228,6 +238,22 @@ Global
 		{0640DFE9-6F1C-4A86-B831-F81DC310FF99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0640DFE9-6F1C-4A86-B831-F81DC310FF99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0640DFE9-6F1C-4A86-B831-F81DC310FF99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F12BE785-0CEB-439D-AF78-5DFF1C3A7848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F12BE785-0CEB-439D-AF78-5DFF1C3A7848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F12BE785-0CEB-439D-AF78-5DFF1C3A7848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F12BE785-0CEB-439D-AF78-5DFF1C3A7848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53E65203-1793-410E-879A-C514214CBFB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53E65203-1793-410E-879A-C514214CBFB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53E65203-1793-410E-879A-C514214CBFB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53E65203-1793-410E-879A-C514214CBFB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E223749E-FD20-4602-B14E-87CB961C4227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E223749E-FD20-4602-B14E-87CB961C4227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E223749E-FD20-4602-B14E-87CB961C4227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E223749E-FD20-4602-B14E-87CB961C4227}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1240D91B-0EF4-45D6-B764-04FF49D23C66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1240D91B-0EF4-45D6-B764-04FF49D23C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1240D91B-0EF4-45D6-B764-04FF49D23C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1240D91B-0EF4-45D6-B764-04FF49D23C66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -272,6 +298,11 @@ Global
 		{FA324FC9-A453-42CD-926F-1F3F73EE74C0} = {59BC1367-98A5-46C3-858E-9EDEA351F025}
 		{8268DFC7-B120-4D80-9FA9-9C62CB5227DC} = {59BC1367-98A5-46C3-858E-9EDEA351F025}
 		{0640DFE9-6F1C-4A86-B831-F81DC310FF99} = {59BC1367-98A5-46C3-858E-9EDEA351F025}
+		{84CE6C16-CC79-471B-92E7-52CD190E3BB1} = {3FBD9712-D4D2-4FB8-A03B-B9E21EA7910A}
+		{F12BE785-0CEB-439D-AF78-5DFF1C3A7848} = {84CE6C16-CC79-471B-92E7-52CD190E3BB1}
+		{53E65203-1793-410E-879A-C514214CBFB3} = {84CE6C16-CC79-471B-92E7-52CD190E3BB1}
+		{E223749E-FD20-4602-B14E-87CB961C4227} = {84CE6C16-CC79-471B-92E7-52CD190E3BB1}
+		{1240D91B-0EF4-45D6-B764-04FF49D23C66} = {84CE6C16-CC79-471B-92E7-52CD190E3BB1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {605F5C6D-ACE2-4166-B786-5D421DCA8FE2}

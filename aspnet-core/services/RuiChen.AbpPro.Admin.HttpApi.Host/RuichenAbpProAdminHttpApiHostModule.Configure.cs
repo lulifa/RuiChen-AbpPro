@@ -379,8 +379,8 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
                 var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]);
                 services
                     .AddDataProtection()
-                    .SetApplicationName("Pure.Abp.Application")
-                    .PersistKeysToStackExchangeRedis(redis, "Pure.Abp.Application:DataProtection:Protection-Keys");
+                    .SetApplicationName("RuiChen.AbpPro.Application")
+                    .PersistKeysToStackExchangeRedis(redis, "RuiChen.AbpPro.Application:DataProtection:Protection-Keys");
             }
 
             services.AddSameSiteCookiePolicy();
