@@ -1,0 +1,9 @@
+
+
+dotnet new classlib -o modules/feature/RuiChen.AbpPro.FeatureManagement.Application
+dotnet new classlib -o modules/feature/RuiChen.AbpPro.FeatureManagement.Application.Contracts
+dotnet new classlib -o modules/feature/RuiChen.AbpPro.FeatureManagement.HttpApi
+
+dotnet sln RuiChen.AbpPro.All.sln add modules/feature/RuiChen.AbpPro.FeatureManagement.Application
+dotnet sln RuiChen.AbpPro.All.sln add modules/feature/RuiChen.AbpPro.FeatureManagement.Application.Contracts
+dotnet sln RuiChen.AbpPro.All.sln add modules/feature/RuiChen.AbpPro.FeatureManagement.HttpApi

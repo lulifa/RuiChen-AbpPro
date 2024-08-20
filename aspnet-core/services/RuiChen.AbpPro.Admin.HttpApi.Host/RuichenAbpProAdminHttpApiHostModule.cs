@@ -1,4 +1,5 @@
 ﻿using RuiChen.AbpPro.Account;
+using RuiChen.AbpPro.FeatureManagement;
 using RuiChen.AbpPro.Identity;
 using RuiChen.AbpPro.OpenIddict;
 using Volo.Abp;
@@ -6,6 +7,7 @@ using Volo.Abp.Account.Web;
 using Volo.Abp.AspNetCore.MultiTenancy;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
+using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement;
@@ -20,6 +22,10 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         typeof(AbpProAccountApplicationModule),
         typeof(AbpProAccountTemplatesModule),
         typeof(AbpAccountWebOpenIddictModule),
+
+        typeof(AbpProFeatureManagementHttpApiModule),
+        typeof(AbpProFeatureManagementApplicationModule),
+        typeof(AbpFeatureManagementEntityFrameworkCoreModule),
 
         typeof(AbpProIdentityHttpApiModule),
         typeof(AbpProIdentityApplicationModule),
@@ -60,12 +66,15 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             ConfigureAuditing();
             ConfigureDbContext();
             ConfigureKestrelServer();
+            ConfigureVirtualFileSystem();
+            ConfigureUrls(configuration);
             ConfigureIdentity(configuration);
             ConfigureAuthServer(configuration);
             ConfigureSwagger(services);
             ConfigureEndpoints(services);
             ConfigureMultiTenancy(configuration);
             ConfigureJsonSerializer(configuration);
+            ConfigureSecurity(services, configuration, hostingEnvironment.IsDevelopment());
         }
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)

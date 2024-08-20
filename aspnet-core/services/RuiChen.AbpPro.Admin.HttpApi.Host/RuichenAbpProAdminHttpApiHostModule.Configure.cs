@@ -1,17 +1,26 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Medallion.Threading.Redis;
+using Medallion.Threading;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.OpenApi.Models;
 using OpenIddict.Server.AspNetCore;
+using StackExchange.Redis;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Auditing;
 using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.GlobalFeatures;
 using Volo.Abp.Json;
 using Volo.Abp.Json.SystemTextJson;
 using Volo.Abp.MultiTenancy;
 using Volo.Abp.Security.Claims;
 using Volo.Abp.Threading;
+using Volo.Abp.UI.Navigation.Urls;
+using Volo.Abp.VirtualFileSystem;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.DataProtection;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -23,6 +32,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         protected const string DefaultCorsPolicyName = "Default";
 
         private static readonly OneTimeRunner OneTimeRunner = new OneTimeRunner();
+
 
         /// <summary>
         /// 确保在身份验证系统的配置阶段添加默认的令牌提供程序
@@ -104,6 +114,30 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 
                 // 请求缓冲区用于临时存储请求数据 取消缓冲区大小的限制
                 options.Limits.MaxRequestBufferSize = null;
+            });
+        }
+
+        private void ConfigureVirtualFileSystem()
+        {
+            Configure<AbpVirtualFileSystemOptions>(options =>
+            {
+                options.FileSets.AddEmbedded<RuichenAbpProAdminHttpApiHostModule>();
+            });
+        }
+
+        private void ConfigureUrls(IConfiguration configuration)
+        {
+            Configure<AppUrlOptions>(options =>
+            {
+                var applicationConfiguration = configuration.GetSection("App:Urls:Applications");
+                foreach (var appConfig in applicationConfiguration.GetChildren())
+                {
+                    options.Applications[appConfig.Key].RootUrl = appConfig["RootUrl"];
+                    foreach (var urlsConfig in appConfig.GetSection("Urls").GetChildren())
+                    {
+                        options.Applications[appConfig.Key].Urls[urlsConfig.Key] = urlsConfig.Value;
+                    }
+                }
             });
         }
 
@@ -276,5 +310,81 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
                 options.JsonSerializerOptions.Encoder = JavaScriptEncoder.Create(UnicodeRanges.All);
             });
         }
+
+        //private void ConfigureCors(IServiceCollection services, IConfiguration configuration)
+        //{
+        //    services.AddCors(options =>
+        //    {
+        //        options.AddPolicy(DefaultCorsPolicyName, builder =>
+        //        {
+        //            builder
+        //                .WithOrigins(
+        //                    configuration["App:CorsOrigins"]
+        //                        .Split(",", StringSplitOptions.RemoveEmptyEntries)
+        //                        .Select(o => o.RemovePostFix("/"))
+        //                        .ToArray()
+        //                )
+        //                .WithAbpExposedHeaders()
+        //                .WithAbpWrapExposedHeaders()
+        //                .SetIsOriginAllowedToAllowWildcardSubdomains()
+        //                .AllowAnyHeader()
+        //                .AllowAnyMethod()
+        //                .AllowCredentials();
+        //        });
+        //    });
+        //}
+
+
+        private void ConfigureDistributedLock(IServiceCollection services, IConfiguration configuration)
+        {
+            var distributedLockEnabled = configuration["DistributedLock:IsEnabled"];
+            if (distributedLockEnabled.IsNullOrEmpty() || bool.Parse(distributedLockEnabled))
+            {
+                var redis = ConnectionMultiplexer.Connect(configuration["DistributedLock:Redis:Configuration"]);
+                services.AddSingleton<IDistributedLockProvider>(_ => new RedisDistributedSynchronizationProvider(redis.GetDatabase()));
+            }
+        }
+
+        private void ConfigureSecurity(IServiceCollection services, IConfiguration configuration, bool isDevelopment = false)
+        {
+            services.AddAuthentication()
+                    .AddJwtBearer(options =>
+                    {
+                        options.Authority = configuration["AuthServer:Authority"];
+                        options.RequireHttpsMetadata = false;
+                        options.Audience = configuration["AuthServer:ApiName"];
+                        options.Events = new JwtBearerEvents
+                        {
+                            OnMessageReceived = context =>
+                            {
+                                var accessToken = context.Request.Query["access_token"];
+                                var path = context.HttpContext.Request.Path;
+                                if (!string.IsNullOrEmpty(accessToken) &&
+                                    (path.StartsWithSegments("/api/files")))
+                                {
+                                    context.Token = accessToken;
+                                }
+                                return Task.CompletedTask;
+                            }
+                        };
+                    });
+
+            if (isDevelopment)
+            {
+                services.AddAlwaysAllowAuthorization();
+            }
+
+            if (!isDevelopment)
+            {
+                var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]);
+                services
+                    .AddDataProtection()
+                    .SetApplicationName("Pure.Abp.Application")
+                    .PersistKeysToStackExchangeRedis(redis, "Pure.Abp.Application:DataProtection:Protection-Keys");
+            }
+
+            services.AddSameSiteCookiePolicy();
+        }
+
     }
 }

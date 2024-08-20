@@ -42,12 +42,7 @@
     <PackageReference Include="Volo.Abp.SettingManagement.HttpApi" />
     <PackageReference Include="Volo.Abp.SettingManagement.EntityFrameworkCore" />
     <PackageReference Include="Volo.Abp.PermissionManagement.EntityFrameworkCore" />
-    <PackageReference Include="Volo.Abp.OpenIddict.EntityFrameworkCore" />
-
-
-    <PackageReference Include="Volo.Abp.Account.HttpApi" />
-    <PackageReference Include="Volo.Abp.Account.Application" />
-    
+    <PackageReference Include="Volo.Abp.OpenIddict.EntityFrameworkCore" />    
 
   </ItemGroup>
 
@@ -62,6 +57,11 @@
     <ProjectReference Include="..\..\modules\account\RuiChen.AbpPro.Account.Application\RuiChen.AbpPro.Account.Application.csproj" />
     <ProjectReference Include="..\..\modules\account\RuiChen.AbpPro.Account.HttpApi\RuiChen.AbpPro.Account.HttpApi.csproj" />
     <ProjectReference Include="..\..\modules\account\RuiChen.AbpPro.Account.Templates\RuiChen.AbpPro.Account.Templates.csproj" />
+
+
+    <ProjectReference Include="..\..\modules\feature\RuiChen.AbpPro.FeatureManagement.Application\RuiChen.AbpPro.FeatureManagement.Application.csproj" />
+    <ProjectReference Include="..\..\modules\feature\RuiChen.AbpPro.FeatureManagement.Application.Contracts\RuiChen.AbpPro.FeatureManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\feature\RuiChen.AbpPro.FeatureManagement.HttpApi\RuiChen.AbpPro.FeatureManagement.HttpApi.csproj" />
 
     <ProjectReference Include="..\..\modules\identity\RuiChen.AbpPro.Identity.Application.Contracts\RuiChen.AbpPro.Identity.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\identity\RuiChen.AbpPro.Identity.Application\RuiChen.AbpPro.Identity.Application.csproj" />
