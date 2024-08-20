@@ -4,6 +4,9 @@ using Volo.Abp.Application.Dtos;
 
 namespace RuiChen.AbpPro.FeatureManagement
 {
+    /// <summary>
+    /// 特性分组
+    /// </summary>
     [Route("api/feature-management/definitions/groups")]
     public class FeatureGroupDefinitionController : FeatureManagementControllerBase, IFeatureGroupDefinitionAppService
     {

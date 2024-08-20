@@ -2,6 +2,7 @@
 using RuiChen.AbpPro.FeatureManagement;
 using RuiChen.AbpPro.Identity;
 using RuiChen.AbpPro.OpenIddict;
+using RuiChen.AbpPro.PermissionManagement;
 using Volo.Abp;
 using Volo.Abp.Account.Web;
 using Volo.Abp.AspNetCore.MultiTenancy;
@@ -36,12 +37,13 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         typeof(AbpProOpenIddictApplicationModule),
         typeof(AbpOpenIddictEntityFrameworkCoreModule),
 
-        typeof(AbpPermissionManagementHttpApiModule),
-        typeof(AbpPermissionManagementApplicationModule),
-        typeof(AbpPermissionManagementDomainModule),
+        typeof(AbpProPermissionManagementHttpApiModule),
+        typeof(AbpProPermissionManagementApplicationModule),
         typeof(AbpPermissionManagementEntityFrameworkCoreModule),
-        typeof(AbpAspNetCoreMultiTenancyModule),
+        typeof(AbpProPermissionManagementDomainOrganizationUnitsModule), // 组织机构权限管理
 
+
+        typeof(AbpAspNetCoreMultiTenancyModule),
         typeof(AbpAspNetCoreSerilogModule),
 
         typeof(AbpAutofacModule)
