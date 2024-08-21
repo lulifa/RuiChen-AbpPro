@@ -3,6 +3,7 @@ using RuiChen.AbpPro.FeatureManagement;
 using RuiChen.AbpPro.Identity;
 using RuiChen.AbpPro.OpenIddict;
 using RuiChen.AbpPro.PermissionManagement;
+using RuiChen.AbpPro.Saas;
 using Volo.Abp;
 using Volo.Abp.Account.Web;
 using Volo.Abp.AspNetCore.MultiTenancy;
@@ -11,9 +12,7 @@ using Volo.Abp.Autofac;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 using Volo.Abp.OpenIddict.EntityFrameworkCore;
-using Volo.Abp.PermissionManagement;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
-using Volo.Abp.PermissionManagement.HttpApi;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -21,7 +20,6 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 
         typeof(AbpProAccountHttpApiModule),
         typeof(AbpProAccountApplicationModule),
-        typeof(AbpProAccountTemplatesModule),
         typeof(AbpAccountWebOpenIddictModule),
 
         typeof(AbpProFeatureManagementHttpApiModule),
@@ -43,7 +41,12 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         typeof(AbpProPermissionManagementDomainOrganizationUnitsModule), // 组织机构权限管理
 
 
+        typeof(AbpProSaasHttpApiModule),
+        typeof(AbpProSaasApplicationModule),
+        typeof(AbpProSaasEntityFrameworkCoreModule),
         typeof(AbpAspNetCoreMultiTenancyModule),
+
+
         typeof(AbpAspNetCoreSerilogModule),
 
         typeof(AbpAutofacModule)
@@ -55,6 +58,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         {
             var configuration = context.Services.GetConfiguration();
 
+            PreConfigureFeature();
             PreConfigureIdentity();
             PreConfigureAuthServer(configuration);
         }
@@ -76,6 +80,8 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             ConfigureEndpoints(services);
             ConfigureMultiTenancy(configuration);
             ConfigureJsonSerializer(configuration);
+            ConfigurePermissionManagement(configuration);
+            ConfigureDistributedLock(services, configuration);
             ConfigureSecurity(services, configuration, hostingEnvironment.IsDevelopment());
         }
 

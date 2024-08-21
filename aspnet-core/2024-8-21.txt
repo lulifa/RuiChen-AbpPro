@@ -1,0 +1,15 @@
+
+
+dotnet new classlib -o modules/saas/RuiChen.AbpPro.Saas.Application
+dotnet new classlib -o modules/saas/RuiChen.AbpPro.Saas.Application.Contracts
+dotnet new classlib -o modules/saas/RuiChen.AbpPro.Saas.Domain
+dotnet new classlib -o modules/saas/RuiChen.AbpPro.Saas.Domain.Shared
+dotnet new classlib -o modules/saas/RuiChen.AbpPro.Saas.EntityFrameworkCore
+dotnet new classlib -o modules/saas/RuiChen.AbpPro.Saas.HttpApi
+
+dotnet sln RuiChen.AbpPro.All.sln add modules/saas/RuiChen.AbpPro.Saas.Application
+dotnet sln RuiChen.AbpPro.All.sln add modules/saas/RuiChen.AbpPro.Saas.Application.Contracts
+dotnet sln RuiChen.AbpPro.All.sln add modules/saas/RuiChen.AbpPro.Saas.Domain
+dotnet sln RuiChen.AbpPro.All.sln add modules/saas/RuiChen.AbpPro.Saas.Domain.Shared
+dotnet sln RuiChen.AbpPro.All.sln add modules/saas/RuiChen.AbpPro.Saas.EntityFrameworkCore
+dotnet sln RuiChen.AbpPro.All.sln add modules/saas/RuiChen.AbpPro.Saas.HttpApi

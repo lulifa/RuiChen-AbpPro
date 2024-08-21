@@ -21,6 +21,9 @@ using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.DataProtection;
+using Volo.Abp.Authorization.Permissions;
+using Volo.Abp.PermissionManagement;
+using RuiChen.AbpPro.OpenIddict;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -32,6 +35,15 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         protected const string DefaultCorsPolicyName = "Default";
 
         private static readonly OneTimeRunner OneTimeRunner = new OneTimeRunner();
+
+
+        private void PreConfigureFeature()
+        {
+            OneTimeRunner.Run(() =>
+            {
+                GlobalFeatureManager.Instance.Modules.Editions().EnableAll();
+            });
+        }
 
 
         /// <summary>
@@ -308,6 +320,23 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             Configure<AbpSystemTextJsonSerializerOptions>(options =>
             {
                 options.JsonSerializerOptions.Encoder = JavaScriptEncoder.Create(UnicodeRanges.All);
+            });
+        }
+
+        private void ConfigurePermissionManagement(IConfiguration configuration)
+        {
+            if (configuration.GetValue<bool>("PermissionManagement:IsDynamicStoreEnabled"))
+            {
+                Configure<PermissionManagementOptions>(options =>
+                {
+                    options.IsDynamicPermissionStoreEnabled = true;
+                });
+            }
+            Configure<PermissionManagementOptions>(options =>
+            {
+                // Rename IdentityServer.Client.ManagePermissions
+                // See https://github.com/abpframework/abp/blob/dev/modules/identityserver/src/Volo.Abp.PermissionManagement.Domain.IdentityServer/Volo/Abp/PermissionManagement/IdentityServer/AbpPermissionManagementDomainIdentityServerModule.cs
+                options.ProviderPolicies[ClientPermissionValueProvider.ProviderName] = AbpProOpenIddictPermissions.Applications.ManagePermissions;
             });
         }
 

@@ -7,23 +7,13 @@
     <RootNamespace/>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
-
+  
   <ItemGroup>
-    <None Remove="RuiChen\AbpPro\FeatureManagement\Localization\Resources\en.json" />
-    <None Remove="RuiChen\AbpPro\FeatureManagement\Localization\Resources\zh-Hans.json" />
+    <EmbeddedResource Include="RuiChen\AbpPro\FeatureManagement\Localization\Resources\*.json" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.FeatureManagement.Application.Contracts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="RuiChen\AbpPro\FeatureManagement\Localization\Resources\en.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RuiChen\AbpPro\FeatureManagement\Localization\Resources\zh-Hans.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

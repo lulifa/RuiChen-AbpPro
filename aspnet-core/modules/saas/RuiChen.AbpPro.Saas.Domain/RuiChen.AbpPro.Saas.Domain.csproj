@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" />
+    <PackageReference Include="Volo.Abp.Caching" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" />
+    <PackageReference Include="Volo.Abp.Features" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\tenants\RuiChen.AbpPro.MultiTenancy.Editions\RuiChen.AbpPro.MultiTenancy.Editions.csproj" />
+    <ProjectReference Include="..\RuiChen.AbpPro.Saas.Domain.Shared\RuiChen.AbpPro.Saas.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

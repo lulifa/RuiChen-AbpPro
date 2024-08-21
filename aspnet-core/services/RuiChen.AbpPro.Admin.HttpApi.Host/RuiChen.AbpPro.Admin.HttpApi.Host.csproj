@@ -48,11 +48,6 @@
 
   <ItemGroup>
 
-  </ItemGroup>
-
-
-  <ItemGroup>
-
     <ProjectReference Include="..\..\modules\account\RuiChen.AbpPro.Account.Application.Contracts\RuiChen.AbpPro.Account.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\account\RuiChen.AbpPro.Account.Application\RuiChen.AbpPro.Account.Application.csproj" />
     <ProjectReference Include="..\..\modules\account\RuiChen.AbpPro.Account.HttpApi\RuiChen.AbpPro.Account.HttpApi.csproj" />
@@ -79,6 +74,13 @@
     <ProjectReference Include="..\..\modules\permission\RuiChen.AbpPro.PermissionManagement.Application\RuiChen.AbpPro.PermissionManagement.Application.csproj" />
     <ProjectReference Include="..\..\modules\permission\RuiChen.AbpPro.PermissionManagement.Domain.OrganizationUnits\RuiChen.AbpPro.PermissionManagement.Domain.OrganizationUnits.csproj" />
     <ProjectReference Include="..\..\modules\permission\RuiChen.AbpPro.PermissionManagement.HttpApi\RuiChen.AbpPro.PermissionManagement.HttpApi.csproj" />
+
+    <ProjectReference Include="..\..\modules\saas\RuiChen.AbpPro.Saas.Application.Contracts\RuiChen.AbpPro.Saas.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\saas\RuiChen.AbpPro.Saas.Domain.Shared\RuiChen.AbpPro.Saas.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\modules\saas\RuiChen.AbpPro.Saas.Domain\RuiChen.AbpPro.Saas.Domain.csproj" />
+    <ProjectReference Include="..\..\modules\saas\RuiChen.AbpPro.Saas.Application\RuiChen.AbpPro.Saas.Application.csproj" />
+    <ProjectReference Include="..\..\modules\saas\RuiChen.AbpPro.Saas.EntityFrameworkCore\RuiChen.AbpPro.Saas.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\modules\saas\RuiChen.AbpPro.Saas.HttpApi\RuiChen.AbpPro.Saas.HttpApi.csproj" />
 
   </ItemGroup>
 

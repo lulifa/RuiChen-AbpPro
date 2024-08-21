@@ -8,17 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="RuiChen\AbpPro\Account\Emailing\Templates\MailConfirm.tpl" />
-    <None Remove="RuiChen\AbpPro\Account\Emailing\Templates\MailSecurityVerify.tpl" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="RuiChen\AbpPro\Account\Emailing\Templates\MailConfirm.tpl">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RuiChen\AbpPro\Account\Emailing\Templates\MailSecurityVerify.tpl">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <EmbeddedResource Include="RuiChen\AbpPro\Account\Emailing\Templates\*.tpl" />
   </ItemGroup>
 
   <ItemGroup>
