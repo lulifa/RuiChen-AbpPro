@@ -13,3 +13,12 @@ dotnet sln RuiChen.AbpPro.All.sln add modules/saas/RuiChen.AbpPro.Saas.Domain
 dotnet sln RuiChen.AbpPro.All.sln add modules/saas/RuiChen.AbpPro.Saas.Domain.Shared
 dotnet sln RuiChen.AbpPro.All.sln add modules/saas/RuiChen.AbpPro.Saas.EntityFrameworkCore
 dotnet sln RuiChen.AbpPro.All.sln add modules/saas/RuiChen.AbpPro.Saas.HttpApi
+
+
+dotnet new classlib -o modules/settings/RuiChen.AbpPro.SettingManagement.Application
+dotnet new classlib -o modules/settings/RuiChen.AbpPro.SettingManagement.Application.Contracts
+dotnet new classlib -o modules/settings/RuiChen.AbpPro.SettingManagement.HttpApi
+
+dotnet sln RuiChen.AbpPro.All.sln add modules/settings/RuiChen.AbpPro.SettingManagement.Application
+dotnet sln RuiChen.AbpPro.All.sln add modules/settings/RuiChen.AbpPro.SettingManagement.Application.Contracts
+dotnet sln RuiChen.AbpPro.All.sln add modules/settings/RuiChen.AbpPro.SettingManagement.HttpApi

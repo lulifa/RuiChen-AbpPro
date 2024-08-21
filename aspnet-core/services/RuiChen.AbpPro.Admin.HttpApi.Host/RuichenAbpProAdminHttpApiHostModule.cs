@@ -13,6 +13,9 @@ using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
+using Volo.Abp.SettingManagement.EntityFrameworkCore;
+using Volo.Abp.SettingManagement;
+using RuiChen.AbpPro.SettingManagement;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -45,6 +48,10 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         typeof(AbpProSaasApplicationModule),
         typeof(AbpProSaasEntityFrameworkCoreModule),
         typeof(AbpAspNetCoreMultiTenancyModule),
+
+        typeof(AbpProSettingManagementHttpApiModule),
+        typeof(AbpProSettingManagementApplicationModule),
+        typeof(AbpSettingManagementEntityFrameworkCoreModule),
 
 
         typeof(AbpAspNetCoreSerilogModule),

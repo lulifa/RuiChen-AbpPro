@@ -82,6 +82,10 @@
     <ProjectReference Include="..\..\modules\saas\RuiChen.AbpPro.Saas.EntityFrameworkCore\RuiChen.AbpPro.Saas.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\modules\saas\RuiChen.AbpPro.Saas.HttpApi\RuiChen.AbpPro.Saas.HttpApi.csproj" />
 
+    <ProjectReference Include="..\..\modules\settings\RuiChen.AbpPro.SettingManagement.Application\RuiChen.AbpPro.SettingManagement.Application.csproj" />
+    <ProjectReference Include="..\..\modules\settings\RuiChen.AbpPro.SettingManagement.Application.Contracts\RuiChen.AbpPro.SettingManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\settings\RuiChen.AbpPro.SettingManagement.HttpApi\RuiChen.AbpPro.SettingManagement.HttpApi.csproj" />
+
   </ItemGroup>
 
 </Project>

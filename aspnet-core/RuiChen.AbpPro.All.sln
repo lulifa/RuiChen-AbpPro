@@ -122,6 +122,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Saas.EntityF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Saas.HttpApi", "modules\saas\RuiChen.AbpPro.Saas.HttpApi\RuiChen.AbpPro.Saas.HttpApi.csproj", "{8C05EF03-E295-462C-9BCF-5E2D2698A6F3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "settings", "settings", "{C5ACBFB5-F4A1-4FDD-9660-5FC344A7FAFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.SettingManagement.Application", "modules\settings\RuiChen.AbpPro.SettingManagement.Application\RuiChen.AbpPro.SettingManagement.Application.csproj", "{CACB070F-EEB5-4404-9968-D653AC4B9C32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.SettingManagement.Application.Contracts", "modules\settings\RuiChen.AbpPro.SettingManagement.Application.Contracts\RuiChen.AbpPro.SettingManagement.Application.Contracts.csproj", "{7225C399-4DA3-456B-9271-04EF8617E16E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.SettingManagement.HttpApi", "modules\settings\RuiChen.AbpPro.SettingManagement.HttpApi\RuiChen.AbpPro.SettingManagement.HttpApi.csproj", "{EA5CA601-DAFA-42AB-8F0B-C2275E6981D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -292,6 +300,18 @@ Global
 		{8C05EF03-E295-462C-9BCF-5E2D2698A6F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C05EF03-E295-462C-9BCF-5E2D2698A6F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C05EF03-E295-462C-9BCF-5E2D2698A6F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CACB070F-EEB5-4404-9968-D653AC4B9C32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CACB070F-EEB5-4404-9968-D653AC4B9C32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CACB070F-EEB5-4404-9968-D653AC4B9C32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CACB070F-EEB5-4404-9968-D653AC4B9C32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7225C399-4DA3-456B-9271-04EF8617E16E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7225C399-4DA3-456B-9271-04EF8617E16E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7225C399-4DA3-456B-9271-04EF8617E16E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7225C399-4DA3-456B-9271-04EF8617E16E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA5CA601-DAFA-42AB-8F0B-C2275E6981D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA5CA601-DAFA-42AB-8F0B-C2275E6981D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA5CA601-DAFA-42AB-8F0B-C2275E6981D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA5CA601-DAFA-42AB-8F0B-C2275E6981D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -348,6 +368,10 @@ Global
 		{371B2047-863B-4FF6-B928-98E26284CD48} = {13D8A9BA-B145-4E1A-BD9F-B973E03849E6}
 		{5BBEEA62-C077-41EA-9020-ECD0B92358D8} = {13D8A9BA-B145-4E1A-BD9F-B973E03849E6}
 		{8C05EF03-E295-462C-9BCF-5E2D2698A6F3} = {13D8A9BA-B145-4E1A-BD9F-B973E03849E6}
+		{C5ACBFB5-F4A1-4FDD-9660-5FC344A7FAFE} = {3FBD9712-D4D2-4FB8-A03B-B9E21EA7910A}
+		{CACB070F-EEB5-4404-9968-D653AC4B9C32} = {C5ACBFB5-F4A1-4FDD-9660-5FC344A7FAFE}
+		{7225C399-4DA3-456B-9271-04EF8617E16E} = {C5ACBFB5-F4A1-4FDD-9660-5FC344A7FAFE}
+		{EA5CA601-DAFA-42AB-8F0B-C2275E6981D8} = {C5ACBFB5-F4A1-4FDD-9660-5FC344A7FAFE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {605F5C6D-ACE2-4166-B786-5D421DCA8FE2}

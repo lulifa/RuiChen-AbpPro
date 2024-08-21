@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="RuiChen\AbpPro\SettingManagement\Localization\Resources\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.Contracts" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" />
+    <PackageReference Include="Volo.Abp.Emailing" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application.Contracts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\account\RuiChen.AbpPro.Account.Application.Contracts\RuiChen.AbpPro.Account.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\identity\RuiChen.AbpPro.Identity.Domain.Shared\RuiChen.AbpPro.Identity.Domain.Shared.csproj" />
+    <ProjectReference Include="..\RuiChen.AbpPro.SettingManagement.Application.Contracts\RuiChen.AbpPro.SettingManagement.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
