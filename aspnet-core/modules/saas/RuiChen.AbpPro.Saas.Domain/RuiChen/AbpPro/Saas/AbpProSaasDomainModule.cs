@@ -13,7 +13,7 @@ namespace RuiChen.AbpPro.Saas
         typeof(AbpAutoMapperModule),
         typeof(AbpDddDomainModule),
         typeof(AbpProSaasDomainSharedModule),
-        typeof(AbpMultiTenancyEditionsModule)
+        typeof(AbpProMultiTenancyEditionsModule)
         )]
     public class AbpProSaasDomainModule:AbpModule
     {
