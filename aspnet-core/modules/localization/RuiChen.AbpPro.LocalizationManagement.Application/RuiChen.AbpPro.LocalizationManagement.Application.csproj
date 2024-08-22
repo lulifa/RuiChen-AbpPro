@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <RootNamespace/>
+    <RootNamespace />
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\localization\RuiChen.AbpPro.Localization.CultureMap\RuiChen.AbpPro.Localization.CultureMap.csproj" />
     <ProjectReference Include="..\RuiChen.AbpPro.LocalizationManagement.Domain\RuiChen.AbpPro.LocalizationManagement.Domain.csproj" />
     <ProjectReference Include="..\RuiChen.AbpPro.LocalizationManagement.Application.Contracts\RuiChen.AbpPro.LocalizationManagement.Application.Contracts.csproj" />
   </ItemGroup>

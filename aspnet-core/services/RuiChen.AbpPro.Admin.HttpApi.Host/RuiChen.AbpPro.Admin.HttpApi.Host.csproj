@@ -66,6 +66,13 @@
     <ProjectReference Include="..\..\modules\identity\RuiChen.AbpPro.Identity.HttpApi\RuiChen.AbpPro.Identity.HttpApi.csproj" />
     <ProjectReference Include="..\..\modules\identity\RuiChen.AbpPro.Identity.OrganizationUnits\RuiChen.AbpPro.Identity.OrganizationUnits.csproj" />
 
+    <ProjectReference Include="..\..\modules\localization\RuiChen.AbpPro.LocalizationManagement.Application.Contracts\RuiChen.AbpPro.LocalizationManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\localization\RuiChen.AbpPro.LocalizationManagement.Application\RuiChen.AbpPro.LocalizationManagement.Application.csproj" />
+    <ProjectReference Include="..\..\modules\localization\RuiChen.AbpPro.LocalizationManagement.Domain.Shared\RuiChen.AbpPro.LocalizationManagement.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\modules\localization\RuiChen.AbpPro.LocalizationManagement.Domain\RuiChen.AbpPro.LocalizationManagement.Domain.csproj" />
+    <ProjectReference Include="..\..\modules\localization\RuiChen.AbpPro.LocalizationManagement.EntityFrameworkCore\RuiChen.AbpPro.LocalizationManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\modules\localization\RuiChen.AbpPro.LocalizationManagement.HttpApi\RuiChen.AbpPro.LocalizationManagement.HttpApi.csproj" />
+
     <ProjectReference Include="..\..\modules\openIddict\RuiChen.AbpPro.OpenIddict.Application.Contracts\RuiChen.AbpPro.OpenIddict.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\openIddict\RuiChen.AbpPro.OpenIddict.Application\RuiChen.AbpPro.OpenIddict.Application.csproj" />
     <ProjectReference Include="..\..\modules\openIddict\RuiChen.AbpPro.OpenIddict.HttpApi\RuiChen.AbpPro.OpenIddict.HttpApi.csproj" />

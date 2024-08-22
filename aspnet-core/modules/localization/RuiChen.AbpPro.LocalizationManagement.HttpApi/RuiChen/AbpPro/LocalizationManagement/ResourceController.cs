@@ -4,6 +4,9 @@ using Volo.Abp.Application.Dtos;
 
 namespace RuiChen.AbpPro.LocalizationManagement
 {
+    /// <summary>
+    /// 文档管理
+    /// </summary>
     [Route("api/localization/resources")]
     public class ResourceController : LocalizationControllerBase, IResourceAppService
     {

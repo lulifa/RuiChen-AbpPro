@@ -16,6 +16,7 @@ using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement;
 using RuiChen.AbpPro.SettingManagement;
+using RuiChen.AbpPro.LocalizationManagement;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -33,6 +34,10 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         typeof(AbpProIdentityApplicationModule),
         typeof(AbpProIdentityEntityFrameworkCoreModule),
         typeof(AbpProIdentityOrganizaztionUnitsModule),
+
+        typeof(AbpProLocalizationManagementHttpApiModule),
+        typeof(AbpProLocalizationManagementApplicationModule),
+        typeof(AbpProLocalizationManagementEntityFrameworkCoreModule),
 
         typeof(AbpProOpenIddictHttpApiModule),
         typeof(AbpProOpenIddictApplicationModule),
