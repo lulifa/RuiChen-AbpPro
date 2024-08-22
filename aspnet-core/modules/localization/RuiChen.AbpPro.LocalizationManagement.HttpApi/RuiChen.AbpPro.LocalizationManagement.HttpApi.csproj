@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RuiChen.AbpPro.LocalizationManagement.Application.Contracts\RuiChen.AbpPro.LocalizationManagement.Application.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>

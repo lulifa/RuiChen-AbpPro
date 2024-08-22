@@ -25,7 +25,7 @@ namespace RuiChen.AbpPro.Saas
 
             Configure<AbpAutoMapperOptions>(options =>
             {
-                options.AddProfile<AbpProSaasDomainMappingProfile>(validate: true);
+                options.AddProfile<AbpProSaasDomainMapperProfile>(validate: true);
             });
 
             Configure<AbpDistributedEntityEventOptions>(options =>

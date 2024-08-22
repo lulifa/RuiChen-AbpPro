@@ -5,9 +5,9 @@ using Volo.Abp.MultiTenancy;
 
 namespace RuiChen.AbpPro.Saas
 {
-    public class AbpProSaasDomainMappingProfile:Profile
+    public class AbpProSaasDomainMapperProfile:Profile
     {
-        public AbpProSaasDomainMappingProfile()
+        public AbpProSaasDomainMapperProfile()
         {
             CreateMap<Edition, EditionInfo>();
             CreateMap<Edition, EditionEto>();
