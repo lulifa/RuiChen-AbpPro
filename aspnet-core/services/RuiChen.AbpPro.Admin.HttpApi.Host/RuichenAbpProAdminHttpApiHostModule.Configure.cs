@@ -28,6 +28,9 @@ using RuiChen.AbpPro.Saas;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Features;
 using Volo.Abp.SettingManagement;
+using RuiChen.AbpPro.Localization;
+using Volo.Abp.Localization;
+using Volo.Abp;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -117,6 +120,47 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             });
         }
 
+        private void ConfigureLocalization()
+        {
+
+            Configure<AbpLocalizationOptions>(options =>
+            {
+                options.Languages.Add(new LanguageInfo("en", "en", "English"));
+                options.Languages.Add(new LanguageInfo("zh-Hans", "zh-Hans", "简体中文"));
+
+                // 语言映射配置
+                var languagesMap = new List<(string app, NameValue[] mappings)>
+                {
+                    ("vue-admin-element-ui", new[]
+                    {
+                        new NameValue("zh-Hans","zh"),
+                        new NameValue("en","en")
+                    }),
+                    ("vben-admin-ui", new[]
+                    {
+                        new NameValue("zh_CN","zh-Hans")
+                    })
+                };
+
+                foreach (var (app, mappings) in languagesMap)
+                {
+                    options.AddLanguagesMapOrUpdate(app, mappings);
+                }
+            });
+
+            Configure<AbpProLocalizationCultureMapOptions>(options =>
+            {
+                var zhHansCultureMapInfo = new CultureMapInfo
+                {
+                    TargetCulture = "zh-Hans",
+                    SourceCultures = new[] { "zh", "zh_CN", "zh-CN" }
+                };
+
+                options.CulturesMaps.Add(zhHansCultureMapInfo);
+                options.UiCulturesMaps.Add(zhHansCultureMapInfo);
+            });
+
+        }
 
         /// <summary>
         /// 配置 Kestrel 服务器的选项

@@ -83,6 +83,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 
             ConfigureAuditing();
             ConfigureDbContext();
+            ConfigureLocalization();
             ConfigureKestrelServer();
             ConfigureVirtualFileSystem();
             ConfigureUrls(configuration);
