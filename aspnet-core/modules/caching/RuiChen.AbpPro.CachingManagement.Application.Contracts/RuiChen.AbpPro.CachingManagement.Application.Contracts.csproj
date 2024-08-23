@@ -3,7 +3,17 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
+    <RootNamespace />
   </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="RuiChen\AbpPro\CachingManagement\Localization\Resources\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Authorization" />
+    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" />
+  </ItemGroup>
 
 </Project>
