@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="RuiChen\AbpPro\AspNetCore\Mvc\Wrapper\Localization\Resources\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuiChen.AbpPro.AspNetCore.Wrapper\RuiChen.AbpPro.AspNetCore.Wrapper.csproj" />
+    <ProjectReference Include="..\RuiChen.AbpPro.Wrapper\RuiChen.AbpPro.Wrapper.csproj" />
+  </ItemGroup>
+
+</Project>

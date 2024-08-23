@@ -31,6 +31,7 @@ using Volo.Abp.SettingManagement;
 using RuiChen.AbpPro.Localization;
 using Volo.Abp.Localization;
 using Volo.Abp;
+using RuiChen.AbpPro.Wrapper;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -87,6 +88,17 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
                     options.UseLocalServer();
                     options.UseAspNetCore();
                 });
+            });
+        }
+
+        private void ConfigureWrapper()
+        {
+            Configure<AbpWrapperOptions>(options =>
+            {
+                options.IsEnabled = true;
+                options.IgnoreNamespaces.Add("Elsa");
+                options.IgnoreNamespaces.Add("Pure.Abp.OssManagement");
+                options.IgnoreNamespaces.Add("Pure.Abp.WeChat");
             });
         }
 
@@ -410,28 +422,28 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             });
         }
 
-        //private void ConfigureCors(IServiceCollection services, IConfiguration configuration)
-        //{
-        //    services.AddCors(options =>
-        //    {
-        //        options.AddPolicy(DefaultCorsPolicyName, builder =>
-        //        {
-        //            builder
-        //                .WithOrigins(
-        //                    configuration["App:CorsOrigins"]
-        //                        .Split(",", StringSplitOptions.RemoveEmptyEntries)
-        //                        .Select(o => o.RemovePostFix("/"))
-        //                        .ToArray()
-        //                )
-        //                .WithAbpExposedHeaders()
-        //                .WithAbpWrapExposedHeaders()
-        //                .SetIsOriginAllowedToAllowWildcardSubdomains()
-        //                .AllowAnyHeader()
-        //                .AllowAnyMethod()
-        //                .AllowCredentials();
-        //        });
-        //    });
-        //}
+        private void ConfigureCors(IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(DefaultCorsPolicyName, builder =>
+                {
+                    builder
+                        .WithOrigins(
+                            configuration["App:CorsOrigins"]
+                                .Split(",", StringSplitOptions.RemoveEmptyEntries)
+                                .Select(o => o.RemovePostFix("/"))
+                                .ToArray()
+                        )
+                        .WithAbpExposedHeaders()
+                        .WithAbpWrapExposedHeaders()
+                        .SetIsOriginAllowedToAllowWildcardSubdomains()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials();
+                });
+            });
+        }
 
 
         private void ConfigureDistributedLock(IServiceCollection services, IConfiguration configuration)

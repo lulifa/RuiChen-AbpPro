@@ -1,9 +1,14 @@
 ﻿using RuiChen.AbpPro.Account;
+using RuiChen.AbpPro.AspNetCore.HttpOverrides;
+using RuiChen.AbpPro.AspNetCore.Mvc.Wrapper;
 using RuiChen.AbpPro.FeatureManagement;
+using RuiChen.AbpPro.HttpClient.Wrapper;
 using RuiChen.AbpPro.Identity;
+using RuiChen.AbpPro.LocalizationManagement;
 using RuiChen.AbpPro.OpenIddict;
 using RuiChen.AbpPro.PermissionManagement;
 using RuiChen.AbpPro.Saas;
+using RuiChen.AbpPro.SettingManagement;
 using Volo.Abp;
 using Volo.Abp.Account.Web;
 using Volo.Abp.AspNetCore.MultiTenancy;
@@ -14,9 +19,6 @@ using Volo.Abp.Modularity;
 using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
-using Volo.Abp.SettingManagement;
-using RuiChen.AbpPro.SettingManagement;
-using RuiChen.AbpPro.LocalizationManagement;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -59,6 +61,12 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         typeof(AbpSettingManagementEntityFrameworkCoreModule),
 
 
+        
+        typeof(AbpAspNetCoreMvcWrapperModule),
+        typeof(AbpHttpClientWrapperModule),
+        typeof(AbpAspNetCoreHttpOverridesModule),
+
+
         typeof(AbpAspNetCoreSerilogModule),
 
         typeof(AbpAutofacModule)
@@ -81,6 +89,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             var hostingEnvironment = services.GetHostingEnvironment();
             var configuration = services.GetConfiguration();
 
+            ConfigureWrapper();
             ConfigureAuditing();
             ConfigureDbContext();
             ConfigureLocalization();

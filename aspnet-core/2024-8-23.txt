@@ -1,0 +1,15 @@
+
+dotnet new classlib -o framework/wrap/RuiChen.AbpPro.AspNetCore.Mvc.Wrapper
+dotnet new classlib -o framework/wrap/RuiChen.AbpPro.AspNetCore.Wrapper
+dotnet new classlib -o framework/wrap/RuiChen.AbpPro.HttpClient.Wrapper
+dotnet new classlib -o framework/wrap/RuiChen.AbpPro.Wrapper
+
+dotnet sln RuiChen.AbpPro.All.sln add framework/wrap/RuiChen.AbpPro.AspNetCore.Mvc.Wrapper
+dotnet sln RuiChen.AbpPro.All.sln add framework/wrap/RuiChen.AbpPro.AspNetCore.Wrapper
+dotnet sln RuiChen.AbpPro.All.sln add framework/wrap/RuiChen.AbpPro.HttpClient.Wrapper
+dotnet sln RuiChen.AbpPro.All.sln add framework/wrap/RuiChen.AbpPro.Wrapper
+
+
+dotnet new classlib -o framework/common/RuiChen.AbpPro.AspNetCore.HttpOverrides
+
+dotnet sln RuiChen.AbpPro.All.sln add framework/common/RuiChen.AbpPro.AspNetCore.HttpOverrides

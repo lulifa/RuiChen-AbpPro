@@ -48,6 +48,18 @@
 
   <ItemGroup>
 
+    <ProjectReference Include="..\..\framework\common\RuiChen.AbpPro.AspNetCore.HttpOverrides\RuiChen.AbpPro.AspNetCore.HttpOverrides.csproj" />
+    <ProjectReference Include="..\..\framework\common\RuiChen.AbpPro.Data.DbMigrator\RuiChen.AbpPro.Data.DbMigrator.csproj" />
+
+    <ProjectReference Include="..\..\framework\wrap\RuiChen.AbpPro.Wrapper\RuiChen.AbpPro.Wrapper.csproj" />
+    <ProjectReference Include="..\..\framework\wrap\RuiChen.AbpPro.HttpClient.Wrapper\RuiChen.AbpPro.HttpClient.Wrapper.csproj" />
+    <ProjectReference Include="..\..\framework\wrap\RuiChen.AbpPro.AspNetCore.Mvc.Wrapper\RuiChen.AbpPro.AspNetCore.Mvc.Wrapper.csproj" />
+    
+  </ItemGroup>
+  
+
+  <ItemGroup>
+
     <ProjectReference Include="..\..\modules\account\RuiChen.AbpPro.Account.Application.Contracts\RuiChen.AbpPro.Account.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\account\RuiChen.AbpPro.Account.Application\RuiChen.AbpPro.Account.Application.csproj" />
     <ProjectReference Include="..\..\modules\account\RuiChen.AbpPro.Account.HttpApi\RuiChen.AbpPro.Account.HttpApi.csproj" />
