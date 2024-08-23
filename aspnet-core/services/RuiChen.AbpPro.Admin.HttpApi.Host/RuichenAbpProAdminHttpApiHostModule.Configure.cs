@@ -122,24 +122,18 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 
         private void ConfigureLocalization()
         {
-
             Configure<AbpLocalizationOptions>(options =>
             {
-                options.Languages.Add(new LanguageInfo("en", "en", "English"));
-                options.Languages.Add(new LanguageInfo("zh-Hans", "zh-Hans", "简体中文"));
-
-                // 语言映射配置
-                var languagesMap = new List<(string app, NameValue[] mappings)>
+                options.Languages.AddRange(new[]
                 {
-                    ("pure-admin-ui", new[]
-                    {
-                        new NameValue("zh-Hans","zh"),
-                        new NameValue("en","en")
-                    }),
-                    ("vben-admin-ui", new[]
-                    {
-                        new NameValue("zh_CN","zh-Hans")
-                    })
+                    new LanguageInfo("en","en","English"),
+                    new LanguageInfo("zh-Hans","zh-Hans","简体中文")
+                });
+
+                var languagesMap = new Dictionary<string, NameValue[]>
+                {
+                    {"pure-admin-ui",new[]{new NameValue("zh-Hans","zh"),new NameValue("en", "en")} },
+                    {"vben-admin-ui",new[]{new NameValue("zh_CN","zh_Hans")} }
                 };
 
                 foreach (var (app, mappings) in languagesMap)
@@ -156,11 +150,12 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
                     SourceCultures = new[] { "zh", "zh_CN", "zh-CN" }
                 };
 
+                // 添加文化映射信息
                 options.CulturesMaps.Add(zhHansCultureMapInfo);
                 options.UiCulturesMaps.Add(zhHansCultureMapInfo);
             });
-
         }
+
 
         /// <summary>
         /// 配置 Kestrel 服务器的选项
@@ -250,7 +245,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
                     // 自定义模式 ID 生成规则，使用类型的全名作为模式 ID
                     options.CustomSchemaIds(type => type.FullName);
 
-                    var assemblies = AppDomain.CurrentDomain.GetAssemblies().Where(item=>item.FullName.Contains("RuiChen")).ToArray();
+                    var assemblies = AppDomain.CurrentDomain.GetAssemblies().Where(item => item.FullName.Contains("RuiChen")).ToArray();
 
                     // 遍历当前程序集中加载的所有模块
                     foreach (var assembly in assemblies)
