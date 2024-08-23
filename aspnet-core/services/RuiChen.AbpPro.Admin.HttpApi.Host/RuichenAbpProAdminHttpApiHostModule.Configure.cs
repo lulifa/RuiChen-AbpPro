@@ -277,13 +277,13 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
                     // 添加安全要求到 Swagger 文档，要求所有请求都需要 Bearer 认证
                     options.AddSecurityRequirement(new OpenApiSecurityRequirement
                     {
-                {
-                    new OpenApiSecurityScheme
-                    {
-                        Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
-                    },
-                    new string[] { }
-                }
+                        {
+                            new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
+                            },
+                            new string[] { }
+                        }
                     });
 
                     // 添加操作过滤器，用于向每个操作添加特定的头参数
