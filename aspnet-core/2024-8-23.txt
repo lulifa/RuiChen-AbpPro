@@ -13,3 +13,17 @@ dotnet sln RuiChen.AbpPro.All.sln add framework/wrap/RuiChen.AbpPro.Wrapper
 dotnet new classlib -o framework/common/RuiChen.AbpPro.AspNetCore.HttpOverrides
 
 dotnet sln RuiChen.AbpPro.All.sln add framework/common/RuiChen.AbpPro.AspNetCore.HttpOverrides
+
+
+
+dotnet new classlib -o modules/caching/RuiChen.AbpPro.CachingManagement.Application
+dotnet new classlib -o modules/caching/RuiChen.AbpPro.CachingManagement.Application.Contracts
+dotnet new classlib -o modules/caching/RuiChen.AbpPro.CachingManagement.Domain
+dotnet new classlib -o modules/caching/RuiChen.AbpPro.CachingManagement.HttpApi
+dotnet new classlib -o modules/caching/RuiChen.AbpPro.CachingManagement.StackExchangeRedis
+
+dotnet sln RuiChen.AbpPro.All.sln add modules/caching/RuiChen.AbpPro.CachingManagement.Application
+dotnet sln RuiChen.AbpPro.All.sln add modules/caching/RuiChen.AbpPro.CachingManagement.Application.Contracts
+dotnet sln RuiChen.AbpPro.All.sln add modules/caching/RuiChen.AbpPro.CachingManagement.Domain
+dotnet sln RuiChen.AbpPro.All.sln add modules/caching/RuiChen.AbpPro.CachingManagement.HttpApi
+dotnet sln RuiChen.AbpPro.All.sln add modules/caching/RuiChen.AbpPro.CachingManagement.StackExchangeRedis
