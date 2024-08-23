@@ -10,8 +10,8 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         {
             try
             {
-                Console.Title = "Admin.Host";
-                Log.Information("Starting Admin.Host.");
+                Console.Title = "RuiChenAdmin.Host";
+                Log.Information("Starting RuiChenAdmin.Host.");
 
                 var builder = WebApplication.CreateBuilder(args);
                 builder.Host.AddAppSettingsSecretsJson()

@@ -92,6 +92,8 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             ConfigureEndpoints(services);
             ConfigureMultiTenancy(configuration);
             ConfigureJsonSerializer(configuration);
+            ConfigureFeatureManagement(configuration);
+            ConfigureSettingManagement(configuration);
             ConfigurePermissionManagement(configuration);
             ConfigureDistributedLock(services, configuration);
             ConfigureSecurity(services, configuration, hostingEnvironment.IsDevelopment());
@@ -104,7 +106,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 
             app.UseForwardedHeaders();
             app.UseCookiePolicy();
-            //app.UseMapRequestLocalization();
+            app.UseMapRequestLocalization();
             // http调用链
             app.UseCorrelationId();
             // 虚拟文件系统
@@ -127,7 +129,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             // Swagger可视化界面
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "RuiChenAbpProAdmin API");
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "RuiChenAdmin API");
             });
             // 审计日志
             app.UseAuditing();

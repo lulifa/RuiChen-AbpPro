@@ -24,6 +24,10 @@ using Microsoft.AspNetCore.DataProtection;
 using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.PermissionManagement;
 using RuiChen.AbpPro.OpenIddict;
+using RuiChen.AbpPro.Saas;
+using Volo.Abp.FeatureManagement;
+using Volo.Abp.Features;
+using Volo.Abp.SettingManagement;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -321,6 +325,33 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             {
                 options.JsonSerializerOptions.Encoder = JavaScriptEncoder.Create(UnicodeRanges.All);
             });
+        }
+
+        private void ConfigureFeatureManagement(IConfiguration configuration)
+        {
+            if (configuration.GetValue<bool>("FeatureManagement:IsDynamicStoreEnabled"))
+            {
+                Configure<FeatureManagementOptions>(options =>
+                {
+                    options.IsDynamicFeatureStoreEnabled = true;
+                });
+            }
+            Configure<FeatureManagementOptions>(options =>
+            {
+                options.ProviderPolicies[EditionFeatureValueProvider.ProviderName] = AbpSaasPermissions.Editions.ManageFeatures;
+                options.ProviderPolicies[TenantFeatureValueProvider.ProviderName] = AbpSaasPermissions.Tenants.ManageFeatures;
+            });
+        }
+
+        private void ConfigureSettingManagement(IConfiguration configuration)
+        {
+            if (configuration.GetValue<bool>("SettingManagement:IsDynamicStoreEnabled"))
+            {
+                Configure<SettingManagementOptions>(options =>
+                {
+                    options.IsDynamicSettingStoreEnabled = true;
+                });
+            }
         }
 
         private void ConfigurePermissionManagement(IConfiguration configuration)
