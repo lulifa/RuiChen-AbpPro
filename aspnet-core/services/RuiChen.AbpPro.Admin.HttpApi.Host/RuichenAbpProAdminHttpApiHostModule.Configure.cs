@@ -131,7 +131,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
                 // 语言映射配置
                 var languagesMap = new List<(string app, NameValue[] mappings)>
                 {
-                    ("vue-admin-element-ui", new[]
+                    ("pure-admin-ui", new[]
                     {
                         new NameValue("zh-Hans","zh"),
                         new NameValue("en","en")
