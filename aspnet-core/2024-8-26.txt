@@ -20,3 +20,8 @@ dotnet sln RuiChen.AbpPro.All.sln add modules/auditing/RuiChen.AbpPro.Auditing.A
 dotnet sln RuiChen.AbpPro.All.sln add modules/auditing/RuiChen.AbpPro.Auditing.Application.Contracts
 dotnet sln RuiChen.AbpPro.All.sln add modules/auditing/RuiChen.AbpPro.Auditing.EntityFrameworkCore
 dotnet sln RuiChen.AbpPro.All.sln add modules/auditing/RuiChen.AbpPro.Auditing.HttpApi
+
+
+dotnet new classlib -o framework/common/RuiChen.AbpPro.ExceptionHandling
+
+dotnet sln RuiChen.AbpPro.All.sln add framework/common/RuiChen.AbpPro.ExceptionHandling

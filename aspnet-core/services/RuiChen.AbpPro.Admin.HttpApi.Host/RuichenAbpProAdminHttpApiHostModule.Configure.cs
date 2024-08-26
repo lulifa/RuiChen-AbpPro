@@ -34,6 +34,9 @@ using Volo.Abp;
 using RuiChen.AbpPro.Wrapper;
 using Microsoft.Extensions.Caching.StackExchangeRedis;
 using Volo.Abp.Caching;
+using RuiChen.AbpPro.ExceptionHandling;
+using VoloAbpExceptionHandlingOptions = Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingOptions;
+
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -86,7 +89,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             {
                 builder.AddValidation(options =>
                 {
-                    options.AddAudiences("ruichen-abppro-application");
+                    options.AddAudiences("pure-abp-application");
                     options.UseLocalServer();
                     options.UseAspNetCore();
                 });
@@ -188,6 +191,35 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 
                 // 请求缓冲区用于临时存储请求数据 取消缓冲区大小的限制
                 options.Limits.MaxRequestBufferSize = null;
+            });
+        }
+
+        private void ConfigureExceptionHandling()
+        {
+            // 自定义需要处理的异常
+            Configure<AbpProExceptionHandlingOptions>(options =>
+            {
+                //  加入需要处理的异常类型
+                options.Handlers.Add<Volo.Abp.Data.AbpDbConcurrencyException>();
+                options.Handlers.Add<AbpInitializationException>();
+                options.Handlers.Add<OutOfMemoryException>();
+                options.Handlers.Add<System.Data.Common.DbException>();
+                options.Handlers.Add<Microsoft.EntityFrameworkCore.DbUpdateException>();
+                options.Handlers.Add<System.Data.DBConcurrencyException>();
+            });
+            // 自定义需要发送邮件通知的异常类型
+            //Configure<AbpEmailExceptionHandlingOptions>(options =>
+            //{
+            //    // 是否发送堆栈信息
+            //    options.SendStackTrace = true;
+            //    // 未指定异常接收者的默认接收邮件
+            //    // 指定自己的邮件地址
+            //});
+
+            Configure<VoloAbpExceptionHandlingOptions>(options =>
+            {
+                options.SendStackTraceToClients = false;
+                options.SendExceptionsDetailsToClients = false;
             });
         }
 

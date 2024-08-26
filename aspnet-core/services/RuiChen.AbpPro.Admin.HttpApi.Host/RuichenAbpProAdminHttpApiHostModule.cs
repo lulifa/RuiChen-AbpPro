@@ -4,6 +4,7 @@ using RuiChen.AbpPro.AspNetCore.Mvc.Wrapper;
 using RuiChen.AbpPro.Auditing;
 using RuiChen.AbpPro.AuditLogging;
 using RuiChen.AbpPro.CachingManagement;
+using RuiChen.AbpPro.ExceptionHandling;
 using RuiChen.AbpPro.FeatureManagement;
 using RuiChen.AbpPro.HttpClient.Wrapper;
 using RuiChen.AbpPro.Identity;
@@ -11,12 +12,14 @@ using RuiChen.AbpPro.LocalizationManagement;
 using RuiChen.AbpPro.OpenIddict;
 using RuiChen.AbpPro.PermissionManagement;
 using RuiChen.AbpPro.Saas;
+using RuiChen.AbpPro.Serilog.Enrichers.Application;
 using RuiChen.AbpPro.SettingManagement;
 using Volo.Abp;
 using Volo.Abp.Account.Web;
 using Volo.Abp.AspNetCore.MultiTenancy;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
+using Volo.Abp.ExceptionHandling;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 using Volo.Abp.OpenIddict.EntityFrameworkCore;
@@ -81,6 +84,8 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 
 
         typeof(AbpAspNetCoreSerilogModule),
+        typeof(AbpProSerilogEnrichersApplicationModule),
+        typeof(AbpProExceptionHandlingModule),
 
         typeof(AbpAutofacModule)
         )]
@@ -106,6 +111,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             ConfigureDbContext();
             ConfigureLocalization();
             ConfigureKestrelServer();
+            ConfigureExceptionHandling();
             ConfigureVirtualFileSystem();
             ConfigureUrls(configuration);
             ConfigureCaching(configuration);

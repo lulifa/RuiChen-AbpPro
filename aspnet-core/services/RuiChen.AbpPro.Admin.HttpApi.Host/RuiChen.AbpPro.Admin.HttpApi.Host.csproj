@@ -50,6 +50,9 @@
 
     <ProjectReference Include="..\..\framework\common\RuiChen.AbpPro.AspNetCore.HttpOverrides\RuiChen.AbpPro.AspNetCore.HttpOverrides.csproj" />
     <ProjectReference Include="..\..\framework\common\RuiChen.AbpPro.Data.DbMigrator\RuiChen.AbpPro.Data.DbMigrator.csproj" />
+    <ProjectReference Include="..\..\framework\common\RuiChen.AbpPro.ExceptionHandling\RuiChen.AbpPro.ExceptionHandling.csproj" />
+
+    <ProjectReference Include="..\..\framework\logging\RuiChen.AbpPro.Serilog.Enrichers.Application\RuiChen.AbpPro.Serilog.Enrichers.Application.csproj" />
 
     <ProjectReference Include="..\..\framework\wrap\RuiChen.AbpPro.Wrapper\RuiChen.AbpPro.Wrapper.csproj" />
     <ProjectReference Include="..\..\framework\wrap\RuiChen.AbpPro.HttpClient.Wrapper\RuiChen.AbpPro.HttpClient.Wrapper.csproj" />

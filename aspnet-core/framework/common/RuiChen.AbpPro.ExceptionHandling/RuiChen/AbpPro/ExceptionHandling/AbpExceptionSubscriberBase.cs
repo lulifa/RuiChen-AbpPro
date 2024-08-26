@@ -1,0 +1,46 @@
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
+using Microsoft.Extensions.Options;
+using Volo.Abp.DependencyInjection;
+using Volo.Abp.ExceptionHandling;
+
+namespace RuiChen.AbpPro.ExceptionHandling
+{
+    public abstract class AbpExceptionSubscriberBase : ExceptionSubscriber
+    {
+        protected IServiceScopeFactory ServiceScopeFactory { get; }
+        protected AbpProExceptionHandlingOptions Options { get; }
+
+        public IAbpLazyServiceProvider ServiceProvider { get; set; }
+
+        protected ILoggerFactory LoggerFactory => ServiceProvider.LazyGetService<ILoggerFactory>();
+
+        protected ILogger Logger => _lazyLogger.Value;
+        private Lazy<ILogger> _lazyLogger => new Lazy<ILogger>(() => LoggerFactory?.CreateLogger(GetType().FullName) ?? NullLogger.Instance, true);
+
+
+        protected AbpExceptionSubscriberBase(
+            IServiceScopeFactory serviceScopeFactory,
+            IOptions<AbpProExceptionHandlingOptions> options)
+        {
+            Options = options.Value;
+            ServiceScopeFactory = serviceScopeFactory;
+        }
+
+        public override async Task HandleAsync(ExceptionNotificationContext context)
+        {
+            if (context.Handled &&
+                Options.HasNotifierError(context.Exception))
+            {
+                using (var scope = ServiceScopeFactory.CreateScope())
+                {
+                    await SendErrorNotifierAsync(
+                        new ExceptionSendNotifierContext(scope.ServiceProvider, context.Exception, context.LogLevel));
+                }
+            }
+        }
+
+        protected abstract Task SendErrorNotifierAsync(ExceptionSendNotifierContext context);
+    }
+}
