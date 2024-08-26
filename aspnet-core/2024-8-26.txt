@@ -1,0 +1,22 @@
+
+
+
+dotnet new classlib -o framework/logging/RuiChen.AbpPro.Logging
+dotnet new classlib -o framework/logging/RuiChen.AbpPro.Serilog.Enrichers.Application
+dotnet new classlib -o framework/logging/RuiChen.AbpPro.AuditLogging
+
+
+dotnet sln RuiChen.AbpPro.All.sln add framework/logging/RuiChen.AbpPro.Logging
+dotnet sln RuiChen.AbpPro.All.sln add framework/logging/RuiChen.AbpPro.Serilog.Enrichers.Application
+dotnet sln RuiChen.AbpPro.All.sln add framework/logging/RuiChen.AbpPro.AuditLogging
+
+
+dotnet new classlib -o modules/auditing/RuiChen.AbpPro.Auditing.Application
+dotnet new classlib -o modules/auditing/RuiChen.AbpPro.Auditing.Application.Contracts
+dotnet new classlib -o modules/auditing/RuiChen.AbpPro.Auditing.EntityFrameworkCore
+dotnet new classlib -o modules/auditing/RuiChen.AbpPro.Auditing.HttpApi
+
+dotnet sln RuiChen.AbpPro.All.sln add modules/auditing/RuiChen.AbpPro.Auditing.Application
+dotnet sln RuiChen.AbpPro.All.sln add modules/auditing/RuiChen.AbpPro.Auditing.Application.Contracts
+dotnet sln RuiChen.AbpPro.All.sln add modules/auditing/RuiChen.AbpPro.Auditing.EntityFrameworkCore
+dotnet sln RuiChen.AbpPro.All.sln add modules/auditing/RuiChen.AbpPro.Auditing.HttpApi

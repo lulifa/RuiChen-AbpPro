@@ -65,6 +65,11 @@
     <ProjectReference Include="..\..\modules\account\RuiChen.AbpPro.Account.HttpApi\RuiChen.AbpPro.Account.HttpApi.csproj" />
     <ProjectReference Include="..\..\modules\account\RuiChen.AbpPro.Account.Templates\RuiChen.AbpPro.Account.Templates.csproj" />
 
+    <ProjectReference Include="..\..\modules\auditing\RuiChen.AbpPro.Auditing.Application.Contracts\RuiChen.AbpPro.Auditing.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\auditing\RuiChen.AbpPro.Auditing.Application\RuiChen.AbpPro.Auditing.Application.csproj" />
+    <ProjectReference Include="..\..\modules\auditing\RuiChen.AbpPro.Auditing.EntityFrameworkCore\RuiChen.AbpPro.Auditing.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\modules\auditing\RuiChen.AbpPro.Auditing.HttpApi\RuiChen.AbpPro.Auditing.HttpApi.csproj" />
+
     <ProjectReference Include="..\..\modules\caching\RuiChen.AbpPro.CachingManagement.Application.Contracts\RuiChen.AbpPro.CachingManagement.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\caching\RuiChen.AbpPro.CachingManagement.Application\RuiChen.AbpPro.CachingManagement.Application.csproj" />
     <ProjectReference Include="..\..\modules\caching\RuiChen.AbpPro.CachingManagement.Domain\RuiChen.AbpPro.CachingManagement.Domain.csproj" />

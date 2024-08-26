@@ -99,15 +99,15 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             {
                 options.IsEnabled = true;
                 options.IgnoreNamespaces.Add("Elsa");
-                options.IgnoreNamespaces.Add("Pure.Abp.OssManagement");
-                options.IgnoreNamespaces.Add("Pure.Abp.WeChat");
+                options.IgnoreNamespaces.Add("RuiChen.AbpPro.OssManagement");
+                options.IgnoreNamespaces.Add("RuiChen.AbpPro.WeChat");
             });
         }
 
         /// <summary>
         /// 配置 ABP 框架中的审计功能
         /// </summary>
-        private void ConfigureAuditing()
+        private void ConfigureAuditing(IConfiguration configuration)
         {
             Configure<AbpAuditingOptions>(options =>
             {
@@ -117,8 +117,13 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
                 // 设置应用程序名称
                 options.ApplicationName = ApplicationName;
 
-                // 启用对所有实体的历史记录
-                options.EntityHistorySelectors.AddAllEntities();
+                var allEntitiesSelectorIsEnabled = configuration["Auditing:AllEntitiesSelector"];
+                if (allEntitiesSelectorIsEnabled.IsNullOrWhiteSpace() ||
+                    (bool.TryParse(allEntitiesSelectorIsEnabled, out var enabled) && enabled))
+                {
+                    // 启用对所有实体的历史记录
+                    options.EntityHistorySelectors.AddAllEntities();
+                }
             });
         }
 

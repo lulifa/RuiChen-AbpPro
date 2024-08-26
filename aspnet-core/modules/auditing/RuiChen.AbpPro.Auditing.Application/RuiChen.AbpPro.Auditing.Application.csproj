@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\logging\RuiChen.AbpPro.AuditLogging\RuiChen.AbpPro.AuditLogging.csproj" />
+    <ProjectReference Include="..\..\..\framework\logging\RuiChen.AbpPro.Logging\RuiChen.AbpPro.Logging.csproj" />
+    <ProjectReference Include="..\RuiChen.AbpPro.Auditing.Application.Contracts\RuiChen.AbpPro.Auditing.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

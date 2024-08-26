@@ -1,6 +1,8 @@
 ﻿using RuiChen.AbpPro.Account;
 using RuiChen.AbpPro.AspNetCore.HttpOverrides;
 using RuiChen.AbpPro.AspNetCore.Mvc.Wrapper;
+using RuiChen.AbpPro.Auditing;
+using RuiChen.AbpPro.AuditLogging;
 using RuiChen.AbpPro.CachingManagement;
 using RuiChen.AbpPro.FeatureManagement;
 using RuiChen.AbpPro.HttpClient.Wrapper;
@@ -28,6 +30,10 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         typeof(AbpProAccountHttpApiModule),
         typeof(AbpProAccountApplicationModule),
         typeof(AbpAccountWebOpenIddictModule),
+
+        typeof(AbpProAuditingHttpApiModule),
+        typeof(AbpProAuditingApplicationModule),
+        typeof(AbpProAuditLoggingEntityFrameworkCoreModule),
 
 
         typeof(AbpProCachingManagementHttpApiModule),
@@ -97,13 +103,13 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             var configuration = services.GetConfiguration();
 
             ConfigureWrapper();
-            ConfigureAuditing();
             ConfigureDbContext();
             ConfigureLocalization();
             ConfigureKestrelServer();
             ConfigureVirtualFileSystem();
             ConfigureUrls(configuration);
             ConfigureCaching(configuration);
+            ConfigureAuditing(configuration);
             ConfigureIdentity(configuration);
             ConfigureAuthServer(configuration);
             ConfigureSwagger(services);
@@ -113,6 +119,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             ConfigureFeatureManagement(configuration);
             ConfigureSettingManagement(configuration);
             ConfigurePermissionManagement(configuration);
+            ConfigureCors(services, configuration);
             ConfigureDistributedLock(services, configuration);
             ConfigureSecurity(services, configuration, hostingEnvironment.IsDevelopment());
         }
