@@ -23,14 +23,12 @@ namespace RuiChen.AbpPro.SettingManagement
         {
             Configure<AbpVirtualFileSystemOptions>(options =>
             {
-                options.FileSets.AddEmbedded<AbpProSettingManagementApplicationContractsModule>("RuiChen.AbpPro.SettingManagement.Application.Contracts");
+                options.FileSets.AddEmbedded<AbpProSettingManagementApplicationContractsModule>();
             });
 
             Configure<AbpLocalizationOptions>(options =>
             {
-                options.Resources
-                .Get<AbpSettingManagementResource>()
-                .AddVirtualJson("/RuiChen/AbpPro/SettingManagement/Localization/ApplicationContracts");
+                options.Resources.Get<AbpSettingManagementResource>().AddVirtualJson("/RuiChen/AbpPro/SettingManagement/Localization/Resources");
             });
         }
 
