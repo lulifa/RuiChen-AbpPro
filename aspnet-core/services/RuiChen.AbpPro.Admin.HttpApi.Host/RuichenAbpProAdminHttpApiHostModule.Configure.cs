@@ -32,6 +32,8 @@ using RuiChen.AbpPro.Localization;
 using Volo.Abp.Localization;
 using Volo.Abp;
 using RuiChen.AbpPro.Wrapper;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
+using Volo.Abp.Caching;
 
 namespace RuiChen.AbpPro.Admin.HttpApi.Host
 {
@@ -205,6 +207,21 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
                         options.Applications[appConfig.Key].Urls[urlsConfig.Key] = urlsConfig.Value;
                     }
                 }
+            });
+        }
+
+        private void ConfigureCaching(IConfiguration configuration)
+        {
+            Configure<AbpDistributedCacheOptions>(options =>
+            {
+                configuration.GetSection("DistributedCache").Bind(options);
+            });
+
+            Configure<RedisCacheOptions>(options =>
+            {
+                var redisConfig = ConfigurationOptions.Parse(options.Configuration);
+                options.ConfigurationOptions = redisConfig;
+                options.InstanceName = configuration["Redis:InstanceName"];
             });
         }
 

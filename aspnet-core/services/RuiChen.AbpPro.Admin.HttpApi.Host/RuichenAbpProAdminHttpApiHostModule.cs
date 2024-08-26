@@ -1,6 +1,7 @@
 ﻿using RuiChen.AbpPro.Account;
 using RuiChen.AbpPro.AspNetCore.HttpOverrides;
 using RuiChen.AbpPro.AspNetCore.Mvc.Wrapper;
+using RuiChen.AbpPro.CachingManagement;
 using RuiChen.AbpPro.FeatureManagement;
 using RuiChen.AbpPro.HttpClient.Wrapper;
 using RuiChen.AbpPro.Identity;
@@ -27,6 +28,12 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         typeof(AbpProAccountHttpApiModule),
         typeof(AbpProAccountApplicationModule),
         typeof(AbpAccountWebOpenIddictModule),
+
+
+        typeof(AbpProCachingManagementHttpApiModule),
+        typeof(AbpProCachingManagementApplicationModule),
+        typeof(AbpProCachingManagementStackExchangeRedisModule),
+
 
         typeof(AbpProFeatureManagementHttpApiModule),
         typeof(AbpProFeatureManagementApplicationModule),
@@ -61,7 +68,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         typeof(AbpSettingManagementEntityFrameworkCoreModule),
 
 
-        
+
         typeof(AbpAspNetCoreMvcWrapperModule),
         typeof(AbpHttpClientWrapperModule),
         typeof(AbpAspNetCoreHttpOverridesModule),
@@ -96,6 +103,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             ConfigureKestrelServer();
             ConfigureVirtualFileSystem();
             ConfigureUrls(configuration);
+            ConfigureCaching(configuration);
             ConfigureIdentity(configuration);
             ConfigureAuthServer(configuration);
             ConfigureSwagger(services);

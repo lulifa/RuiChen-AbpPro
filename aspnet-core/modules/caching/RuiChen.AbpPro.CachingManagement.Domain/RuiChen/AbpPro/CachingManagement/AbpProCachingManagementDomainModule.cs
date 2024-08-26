@@ -6,7 +6,7 @@ namespace RuiChen.AbpPro.CachingManagement
     [DependsOn(
         typeof(AbpCachingModule)
         )]
-    public class AbpCachingManagementDomainModule : AbpModule
+    public class AbpProCachingManagementDomainModule : AbpModule
     {
     }
 }
