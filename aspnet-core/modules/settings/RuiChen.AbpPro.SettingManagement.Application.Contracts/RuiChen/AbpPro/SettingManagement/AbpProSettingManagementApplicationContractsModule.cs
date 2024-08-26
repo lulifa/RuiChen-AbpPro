@@ -30,7 +30,7 @@ namespace RuiChen.AbpPro.SettingManagement
             {
                 options.Resources
                 .Get<AbpSettingManagementResource>()
-                .AddVirtualJson("/Pure/Abp/SettingManagement/Localization/ApplicationContracts");
+                .AddVirtualJson("/RuiChen/AbpPro/SettingManagement/Localization/ApplicationContracts");
             });
         }
 
