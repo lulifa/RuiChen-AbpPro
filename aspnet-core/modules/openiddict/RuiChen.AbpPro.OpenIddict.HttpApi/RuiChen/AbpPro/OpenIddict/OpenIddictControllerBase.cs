@@ -19,7 +19,7 @@ namespace RuiChen.AbpPro.OpenIddict
     {
         protected OpenIddictControllerBase()
         {
-            LocalizationResource = typeof(AbpOpenIddictResource);
+            //LocalizationResource = typeof(AbpOpenIddictResource);
         }
     }
 }

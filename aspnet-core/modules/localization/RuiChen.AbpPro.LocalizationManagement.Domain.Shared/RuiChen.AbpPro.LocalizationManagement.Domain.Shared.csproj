@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Pure\Abp\LocalizationManagement\Localization\Resources\*.json" />
+    <EmbeddedResource Include="RuiChen\AbpPro\LocalizationManagement\Localization\Resources\*.json" />
   </ItemGroup>
 
   <ItemGroup>

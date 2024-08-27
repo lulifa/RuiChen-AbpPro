@@ -1,10 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 
 namespace RuiChen.AbpPro.OpenIddict
@@ -12,6 +7,7 @@ namespace RuiChen.AbpPro.OpenIddict
     /// <summary>
     /// Openiddict作用域
     /// </summary>
+    [Route("api/openiddict/scopes")]
     public class OpenIddictScopeController : OpenIddictControllerBase, IOpenIddictScopeAppService
     {
         private readonly IOpenIddictScopeAppService service;
