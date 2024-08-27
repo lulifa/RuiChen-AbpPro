@@ -17,7 +17,6 @@ namespace RuiChen.AbpPro.Account
             PreConfigure<AbpMvcDataAnnotationsLocalizationOptions>(options =>
             {
                 options.AddAssemblyResource(typeof(AccountResource), typeof(AbpProAccountApplicationContractsModule).Assembly);
-                options.AddAssemblyResource(typeof(AccountResource), typeof(AbpAccountApplicationContractsModule).Assembly);
             });
 
             PreConfigure<IMvcBuilder>(mvcBuilder =>
