@@ -23,7 +23,6 @@ namespace RuiChen.AbpPro.OpenIddict
         /// <param name="input"></param>
         /// <returns></returns>
         [HttpPost]
-        [Authorize(AbpProOpenIddictPermissions.Applications.Create)]
         public virtual Task<OpenIddictApplicationDto> CreateAsync(OpenIddictApplicationCreateDto input)
         {
             return service.CreateAsync(input);
@@ -36,7 +35,6 @@ namespace RuiChen.AbpPro.OpenIddict
         /// <returns></returns>
         [HttpDelete]
         [Route("{id}")]
-        [Authorize(AbpProOpenIddictPermissions.Applications.Delete)]
         public virtual Task DeleteAsync(Guid id)
         {
             return service.DeleteAsync(id);
@@ -50,7 +48,6 @@ namespace RuiChen.AbpPro.OpenIddict
         /// <returns></returns>
         [HttpPut]
         [Route("{id}")]
-        [Authorize(AbpProOpenIddictPermissions.Applications.Update)]
         public virtual Task<OpenIddictApplicationDto> UpdateAsync(Guid id, OpenIddictApplicationUpdateDto input)
         {
             return service.UpdateAsync(id, input);
@@ -63,7 +60,6 @@ namespace RuiChen.AbpPro.OpenIddict
         /// <returns></returns>
         [HttpGet]
         [Route("{id}")]
-        [Authorize(AbpProOpenIddictPermissions.Applications.Default)]
         public virtual Task<OpenIddictApplicationDto> GetAsync(Guid id)
         {
             return service.GetAsync(id);
@@ -75,8 +71,6 @@ namespace RuiChen.AbpPro.OpenIddict
         /// <param name="input"></param>
         /// <returns></returns>
         [HttpGet]
-        //[Authorize(AbpProOpenIddictPermissions.Applications.Default)]
-        [AllowAnonymous]
         public virtual Task<PagedResultDto<OpenIddictApplicationDto>> GetListAsync(OpenIddictApplicationGetListInput input)
         {
             return service.GetListAsync(input);

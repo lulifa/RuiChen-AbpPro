@@ -1,4 +1,5 @@
-﻿using OpenIddict.Abstractions;
+﻿using Microsoft.AspNetCore.Authorization;
+using OpenIddict.Abstractions;
 using System.Linq.Dynamic.Core;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Repositories;
@@ -28,6 +29,7 @@ namespace RuiChen.AbpPro.OpenIddict
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [Authorize(AbpProOpenIddictPermissions.Authorizations.Delete)]
         public async virtual Task DeleteAsync(Guid id)
         {
             var authorization = await authorizationManager.FindByIdAsync(identifierConverter.ToString(id));
@@ -41,6 +43,7 @@ namespace RuiChen.AbpPro.OpenIddict
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [Authorize(AbpProOpenIddictPermissions.Authorizations.Default)]
         public async virtual Task<OpenIddictAuthorizationDto> GetAsync(Guid id)
         {
             var authorization = await authorizationRepository.GetAsync(id);
@@ -54,6 +57,7 @@ namespace RuiChen.AbpPro.OpenIddict
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
+        [Authorize(AbpProOpenIddictPermissions.Authorizations.Default)]
         public async virtual Task<PagedResultDto<OpenIddictAuthorizationDto>> GetListAsync(OpenIddictAuthorizationGetListInput input)
         {
             var queryable = await authorizationRepository.GetQueryableAsync();

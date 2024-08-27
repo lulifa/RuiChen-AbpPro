@@ -23,7 +23,6 @@ namespace RuiChen.AbpPro.OpenIddict
         /// <param name="input"></param>
         /// <returns></returns>
         [HttpPost]
-        [Authorize(AbpProOpenIddictPermissions.Scopes.Create)]
         public Task<OpenIddictScopeDto> CreateAsync(OpenIddictScopeCreateDto input)
         {
             return service.CreateAsync(input);
@@ -36,7 +35,6 @@ namespace RuiChen.AbpPro.OpenIddict
         /// <returns></returns>
         [HttpDelete]
         [Route("{id}")]
-        [Authorize(AbpProOpenIddictPermissions.Scopes.Delete)]
         public Task DeleteAsync(Guid id)
         {
             return service.DeleteAsync(id);
@@ -50,7 +48,6 @@ namespace RuiChen.AbpPro.OpenIddict
         /// <returns></returns>
         [HttpPut]
         [Route("{id}")]
-        [Authorize(AbpProOpenIddictPermissions.Scopes.Update)]
         public Task<OpenIddictScopeDto> UpdateAsync(Guid id, OpenIddictScopeUpdateDto input)
         {
             return service.UpdateAsync(id, input);

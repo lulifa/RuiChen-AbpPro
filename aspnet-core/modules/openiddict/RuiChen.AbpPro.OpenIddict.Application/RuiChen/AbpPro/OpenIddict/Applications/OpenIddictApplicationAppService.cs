@@ -1,4 +1,5 @@
-﻿using Volo.Abp;
+﻿using Microsoft.AspNetCore.Authorization;
+using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Data;
 using Volo.Abp.OpenIddict;
@@ -27,6 +28,7 @@ namespace RuiChen.AbpPro.OpenIddict
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
+        [Authorize(AbpProOpenIddictPermissions.Applications.Create)]
         public async virtual Task<OpenIddictApplicationDto> CreateAsync(OpenIddictApplicationCreateDto input)
         {
             if (await applicationManager.FindByClientIdAsync(input.ClientId) != null)
@@ -55,6 +57,7 @@ namespace RuiChen.AbpPro.OpenIddict
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [Authorize(AbpProOpenIddictPermissions.Applications.Delete)]
         public async virtual Task DeleteAsync(Guid id)
         {
             var application = await applicationManager.FindByIdAsync(identifierConverter.ToString(id));
@@ -68,6 +71,7 @@ namespace RuiChen.AbpPro.OpenIddict
         /// <param name="id"></param>
         /// <param name="input"></param>
         /// <returns></returns>
+        [Authorize(AbpProOpenIddictPermissions.Applications.Update)]
         public async virtual Task<OpenIddictApplicationDto> UpdateAsync(Guid id, OpenIddictApplicationUpdateDto input)
         {
             var application = await applicationRepository.GetAsync(id);
@@ -96,6 +100,7 @@ namespace RuiChen.AbpPro.OpenIddict
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [Authorize(AbpProOpenIddictPermissions.Applications.Default)]
         public async virtual Task<OpenIddictApplicationDto> GetAsync(Guid id)
         {
             var application = await applicationRepository.GetAsync(id);
@@ -108,6 +113,7 @@ namespace RuiChen.AbpPro.OpenIddict
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
+        [Authorize(AbpProOpenIddictPermissions.Applications.Default)]
         public async virtual Task<PagedResultDto<OpenIddictApplicationDto>> GetListAsync(OpenIddictApplicationGetListInput input)
         {
             var totalCount = await applicationRepository.GetCountAsync(input.Filter);

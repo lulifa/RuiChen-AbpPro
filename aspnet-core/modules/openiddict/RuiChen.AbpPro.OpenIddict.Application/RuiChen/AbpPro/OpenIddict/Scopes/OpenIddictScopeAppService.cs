@@ -1,4 +1,5 @@
-﻿using OpenIddict.Abstractions;
+﻿using Microsoft.AspNetCore.Authorization;
+using OpenIddict.Abstractions;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Data;
@@ -28,6 +29,7 @@ namespace RuiChen.AbpPro.OpenIddict
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
+        [Authorize(AbpProOpenIddictPermissions.Scopes.Create)]
         public async virtual Task<OpenIddictScopeDto> CreateAsync(OpenIddictScopeCreateDto input)
         {
             if (await scopeManager.FindByNameAsync(input.Name) != null)
@@ -53,6 +55,7 @@ namespace RuiChen.AbpPro.OpenIddict
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [Authorize(AbpProOpenIddictPermissions.Scopes.Delete)]
         public async virtual Task DeleteAsync(Guid id)
         {
             var scope = await scopeManager.FindByIdAsync(identifierConverter.ToString(id));
@@ -67,6 +70,7 @@ namespace RuiChen.AbpPro.OpenIddict
         /// <param name="id"></param>
         /// <param name="input"></param>
         /// <returns></returns>
+        [Authorize(AbpProOpenIddictPermissions.Scopes.Update)]
         public async virtual Task<OpenIddictScopeDto> UpdateAsync(Guid id, OpenIddictScopeUpdateDto input)
         {
             var scope = await scopeRepository.GetAsync(id);
@@ -94,6 +98,7 @@ namespace RuiChen.AbpPro.OpenIddict
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [Authorize(AbpProOpenIddictPermissions.Scopes.Default)]
         public async virtual Task<OpenIddictScopeDto> GetAsync(Guid id)
         {
             var scope = await scopeRepository.GetAsync(id);
@@ -106,6 +111,7 @@ namespace RuiChen.AbpPro.OpenIddict
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
+        [Authorize(AbpProOpenIddictPermissions.Scopes.Default)]
         public async virtual Task<PagedResultDto<OpenIddictScopeDto>> GetListAsync(OpenIddictScopeGetListInput input)
         {
             var totalCount = await scopeRepository.GetCountAsync(input.Filter);

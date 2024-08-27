@@ -24,7 +24,6 @@ namespace RuiChen.AbpPro.OpenIddict
         /// <returns></returns>
         [HttpDelete]
         [Route("{id}")]
-        [Authorize(AbpProOpenIddictPermissions.Tokens.Delete)]
         public Task DeleteAsync(Guid id)
         {
             return service.DeleteAsync(id);
