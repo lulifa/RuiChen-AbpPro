@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RuiChen.AbpPro.OpenIddict.Application.Contracts\RuiChen.AbpPro.OpenIddict.Application.Contracts.csproj" />
+    <ProjectReference Include="..\RuiChen.AbpPro.OpenIddict.AspNetCore\RuiChen.AbpPro.OpenIddict.AspNetCore.csproj" />
   </ItemGroup>
 
 </Project>

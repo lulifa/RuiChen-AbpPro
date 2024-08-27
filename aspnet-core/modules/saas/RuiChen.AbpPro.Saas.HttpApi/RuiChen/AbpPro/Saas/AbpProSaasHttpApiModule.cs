@@ -16,14 +16,14 @@ namespace RuiChen.AbpPro.Saas
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
-            PreConfigure<IMvcBuilder>(mvcBuilder =>
-            {
-                mvcBuilder.AddApplicationPartIfNotExists(typeof(AbpProSaasHttpApiModule).Assembly);
-            });
-
             PreConfigure<AbpMvcDataAnnotationsLocalizationOptions>(options =>
             {
                 options.AddAssemblyResource(typeof(AbpProSaasResource), typeof(AbpProSaasApplicationContractsModule).Assembly);
+            });
+
+            PreConfigure<IMvcBuilder>(options =>
+            {
+                options.AddApplicationPartIfNotExists(typeof(AbpProSaasHttpApiModule).Assembly);
             });
 
         }
