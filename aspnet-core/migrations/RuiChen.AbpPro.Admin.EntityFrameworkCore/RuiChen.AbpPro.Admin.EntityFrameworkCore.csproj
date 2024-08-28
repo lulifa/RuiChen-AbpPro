@@ -3,7 +3,32 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
+    <RootNamespace/>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.MySql" />
+    <PackageReference Include="Volo.Abp.OpenIddict.EntityFrameworkCore" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.EntityFrameworkCore" />
+    <PackageReference Include="Volo.Abp.SettingManagement.EntityFrameworkCore" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.EntityFrameworkCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\framework\common\RuiChen.AbpPro.Data.DbMigrator\RuiChen.AbpPro.Data.DbMigrator.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\modules\auditing\RuiChen.AbpPro.Auditing.EntityFrameworkCore\RuiChen.AbpPro.Auditing.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\modules\identity\RuiChen.AbpPro.Identity.EntityFrameworkCore\RuiChen.AbpPro.Identity.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\modules\localization\RuiChen.AbpPro.LocalizationManagement.EntityFrameworkCore\RuiChen.AbpPro.LocalizationManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\modules\platform\RuiChen.AbpPro.Platform.EntityFrameworkCore\RuiChen.AbpPro.Platform.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\modules\saas\RuiChen.AbpPro.Saas.EntityFrameworkCore\RuiChen.AbpPro.Saas.EntityFrameworkCore.csproj" />
+  </ItemGroup>
 
 </Project>

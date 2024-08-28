@@ -89,7 +89,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             {
                 builder.AddValidation(options =>
                 {
-                    options.AddAudiences("pure-abp-application");
+                    options.AddAudiences(configuration["AuthServer:ApiName"]);
                     options.UseLocalServer();
                     options.UseAspNetCore();
                 });
