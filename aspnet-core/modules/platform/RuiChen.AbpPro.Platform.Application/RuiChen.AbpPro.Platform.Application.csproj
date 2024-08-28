@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuiChen.AbpPro.Platform.Application.Contracts\RuiChen.AbpPro.Platform.Application.Contracts.csproj" />
+    <ProjectReference Include="..\RuiChen.AbpPro.Platform.Domain\RuiChen.AbpPro.Platform.Domain.csproj" />
+    <ProjectReference Include="..\RuiChen.AbpPro.Platform.Navigation\RuiChen.AbpPro.Platform.Navigation.csproj" />
+  </ItemGroup>
+
+</Project>

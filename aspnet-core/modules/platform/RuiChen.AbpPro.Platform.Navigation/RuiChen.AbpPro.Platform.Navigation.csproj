@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Data" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\navigation\RuiChen.AbpPro.UI.Navigation\RuiChen.AbpPro.UI.Navigation.csproj" />
+    <ProjectReference Include="..\RuiChen.AbpPro.Platform.Domain\RuiChen.AbpPro.Platform.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

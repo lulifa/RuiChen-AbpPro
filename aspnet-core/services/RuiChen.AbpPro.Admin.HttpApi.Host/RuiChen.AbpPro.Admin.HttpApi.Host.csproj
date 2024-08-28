@@ -108,6 +108,15 @@
     <ProjectReference Include="..\..\modules\permission\RuiChen.AbpPro.PermissionManagement.Domain.OrganizationUnits\RuiChen.AbpPro.PermissionManagement.Domain.OrganizationUnits.csproj" />
     <ProjectReference Include="..\..\modules\permission\RuiChen.AbpPro.PermissionManagement.HttpApi\RuiChen.AbpPro.PermissionManagement.HttpApi.csproj" />
 
+
+    <ProjectReference Include="..\..\modules\platform\RuiChen.AbpPro.Platform.Application.Contracts\RuiChen.AbpPro.Platform.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\platform\RuiChen.AbpPro.Platform.Application\RuiChen.AbpPro.Platform.Application.csproj" />
+    <ProjectReference Include="..\..\modules\platform\RuiChen.AbpPro.Platform.Domain.Shared\RuiChen.AbpPro.Platform.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\modules\platform\RuiChen.AbpPro.Platform.Domain\RuiChen.AbpPro.Platform.Domain.csproj" />
+    <ProjectReference Include="..\..\modules\platform\RuiChen.AbpPro.Platform.EntityFrameworkCore\RuiChen.AbpPro.Platform.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\modules\platform\RuiChen.AbpPro.Platform.HttpApi\RuiChen.AbpPro.Platform.HttpApi.csproj" />
+    <ProjectReference Include="..\..\modules\platform\RuiChen.AbpPro.Platform.Navigation\RuiChen.AbpPro.Platform.Navigation.csproj" />
+
     <ProjectReference Include="..\..\modules\saas\RuiChen.AbpPro.Saas.Application.Contracts\RuiChen.AbpPro.Saas.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\saas\RuiChen.AbpPro.Saas.Domain.Shared\RuiChen.AbpPro.Saas.Domain.Shared.csproj" />
     <ProjectReference Include="..\..\modules\saas\RuiChen.AbpPro.Saas.Domain\RuiChen.AbpPro.Saas.Domain.csproj" />

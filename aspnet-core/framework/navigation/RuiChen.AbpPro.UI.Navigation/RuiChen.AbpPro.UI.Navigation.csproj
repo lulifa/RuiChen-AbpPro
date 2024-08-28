@@ -3,7 +3,13 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
+    <RootNamespace />
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.MultiTenancy" />
+    <PackageReference Include="Volo.Abp.ObjectExtending" />
+  </ItemGroup>
 
 </Project>

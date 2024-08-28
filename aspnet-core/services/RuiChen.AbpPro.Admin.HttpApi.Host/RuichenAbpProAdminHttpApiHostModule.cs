@@ -1,4 +1,5 @@
-﻿using RuiChen.AbpPro.Account;
+﻿using Pure.Platform.HttpApi;
+using RuiChen.AbpPro.Account;
 using RuiChen.AbpPro.AspNetCore.HttpOverrides;
 using RuiChen.AbpPro.AspNetCore.Mvc.Wrapper;
 using RuiChen.AbpPro.Auditing;
@@ -11,6 +12,7 @@ using RuiChen.AbpPro.Identity;
 using RuiChen.AbpPro.LocalizationManagement;
 using RuiChen.AbpPro.OpenIddict;
 using RuiChen.AbpPro.PermissionManagement;
+using RuiChen.AbpPro.Platform;
 using RuiChen.AbpPro.Saas;
 using RuiChen.AbpPro.Serilog.Enrichers.Application;
 using RuiChen.AbpPro.SettingManagement;
@@ -65,6 +67,10 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         typeof(AbpProPermissionManagementApplicationModule),
         typeof(AbpPermissionManagementEntityFrameworkCoreModule),
         typeof(AbpProPermissionManagementDomainOrganizationUnitsModule), // 组织机构权限管理
+
+        typeof(AbpProPlatformHttpApiModule),
+        typeof(AbpProPlatformApplicationModule),
+        typeof(AbpProPlatformEntityFrameworkCoreModule),
 
 
         typeof(AbpProSaasHttpApiModule),

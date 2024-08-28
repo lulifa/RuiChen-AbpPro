@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" />
+    <PackageReference Include="Volo.Abp.AutoMapper" />
+    <PackageReference Include="Volo.Abp.BlobStoring" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" />
+    <PackageReference Include="Volo.Abp.Settings" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuiChen.AbpPro.Platform.Domain.Shared\RuiChen.AbpPro.Platform.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
