@@ -113,7 +113,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             var hostingEnvironment = services.GetHostingEnvironment();
             var configuration = services.GetConfiguration();
 
-            //ConfigureWrapper();
+            ConfigureWrapper();
             ConfigureDbContext();
             ConfigureLocalization();
             ConfigureKestrelServer();
