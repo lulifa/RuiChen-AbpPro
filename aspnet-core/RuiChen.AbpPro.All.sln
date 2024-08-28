@@ -92,105 +92,125 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Sms.Aliyun",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "feature", "feature", "{59BC1367-98A5-46C3-858E-9EDEA351F025}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.FeatureManagement.Application", "modules\feature\RuiChen.AbpPro.FeatureManagement.Application\RuiChen.AbpPro.FeatureManagement.Application.csproj", "{FA324FC9-A453-42CD-926F-1F3F73EE74C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.FeatureManagement.Application", "modules\feature\RuiChen.AbpPro.FeatureManagement.Application\RuiChen.AbpPro.FeatureManagement.Application.csproj", "{FA324FC9-A453-42CD-926F-1F3F73EE74C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.FeatureManagement.Application.Contracts", "modules\feature\RuiChen.AbpPro.FeatureManagement.Application.Contracts\RuiChen.AbpPro.FeatureManagement.Application.Contracts.csproj", "{8268DFC7-B120-4D80-9FA9-9C62CB5227DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.FeatureManagement.Application.Contracts", "modules\feature\RuiChen.AbpPro.FeatureManagement.Application.Contracts\RuiChen.AbpPro.FeatureManagement.Application.Contracts.csproj", "{8268DFC7-B120-4D80-9FA9-9C62CB5227DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.FeatureManagement.HttpApi", "modules\feature\RuiChen.AbpPro.FeatureManagement.HttpApi\RuiChen.AbpPro.FeatureManagement.HttpApi.csproj", "{0640DFE9-6F1C-4A86-B831-F81DC310FF99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.FeatureManagement.HttpApi", "modules\feature\RuiChen.AbpPro.FeatureManagement.HttpApi\RuiChen.AbpPro.FeatureManagement.HttpApi.csproj", "{0640DFE9-6F1C-4A86-B831-F81DC310FF99}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "permission", "permission", "{84CE6C16-CC79-471B-92E7-52CD190E3BB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.PermissionManagement.Application", "modules\permission\RuiChen.AbpPro.PermissionManagement.Application\RuiChen.AbpPro.PermissionManagement.Application.csproj", "{F12BE785-0CEB-439D-AF78-5DFF1C3A7848}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.PermissionManagement.Application", "modules\permission\RuiChen.AbpPro.PermissionManagement.Application\RuiChen.AbpPro.PermissionManagement.Application.csproj", "{F12BE785-0CEB-439D-AF78-5DFF1C3A7848}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.PermissionManagement.Application.Contracts", "modules\permission\RuiChen.AbpPro.PermissionManagement.Application.Contracts\RuiChen.AbpPro.PermissionManagement.Application.Contracts.csproj", "{53E65203-1793-410E-879A-C514214CBFB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.PermissionManagement.Application.Contracts", "modules\permission\RuiChen.AbpPro.PermissionManagement.Application.Contracts\RuiChen.AbpPro.PermissionManagement.Application.Contracts.csproj", "{53E65203-1793-410E-879A-C514214CBFB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.PermissionManagement.Domain.OrganizationUnits", "modules\permission\RuiChen.AbpPro.PermissionManagement.Domain.OrganizationUnits\RuiChen.AbpPro.PermissionManagement.Domain.OrganizationUnits.csproj", "{E223749E-FD20-4602-B14E-87CB961C4227}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.PermissionManagement.Domain.OrganizationUnits", "modules\permission\RuiChen.AbpPro.PermissionManagement.Domain.OrganizationUnits\RuiChen.AbpPro.PermissionManagement.Domain.OrganizationUnits.csproj", "{E223749E-FD20-4602-B14E-87CB961C4227}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.PermissionManagement.HttpApi", "modules\permission\RuiChen.AbpPro.PermissionManagement.HttpApi\RuiChen.AbpPro.PermissionManagement.HttpApi.csproj", "{1240D91B-0EF4-45D6-B764-04FF49D23C66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.PermissionManagement.HttpApi", "modules\permission\RuiChen.AbpPro.PermissionManagement.HttpApi\RuiChen.AbpPro.PermissionManagement.HttpApi.csproj", "{1240D91B-0EF4-45D6-B764-04FF49D23C66}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "saas", "saas", "{13D8A9BA-B145-4E1A-BD9F-B973E03849E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Saas.Application", "modules\saas\RuiChen.AbpPro.Saas.Application\RuiChen.AbpPro.Saas.Application.csproj", "{216259C8-43A0-4B64-8312-D4F211B8F6DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Saas.Application", "modules\saas\RuiChen.AbpPro.Saas.Application\RuiChen.AbpPro.Saas.Application.csproj", "{216259C8-43A0-4B64-8312-D4F211B8F6DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Saas.Application.Contracts", "modules\saas\RuiChen.AbpPro.Saas.Application.Contracts\RuiChen.AbpPro.Saas.Application.Contracts.csproj", "{1B93B60F-0DDF-4753-997D-B29615D800F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Saas.Application.Contracts", "modules\saas\RuiChen.AbpPro.Saas.Application.Contracts\RuiChen.AbpPro.Saas.Application.Contracts.csproj", "{1B93B60F-0DDF-4753-997D-B29615D800F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Saas.Domain", "modules\saas\RuiChen.AbpPro.Saas.Domain\RuiChen.AbpPro.Saas.Domain.csproj", "{B4C7FCA4-F32C-47E8-ABBC-E149F9543E91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Saas.Domain", "modules\saas\RuiChen.AbpPro.Saas.Domain\RuiChen.AbpPro.Saas.Domain.csproj", "{B4C7FCA4-F32C-47E8-ABBC-E149F9543E91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Saas.Domain.Shared", "modules\saas\RuiChen.AbpPro.Saas.Domain.Shared\RuiChen.AbpPro.Saas.Domain.Shared.csproj", "{371B2047-863B-4FF6-B928-98E26284CD48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Saas.Domain.Shared", "modules\saas\RuiChen.AbpPro.Saas.Domain.Shared\RuiChen.AbpPro.Saas.Domain.Shared.csproj", "{371B2047-863B-4FF6-B928-98E26284CD48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Saas.EntityFrameworkCore", "modules\saas\RuiChen.AbpPro.Saas.EntityFrameworkCore\RuiChen.AbpPro.Saas.EntityFrameworkCore.csproj", "{5BBEEA62-C077-41EA-9020-ECD0B92358D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Saas.EntityFrameworkCore", "modules\saas\RuiChen.AbpPro.Saas.EntityFrameworkCore\RuiChen.AbpPro.Saas.EntityFrameworkCore.csproj", "{5BBEEA62-C077-41EA-9020-ECD0B92358D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Saas.HttpApi", "modules\saas\RuiChen.AbpPro.Saas.HttpApi\RuiChen.AbpPro.Saas.HttpApi.csproj", "{8C05EF03-E295-462C-9BCF-5E2D2698A6F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Saas.HttpApi", "modules\saas\RuiChen.AbpPro.Saas.HttpApi\RuiChen.AbpPro.Saas.HttpApi.csproj", "{8C05EF03-E295-462C-9BCF-5E2D2698A6F3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "settings", "settings", "{C5ACBFB5-F4A1-4FDD-9660-5FC344A7FAFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.SettingManagement.Application", "modules\settings\RuiChen.AbpPro.SettingManagement.Application\RuiChen.AbpPro.SettingManagement.Application.csproj", "{CACB070F-EEB5-4404-9968-D653AC4B9C32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.SettingManagement.Application", "modules\settings\RuiChen.AbpPro.SettingManagement.Application\RuiChen.AbpPro.SettingManagement.Application.csproj", "{CACB070F-EEB5-4404-9968-D653AC4B9C32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.SettingManagement.Application.Contracts", "modules\settings\RuiChen.AbpPro.SettingManagement.Application.Contracts\RuiChen.AbpPro.SettingManagement.Application.Contracts.csproj", "{7225C399-4DA3-456B-9271-04EF8617E16E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.SettingManagement.Application.Contracts", "modules\settings\RuiChen.AbpPro.SettingManagement.Application.Contracts\RuiChen.AbpPro.SettingManagement.Application.Contracts.csproj", "{7225C399-4DA3-456B-9271-04EF8617E16E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.SettingManagement.HttpApi", "modules\settings\RuiChen.AbpPro.SettingManagement.HttpApi\RuiChen.AbpPro.SettingManagement.HttpApi.csproj", "{EA5CA601-DAFA-42AB-8F0B-C2275E6981D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.SettingManagement.HttpApi", "modules\settings\RuiChen.AbpPro.SettingManagement.HttpApi\RuiChen.AbpPro.SettingManagement.HttpApi.csproj", "{EA5CA601-DAFA-42AB-8F0B-C2275E6981D8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "localization", "localization", "{F39CB3EE-AA96-4858-A6EC-CA235BD7E73F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Localization.CultureMap", "framework\localization\RuiChen.AbpPro.Localization.CultureMap\RuiChen.AbpPro.Localization.CultureMap.csproj", "{5782B14A-FCA8-429F-9472-F6E8BBA2D8E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Localization.CultureMap", "framework\localization\RuiChen.AbpPro.Localization.CultureMap\RuiChen.AbpPro.Localization.CultureMap.csproj", "{5782B14A-FCA8-429F-9472-F6E8BBA2D8E6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "localization", "localization", "{8C0CBE66-5506-4D82-B7AD-1885CF423093}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.LocalizationManagement.Application", "modules\localization\RuiChen.AbpPro.LocalizationManagement.Application\RuiChen.AbpPro.LocalizationManagement.Application.csproj", "{C5C7A676-6814-46CE-9539-361159369216}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.LocalizationManagement.Application", "modules\localization\RuiChen.AbpPro.LocalizationManagement.Application\RuiChen.AbpPro.LocalizationManagement.Application.csproj", "{C5C7A676-6814-46CE-9539-361159369216}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.LocalizationManagement.Application.Contracts", "modules\localization\RuiChen.AbpPro.LocalizationManagement.Application.Contracts\RuiChen.AbpPro.LocalizationManagement.Application.Contracts.csproj", "{CBF8A752-759C-4F55-AD71-86E15D9001A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.LocalizationManagement.Application.Contracts", "modules\localization\RuiChen.AbpPro.LocalizationManagement.Application.Contracts\RuiChen.AbpPro.LocalizationManagement.Application.Contracts.csproj", "{CBF8A752-759C-4F55-AD71-86E15D9001A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.LocalizationManagement.Domain", "modules\localization\RuiChen.AbpPro.LocalizationManagement.Domain\RuiChen.AbpPro.LocalizationManagement.Domain.csproj", "{95254EF5-637A-42AC-BF19-45388BDC1831}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.LocalizationManagement.Domain", "modules\localization\RuiChen.AbpPro.LocalizationManagement.Domain\RuiChen.AbpPro.LocalizationManagement.Domain.csproj", "{95254EF5-637A-42AC-BF19-45388BDC1831}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.LocalizationManagement.Domain.Shared", "modules\localization\RuiChen.AbpPro.LocalizationManagement.Domain.Shared\RuiChen.AbpPro.LocalizationManagement.Domain.Shared.csproj", "{88A0BB3D-6A66-4633-9E84-9C5C1AD66140}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.LocalizationManagement.Domain.Shared", "modules\localization\RuiChen.AbpPro.LocalizationManagement.Domain.Shared\RuiChen.AbpPro.LocalizationManagement.Domain.Shared.csproj", "{88A0BB3D-6A66-4633-9E84-9C5C1AD66140}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.LocalizationManagement.EntityFrameworkCore", "modules\localization\RuiChen.AbpPro.LocalizationManagement.EntityFrameworkCore\RuiChen.AbpPro.LocalizationManagement.EntityFrameworkCore.csproj", "{D2937DD3-FF48-4E0C-9C1C-767D744A5523}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.LocalizationManagement.EntityFrameworkCore", "modules\localization\RuiChen.AbpPro.LocalizationManagement.EntityFrameworkCore\RuiChen.AbpPro.LocalizationManagement.EntityFrameworkCore.csproj", "{D2937DD3-FF48-4E0C-9C1C-767D744A5523}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.LocalizationManagement.HttpApi", "modules\localization\RuiChen.AbpPro.LocalizationManagement.HttpApi\RuiChen.AbpPro.LocalizationManagement.HttpApi.csproj", "{A031E92B-202B-4C65-861C-9772587672ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.LocalizationManagement.HttpApi", "modules\localization\RuiChen.AbpPro.LocalizationManagement.HttpApi\RuiChen.AbpPro.LocalizationManagement.HttpApi.csproj", "{A031E92B-202B-4C65-861C-9772587672ED}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wrap", "wrap", "{B3E8607F-5961-457A-8DC9-EAE9F366B74D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.AspNetCore.Mvc.Wrapper", "framework\wrap\RuiChen.AbpPro.AspNetCore.Mvc.Wrapper\RuiChen.AbpPro.AspNetCore.Mvc.Wrapper.csproj", "{ACFD4FEA-CD0C-4DA2-8776-F1BEE0393D54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.AspNetCore.Mvc.Wrapper", "framework\wrap\RuiChen.AbpPro.AspNetCore.Mvc.Wrapper\RuiChen.AbpPro.AspNetCore.Mvc.Wrapper.csproj", "{ACFD4FEA-CD0C-4DA2-8776-F1BEE0393D54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.AspNetCore.Wrapper", "framework\wrap\RuiChen.AbpPro.AspNetCore.Wrapper\RuiChen.AbpPro.AspNetCore.Wrapper.csproj", "{4AC3E9D3-570B-4786-93B3-AFBD20B69144}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.AspNetCore.Wrapper", "framework\wrap\RuiChen.AbpPro.AspNetCore.Wrapper\RuiChen.AbpPro.AspNetCore.Wrapper.csproj", "{4AC3E9D3-570B-4786-93B3-AFBD20B69144}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.HttpClient.Wrapper", "framework\wrap\RuiChen.AbpPro.HttpClient.Wrapper\RuiChen.AbpPro.HttpClient.Wrapper.csproj", "{1B9CA692-2234-46B0-9073-AAE8142440DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.HttpClient.Wrapper", "framework\wrap\RuiChen.AbpPro.HttpClient.Wrapper\RuiChen.AbpPro.HttpClient.Wrapper.csproj", "{1B9CA692-2234-46B0-9073-AAE8142440DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Wrapper", "framework\wrap\RuiChen.AbpPro.Wrapper\RuiChen.AbpPro.Wrapper.csproj", "{EF55D64E-4E84-495F-86C9-FF71AF3F2948}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Wrapper", "framework\wrap\RuiChen.AbpPro.Wrapper\RuiChen.AbpPro.Wrapper.csproj", "{EF55D64E-4E84-495F-86C9-FF71AF3F2948}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.AspNetCore.HttpOverrides", "framework\common\RuiChen.AbpPro.AspNetCore.HttpOverrides\RuiChen.AbpPro.AspNetCore.HttpOverrides.csproj", "{8A83593E-A9C1-46F2-89BC-89B865D1FE96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.AspNetCore.HttpOverrides", "framework\common\RuiChen.AbpPro.AspNetCore.HttpOverrides\RuiChen.AbpPro.AspNetCore.HttpOverrides.csproj", "{8A83593E-A9C1-46F2-89BC-89B865D1FE96}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "caching", "caching", "{18F01BA6-A0D8-4A45-B4D8-D07EC2034DE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.CachingManagement.Application", "modules\caching\RuiChen.AbpPro.CachingManagement.Application\RuiChen.AbpPro.CachingManagement.Application.csproj", "{4720351E-0B34-412F-BA32-1CBCAF16A57F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.CachingManagement.Application", "modules\caching\RuiChen.AbpPro.CachingManagement.Application\RuiChen.AbpPro.CachingManagement.Application.csproj", "{4720351E-0B34-412F-BA32-1CBCAF16A57F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.CachingManagement.Application.Contracts", "modules\caching\RuiChen.AbpPro.CachingManagement.Application.Contracts\RuiChen.AbpPro.CachingManagement.Application.Contracts.csproj", "{BCA4495A-34CD-492C-AEAB-276F6B4FDE5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.CachingManagement.Application.Contracts", "modules\caching\RuiChen.AbpPro.CachingManagement.Application.Contracts\RuiChen.AbpPro.CachingManagement.Application.Contracts.csproj", "{BCA4495A-34CD-492C-AEAB-276F6B4FDE5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.CachingManagement.Domain", "modules\caching\RuiChen.AbpPro.CachingManagement.Domain\RuiChen.AbpPro.CachingManagement.Domain.csproj", "{58054429-5ADA-4525-BD78-A6603C7204FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.CachingManagement.Domain", "modules\caching\RuiChen.AbpPro.CachingManagement.Domain\RuiChen.AbpPro.CachingManagement.Domain.csproj", "{58054429-5ADA-4525-BD78-A6603C7204FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.CachingManagement.HttpApi", "modules\caching\RuiChen.AbpPro.CachingManagement.HttpApi\RuiChen.AbpPro.CachingManagement.HttpApi.csproj", "{B6199FD8-A67D-4FA6-85A7-84DD9F6AB3D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.CachingManagement.HttpApi", "modules\caching\RuiChen.AbpPro.CachingManagement.HttpApi\RuiChen.AbpPro.CachingManagement.HttpApi.csproj", "{B6199FD8-A67D-4FA6-85A7-84DD9F6AB3D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.CachingManagement.StackExchangeRedis", "modules\caching\RuiChen.AbpPro.CachingManagement.StackExchangeRedis\RuiChen.AbpPro.CachingManagement.StackExchangeRedis.csproj", "{50A82C2A-3AAC-470E-B736-3FD58EE06B08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.CachingManagement.StackExchangeRedis", "modules\caching\RuiChen.AbpPro.CachingManagement.StackExchangeRedis\RuiChen.AbpPro.CachingManagement.StackExchangeRedis.csproj", "{50A82C2A-3AAC-470E-B736-3FD58EE06B08}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logging", "logging", "{9D965ECC-7758-49C1-9F51-0E6D432A38C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Logging", "framework\logging\RuiChen.AbpPro.Logging\RuiChen.AbpPro.Logging.csproj", "{C8A2C4DF-ED58-4387-B426-988D28E7B33D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Logging", "framework\logging\RuiChen.AbpPro.Logging\RuiChen.AbpPro.Logging.csproj", "{C8A2C4DF-ED58-4387-B426-988D28E7B33D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Serilog.Enrichers.Application", "framework\logging\RuiChen.AbpPro.Serilog.Enrichers.Application\RuiChen.AbpPro.Serilog.Enrichers.Application.csproj", "{0D97BB3E-A754-4962-B1BE-3D650B75F8E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Serilog.Enrichers.Application", "framework\logging\RuiChen.AbpPro.Serilog.Enrichers.Application\RuiChen.AbpPro.Serilog.Enrichers.Application.csproj", "{0D97BB3E-A754-4962-B1BE-3D650B75F8E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.AuditLogging", "framework\logging\RuiChen.AbpPro.AuditLogging\RuiChen.AbpPro.AuditLogging.csproj", "{A3C94926-3216-4A15-85C6-D3498BB481BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.AuditLogging", "framework\logging\RuiChen.AbpPro.AuditLogging\RuiChen.AbpPro.AuditLogging.csproj", "{A3C94926-3216-4A15-85C6-D3498BB481BF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "auditing", "auditing", "{4AC814BA-78F3-4D4A-88B4-F4217ECEC243}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Auditing.Application", "modules\auditing\RuiChen.AbpPro.Auditing.Application\RuiChen.AbpPro.Auditing.Application.csproj", "{FA7C2FE5-54F5-40F7-8C2C-1A149946D15B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Auditing.Application", "modules\auditing\RuiChen.AbpPro.Auditing.Application\RuiChen.AbpPro.Auditing.Application.csproj", "{FA7C2FE5-54F5-40F7-8C2C-1A149946D15B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Auditing.Application.Contracts", "modules\auditing\RuiChen.AbpPro.Auditing.Application.Contracts\RuiChen.AbpPro.Auditing.Application.Contracts.csproj", "{E7F21E40-ED05-42A1-B0FC-9BC7C2BAC67A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Auditing.Application.Contracts", "modules\auditing\RuiChen.AbpPro.Auditing.Application.Contracts\RuiChen.AbpPro.Auditing.Application.Contracts.csproj", "{E7F21E40-ED05-42A1-B0FC-9BC7C2BAC67A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Auditing.EntityFrameworkCore", "modules\auditing\RuiChen.AbpPro.Auditing.EntityFrameworkCore\RuiChen.AbpPro.Auditing.EntityFrameworkCore.csproj", "{5E4617EE-AFB5-4A90-A4A3-205CD25EBC1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Auditing.EntityFrameworkCore", "modules\auditing\RuiChen.AbpPro.Auditing.EntityFrameworkCore\RuiChen.AbpPro.Auditing.EntityFrameworkCore.csproj", "{5E4617EE-AFB5-4A90-A4A3-205CD25EBC1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.Auditing.HttpApi", "modules\auditing\RuiChen.AbpPro.Auditing.HttpApi\RuiChen.AbpPro.Auditing.HttpApi.csproj", "{41B4CAC9-1322-4D8E-A327-FD81E6AEFD01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.Auditing.HttpApi", "modules\auditing\RuiChen.AbpPro.Auditing.HttpApi\RuiChen.AbpPro.Auditing.HttpApi.csproj", "{41B4CAC9-1322-4D8E-A327-FD81E6AEFD01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.ExceptionHandling", "framework\common\RuiChen.AbpPro.ExceptionHandling\RuiChen.AbpPro.ExceptionHandling.csproj", "{A22454AF-2160-43AA-B139-A3D3A4D6E5BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.ExceptionHandling", "framework\common\RuiChen.AbpPro.ExceptionHandling\RuiChen.AbpPro.ExceptionHandling.csproj", "{A22454AF-2160-43AA-B139-A3D3A4D6E5BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "navigation", "navigation", "{CAF884E7-15A2-4DED-9182-6BD8139B5342}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuiChen.AbpPro.UI.Navigation", "framework\navigation\RuiChen.AbpPro.UI.Navigation\RuiChen.AbpPro.UI.Navigation.csproj", "{3060CBC1-FDB4-49AC-BBBE-CE7B588A13F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "platform", "platform", "{17034C29-77E6-4575-B788-4C373C14CF53}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pure.Platform.Application", "modules\platform\Pure.Platform.Application\Pure.Platform.Application.csproj", "{8CB83E6B-5AA3-4A65-ADA4-EB6BE4FB5592}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pure.Platform.Application.Contracts", "modules\platform\Pure.Platform.Application.Contracts\Pure.Platform.Application.Contracts.csproj", "{6199358F-0B03-4406-8562-106606DD2914}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pure.Platform.Domain", "modules\platform\Pure.Platform.Domain\Pure.Platform.Domain.csproj", "{FC744090-60ED-4553-B68C-D8DC862A42CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pure.Platform.Domain.Shared", "modules\platform\Pure.Platform.Domain.Shared\Pure.Platform.Domain.Shared.csproj", "{5CBF7F7B-3D9D-4D34-95EA-56F1BF309D30}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pure.Platform.EntityFrameworkCore", "modules\platform\Pure.Platform.EntityFrameworkCore\Pure.Platform.EntityFrameworkCore.csproj", "{54F6D531-F347-4F0B-856D-8D8A44422869}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pure.Platform.HttpApi", "modules\platform\Pure.Platform.HttpApi\Pure.Platform.HttpApi.csproj", "{43689FFB-C8EE-41A6-B53A-93D51DDBCB56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.AbpPro.UI.Navigation.VuePureAdmin", "framework\navigation\RuiChen.AbpPro.UI.Navigation.VuePureAdmin\RuiChen.AbpPro.UI.Navigation.VuePureAdmin.csproj", "{698E4F1E-26BE-4B62-8400-A4066E94C826}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -474,6 +494,38 @@ Global
 		{A22454AF-2160-43AA-B139-A3D3A4D6E5BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A22454AF-2160-43AA-B139-A3D3A4D6E5BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A22454AF-2160-43AA-B139-A3D3A4D6E5BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3060CBC1-FDB4-49AC-BBBE-CE7B588A13F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3060CBC1-FDB4-49AC-BBBE-CE7B588A13F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3060CBC1-FDB4-49AC-BBBE-CE7B588A13F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3060CBC1-FDB4-49AC-BBBE-CE7B588A13F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CB83E6B-5AA3-4A65-ADA4-EB6BE4FB5592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CB83E6B-5AA3-4A65-ADA4-EB6BE4FB5592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CB83E6B-5AA3-4A65-ADA4-EB6BE4FB5592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CB83E6B-5AA3-4A65-ADA4-EB6BE4FB5592}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6199358F-0B03-4406-8562-106606DD2914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6199358F-0B03-4406-8562-106606DD2914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6199358F-0B03-4406-8562-106606DD2914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6199358F-0B03-4406-8562-106606DD2914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC744090-60ED-4553-B68C-D8DC862A42CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC744090-60ED-4553-B68C-D8DC862A42CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC744090-60ED-4553-B68C-D8DC862A42CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC744090-60ED-4553-B68C-D8DC862A42CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CBF7F7B-3D9D-4D34-95EA-56F1BF309D30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CBF7F7B-3D9D-4D34-95EA-56F1BF309D30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CBF7F7B-3D9D-4D34-95EA-56F1BF309D30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CBF7F7B-3D9D-4D34-95EA-56F1BF309D30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54F6D531-F347-4F0B-856D-8D8A44422869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54F6D531-F347-4F0B-856D-8D8A44422869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54F6D531-F347-4F0B-856D-8D8A44422869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54F6D531-F347-4F0B-856D-8D8A44422869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43689FFB-C8EE-41A6-B53A-93D51DDBCB56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43689FFB-C8EE-41A6-B53A-93D51DDBCB56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43689FFB-C8EE-41A6-B53A-93D51DDBCB56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43689FFB-C8EE-41A6-B53A-93D51DDBCB56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{698E4F1E-26BE-4B62-8400-A4066E94C826}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{698E4F1E-26BE-4B62-8400-A4066E94C826}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{698E4F1E-26BE-4B62-8400-A4066E94C826}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{698E4F1E-26BE-4B62-8400-A4066E94C826}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -565,6 +617,16 @@ Global
 		{5E4617EE-AFB5-4A90-A4A3-205CD25EBC1C} = {4AC814BA-78F3-4D4A-88B4-F4217ECEC243}
 		{41B4CAC9-1322-4D8E-A327-FD81E6AEFD01} = {4AC814BA-78F3-4D4A-88B4-F4217ECEC243}
 		{A22454AF-2160-43AA-B139-A3D3A4D6E5BD} = {3F7C79D0-AA79-4A64-A378-2FC5D075ACB5}
+		{CAF884E7-15A2-4DED-9182-6BD8139B5342} = {CF51C53E-65AC-482A-9C58-B0EBC199E6E7}
+		{3060CBC1-FDB4-49AC-BBBE-CE7B588A13F0} = {CAF884E7-15A2-4DED-9182-6BD8139B5342}
+		{17034C29-77E6-4575-B788-4C373C14CF53} = {3FBD9712-D4D2-4FB8-A03B-B9E21EA7910A}
+		{8CB83E6B-5AA3-4A65-ADA4-EB6BE4FB5592} = {17034C29-77E6-4575-B788-4C373C14CF53}
+		{6199358F-0B03-4406-8562-106606DD2914} = {17034C29-77E6-4575-B788-4C373C14CF53}
+		{FC744090-60ED-4553-B68C-D8DC862A42CA} = {17034C29-77E6-4575-B788-4C373C14CF53}
+		{5CBF7F7B-3D9D-4D34-95EA-56F1BF309D30} = {17034C29-77E6-4575-B788-4C373C14CF53}
+		{54F6D531-F347-4F0B-856D-8D8A44422869} = {17034C29-77E6-4575-B788-4C373C14CF53}
+		{43689FFB-C8EE-41A6-B53A-93D51DDBCB56} = {17034C29-77E6-4575-B788-4C373C14CF53}
+		{698E4F1E-26BE-4B62-8400-A4066E94C826} = {CAF884E7-15A2-4DED-9182-6BD8139B5342}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {605F5C6D-ACE2-4166-B786-5D421DCA8FE2}

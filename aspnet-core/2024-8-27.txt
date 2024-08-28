@@ -1,0 +1,24 @@
+
+
+dotnet new classlib -o framework/navigation/RuiChen.AbpPro.UI.Navigation
+dotnet new classlib -o framework/navigation/RuiChen.AbpPro.UI.Navigation.VuePureAdmin
+
+dotnet sln RuiChen.AbpPro.All.sln add framework/navigation/RuiChen.AbpPro.UI.Navigation
+dotnet sln RuiChen.AbpPro.All.sln add framework/navigation/RuiChen.AbpPro.UI.Navigation.VuePureAdmin
+
+
+
+
+dotnet new classlib -o modules/platform/Pure.Platform.Application
+dotnet new classlib -o modules/platform/Pure.Platform.Application.Contracts
+dotnet new classlib -o modules/platform/Pure.Platform.Domain
+dotnet new classlib -o modules/platform/Pure.Platform.Domain.Shared
+dotnet new classlib -o modules/platform/Pure.Platform.EntityFrameworkCore
+dotnet new classlib -o modules/platform/Pure.Platform.HttpApi
+
+dotnet sln RuiChen.AbpPro.All.sln add modules/platform/Pure.Platform.Application
+dotnet sln RuiChen.AbpPro.All.sln add modules/platform/Pure.Platform.Application.Contracts
+dotnet sln RuiChen.AbpPro.All.sln add modules/platform/Pure.Platform.Domain
+dotnet sln RuiChen.AbpPro.All.sln add modules/platform/Pure.Platform.Domain.Shared
+dotnet sln RuiChen.AbpPro.All.sln add modules/platform/Pure.Platform.EntityFrameworkCore
+dotnet sln RuiChen.AbpPro.All.sln add modules/platform/Pure.Platform.HttpApi
