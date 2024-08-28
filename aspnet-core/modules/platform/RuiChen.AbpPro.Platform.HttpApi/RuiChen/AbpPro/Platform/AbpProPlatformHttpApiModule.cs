@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http.Features;
 using Microsoft.Extensions.DependencyInjection;
-using RuiChen.AbpPro.Platform;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Modularity;
 
-namespace Pure.Platform.HttpApi
+namespace RuiChen.AbpPro.Platform
 {
     [DependsOn(
         typeof(AbpProPlatformApplicationContractModule),

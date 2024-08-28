@@ -1,5 +1,4 @@
-﻿using Pure.Platform.HttpApi;
-using RuiChen.AbpPro.Account;
+﻿using RuiChen.AbpPro.Account;
 using RuiChen.AbpPro.AspNetCore.HttpOverrides;
 using RuiChen.AbpPro.AspNetCore.Mvc.Wrapper;
 using RuiChen.AbpPro.Auditing;
@@ -21,7 +20,6 @@ using Volo.Abp.Account.Web;
 using Volo.Abp.AspNetCore.MultiTenancy;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
-using Volo.Abp.ExceptionHandling;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 using Volo.Abp.OpenIddict.EntityFrameworkCore;
