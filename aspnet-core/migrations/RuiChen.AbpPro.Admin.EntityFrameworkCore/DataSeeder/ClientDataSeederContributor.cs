@@ -51,7 +51,7 @@ namespace RuiChen.AbpPro.Admin.EntityFrameworkCore
             var scope = _configuration["AuthServer:Scope"];
 
             await CreateScopeAsync(scope);
-            await CreateApplicationAsync("scope");
+            await CreateApplicationAsync(scope);
         }
 
         private async Task CreateScopeAsync(string scope)

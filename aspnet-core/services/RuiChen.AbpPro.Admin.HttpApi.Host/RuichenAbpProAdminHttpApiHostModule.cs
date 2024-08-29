@@ -95,8 +95,8 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 
         typeof(AbpProExceptionHandlingModule),
 
-        typeof(AbpProDataDbMigratorModule),
-        typeof(RuiChenAbpProAdminMigrationEntityFrameworkCoreModule),
+        //typeof(AbpProDataDbMigratorModule),
+        //typeof(RuiChenAbpProAdminMigrationEntityFrameworkCoreModule),
 
         typeof(AbpAutofacModule)
         )]

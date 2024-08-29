@@ -12,7 +12,7 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Migrations
 {
     [DbContext(typeof(RuiChenAbpProAdminMigrationDbContext))]
-    [Migration("20240829033139_InitialDatabase")]
+    [Migration("20240829071516_InitialDatabase")]
     partial class InitialDatabase
     {
         /// <inheritdoc />
