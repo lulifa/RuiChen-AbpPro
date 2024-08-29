@@ -89,7 +89,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
             {
                 builder.AddValidation(options =>
                 {
-                    options.AddAudiences(configuration["AuthServer:ApiName"]);
+                    options.AddAudiences(configuration["AuthServer:Scope"]);
                     options.UseLocalServer();
                     options.UseAspNetCore();
                 });
@@ -517,7 +517,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
                     {
                         options.Authority = configuration["AuthServer:Authority"];
                         options.RequireHttpsMetadata = false;
-                        options.Audience = configuration["AuthServer:ApiName"];
+                        options.Audience = configuration["AuthServer:Scope"];
                         options.Events = new JwtBearerEvents
                         {
                             OnMessageReceived = context =>

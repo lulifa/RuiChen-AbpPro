@@ -9,14 +9,12 @@
     <Authors>lulifa</Authors>
     <NoWarn>$(NoWarn);CS1591;CS0436;CS8618;NU1803</NoWarn>
     <PackageProjectUrl>https://github.com/lulifa/RuiChen-AbpPro</PackageProjectUrl>
-    <PackageOutputPath>$(ProjectDir)LocalNuget</PackageOutputPath>
     <PackageVersion>8.1.0</PackageVersion>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>package-readme.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/lulifa/RuiChen-AbpPro</RepositoryUrl>
-    <GeneratePackageOnBuild Condition="$(AssemblyName.StartsWith('RuiChen'))">true</GeneratePackageOnBuild>
 
     <!-- Define versions for referenced packages -->
     <VoloAbpPackageVersion>8.1.0</VoloAbpPackageVersion>
@@ -47,10 +45,6 @@
     <None Remove="LocalNuget\**;Logs\**;Modules\**" />
     <Content Remove="$(UserProfile)\.nuget\packages\*\*\contentFiles\any\*\*.abppkg*.json" />
   </ItemGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>$(ProjectDir)LocalNuget</OutputPath>
-  </PropertyGroup>
 
 </Project>
 

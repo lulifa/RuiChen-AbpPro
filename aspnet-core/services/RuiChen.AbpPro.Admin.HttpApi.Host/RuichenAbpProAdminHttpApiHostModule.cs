@@ -1,9 +1,11 @@
 ﻿using RuiChen.AbpPro.Account;
+using RuiChen.AbpPro.Admin.EntityFrameworkCore;
 using RuiChen.AbpPro.AspNetCore.HttpOverrides;
 using RuiChen.AbpPro.AspNetCore.Mvc.Wrapper;
 using RuiChen.AbpPro.Auditing;
 using RuiChen.AbpPro.AuditLogging;
 using RuiChen.AbpPro.CachingManagement;
+using RuiChen.AbpPro.Data.DbMigrator;
 using RuiChen.AbpPro.ExceptionHandling;
 using RuiChen.AbpPro.FeatureManagement;
 using RuiChen.AbpPro.HttpClient.Wrapper;
@@ -89,7 +91,12 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 
         typeof(AbpAspNetCoreSerilogModule),
         typeof(AbpProSerilogEnrichersApplicationModule),
+
+
         typeof(AbpProExceptionHandlingModule),
+
+        typeof(AbpProDataDbMigratorModule),
+        typeof(RuiChenAbpProAdminMigrationEntityFrameworkCoreModule),
 
         typeof(AbpAutofacModule)
         )]

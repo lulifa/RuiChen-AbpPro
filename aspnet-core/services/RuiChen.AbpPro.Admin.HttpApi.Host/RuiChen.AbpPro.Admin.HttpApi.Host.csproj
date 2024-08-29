@@ -63,6 +63,8 @@
 
   <ItemGroup>
 
+    <ProjectReference Include="..\..\migrations\RuiChen.AbpPro.Admin.EntityFrameworkCore\RuiChen.AbpPro.Admin.EntityFrameworkCore.csproj" />
+
     <ProjectReference Include="..\..\modules\account\RuiChen.AbpPro.Account.Application.Contracts\RuiChen.AbpPro.Account.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\account\RuiChen.AbpPro.Account.Application\RuiChen.AbpPro.Account.Application.csproj" />
     <ProjectReference Include="..\..\modules\account\RuiChen.AbpPro.Account.HttpApi\RuiChen.AbpPro.Account.HttpApi.csproj" />

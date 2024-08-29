@@ -48,7 +48,7 @@ namespace RuiChen.AbpPro.Admin.EntityFrameworkCore
 
         private async Task SeedOpenIddictAsync()
         {
-            var scope = _configuration["AuthServer:ApiName"];
+            var scope = _configuration["AuthServer:Scope"];
 
             await CreateScopeAsync(scope);
             await CreateApplicationAsync("pure-abp-application");
@@ -142,6 +142,61 @@ namespace RuiChen.AbpPro.Admin.EntityFrameworkCore
                     "AbpIdentity.UserLookup","AbpIdentity.Users"
                     };
                     await _permissionDataSeeder.SeedAsync(ClientPermissionValueProvider.ProviderName, vueClientId, vueClientPermissions);
+                }
+            }
+
+            var internalServiceClientId = configurationSection["RuiChenAbpPro:ClientId"];
+            if (!internalServiceClientId.IsNullOrWhiteSpace())
+            {
+                if (await _applicationManager.FindByClientIdAsync(internalServiceClientId) == null)
+                {
+                    await _applicationManager.CreateAsync(new OpenIddictApplicationDescriptor
+                    {
+                        ClientId = internalServiceClientId,
+                        ClientSecret = "1q2w3e*",
+                        ClientType = OpenIddictConstants.ClientTypes.Confidential,
+                        ConsentType = OpenIddictConstants.ConsentTypes.Explicit,
+                        ApplicationType = OpenIddictConstants.ApplicationTypes.Native,
+                        DisplayName = "Abp Vue Admin Client",
+                        Permissions =
+                        {
+                            OpenIddictConstants.Permissions.Endpoints.Authorization,
+                            OpenIddictConstants.Permissions.Endpoints.Token,
+                            OpenIddictConstants.Permissions.Endpoints.Device,
+                            OpenIddictConstants.Permissions.Endpoints.Introspection,
+                            OpenIddictConstants.Permissions.Endpoints.Revocation,
+                            OpenIddictConstants.Permissions.Endpoints.Logout,
+
+                            OpenIddictConstants.Permissions.GrantTypes.AuthorizationCode,
+                            OpenIddictConstants.Permissions.GrantTypes.Implicit,
+                            OpenIddictConstants.Permissions.GrantTypes.Password,
+                            OpenIddictConstants.Permissions.GrantTypes.RefreshToken,
+                            OpenIddictConstants.Permissions.GrantTypes.DeviceCode,
+                            OpenIddictConstants.Permissions.GrantTypes.ClientCredentials,
+
+                            OpenIddictConstants.Permissions.ResponseTypes.Code,
+                            OpenIddictConstants.Permissions.ResponseTypes.CodeIdToken,
+                            OpenIddictConstants.Permissions.ResponseTypes.CodeIdTokenToken,
+                            OpenIddictConstants.Permissions.ResponseTypes.CodeToken,
+                            OpenIddictConstants.Permissions.ResponseTypes.IdToken,
+                            OpenIddictConstants.Permissions.ResponseTypes.IdTokenToken,
+                            OpenIddictConstants.Permissions.ResponseTypes.None,
+                            OpenIddictConstants.Permissions.ResponseTypes.Token,
+
+                            OpenIddictConstants.Permissions.Scopes.Roles,
+                            OpenIddictConstants.Permissions.Scopes.Profile,
+                            OpenIddictConstants.Permissions.Scopes.Email,
+                            OpenIddictConstants.Permissions.Scopes.Address,
+                            OpenIddictConstants.Permissions.Scopes.Phone,
+                            OpenIddictConstants.Permissions.Prefixes.Scope + scope
+                        }
+                    });
+
+                    var internalServicePermissions = new string[2]
+                    {
+                        "AbpIdentity.UserLookup","AbpIdentity.Users"
+                    };
+                    await _permissionDataSeeder.SeedAsync(ClientPermissionValueProvider.ProviderName, internalServiceClientId, internalServicePermissions);
                 }
             }
         }
