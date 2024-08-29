@@ -8,7 +8,8 @@ namespace RuiChen.AbpPro.Identity
     [DependsOn(
         typeof(VoloAbpIdentityApplicationModule),
         typeof(AbpProIdentityApplicationContractsModule),
-        typeof(AbpProIdentityDomainModule)
+        typeof(AbpProIdentityDomainModule),
+        typeof(AbpProIdentityOrganizaztionUnitsModule)
         )]
     public class AbpProIdentityApplicationModule : AbpModule
     {

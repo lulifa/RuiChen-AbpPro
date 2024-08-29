@@ -53,7 +53,6 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         typeof(AbpProIdentityHttpApiModule),
         typeof(AbpProIdentityApplicationModule),
         typeof(AbpProIdentityEntityFrameworkCoreModule),
-        typeof(AbpProIdentityOrganizaztionUnitsModule),
 
         typeof(AbpProLocalizationManagementHttpApiModule),
         typeof(AbpProLocalizationManagementApplicationModule),
@@ -95,8 +94,8 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
 
         typeof(AbpProExceptionHandlingModule),
 
-        //typeof(AbpProDataDbMigratorModule),
-        //typeof(RuiChenAbpProAdminMigrationEntityFrameworkCoreModule),
+        typeof(AbpProDataDbMigratorModule),
+        typeof(RuiChenAbpProAdminMigrationEntityFrameworkCoreModule),
 
         typeof(AbpAutofacModule)
         )]

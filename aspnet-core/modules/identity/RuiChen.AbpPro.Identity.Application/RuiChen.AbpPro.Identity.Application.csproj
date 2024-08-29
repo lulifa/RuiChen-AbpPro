@@ -14,6 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\RuiChen.AbpPro.Identity.Application.Contracts\RuiChen.AbpPro.Identity.Application.Contracts.csproj" />
     <ProjectReference Include="..\RuiChen.AbpPro.Identity.Domain\RuiChen.AbpPro.Identity.Domain.csproj" />
+    <ProjectReference Include="..\RuiChen.AbpPro.Identity.OrganizationUnits\RuiChen.AbpPro.Identity.OrganizationUnits.csproj" />
   </ItemGroup>
 
 </Project>
