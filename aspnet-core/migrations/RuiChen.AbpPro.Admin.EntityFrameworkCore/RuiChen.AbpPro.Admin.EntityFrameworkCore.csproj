@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <RootNamespace/>
+    <RootNamespace />
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,6 +27,7 @@
     <ProjectReference Include="..\..\modules\auditing\RuiChen.AbpPro.Auditing.EntityFrameworkCore\RuiChen.AbpPro.Auditing.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\modules\identity\RuiChen.AbpPro.Identity.EntityFrameworkCore\RuiChen.AbpPro.Identity.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\modules\localization\RuiChen.AbpPro.LocalizationManagement.EntityFrameworkCore\RuiChen.AbpPro.LocalizationManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\modules\openiddict\RuiChen.AbpPro.OpenIddict.Sms\RuiChen.AbpPro.OpenIddict.Sms.csproj" />
     <ProjectReference Include="..\..\modules\platform\RuiChen.AbpPro.Platform.EntityFrameworkCore\RuiChen.AbpPro.Platform.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\modules\saas\RuiChen.AbpPro.Saas.EntityFrameworkCore\RuiChen.AbpPro.Saas.EntityFrameworkCore.csproj" />
   </ItemGroup>

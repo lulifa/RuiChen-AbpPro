@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using OpenIddict.Abstractions;
+using RuiChen.AbpPro.OpenIddict.Sms;
 using System.Globalization;
 using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Data;
@@ -118,6 +119,7 @@ namespace RuiChen.AbpPro.Admin.EntityFrameworkCore
                             OpenIddictConstants.Permissions.GrantTypes.RefreshToken,
                             OpenIddictConstants.Permissions.GrantTypes.DeviceCode,
                             OpenIddictConstants.Permissions.GrantTypes.ClientCredentials,
+                            OpenIddictConstants.Permissions.Prefixes.GrantType + SmsTokenExtensionGrantConsts.GrantType,
 
                             OpenIddictConstants.Permissions.ResponseTypes.Code,
                             OpenIddictConstants.Permissions.ResponseTypes.CodeIdToken,

@@ -104,6 +104,7 @@
     <ProjectReference Include="..\..\modules\openIddict\RuiChen.AbpPro.OpenIddict.Application.Contracts\RuiChen.AbpPro.OpenIddict.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\openIddict\RuiChen.AbpPro.OpenIddict.Application\RuiChen.AbpPro.OpenIddict.Application.csproj" />
     <ProjectReference Include="..\..\modules\openIddict\RuiChen.AbpPro.OpenIddict.HttpApi\RuiChen.AbpPro.OpenIddict.HttpApi.csproj" />
+    <ProjectReference Include="..\..\modules\openIddict\RuiChen.AbpPro.OpenIddict.Sms\RuiChen.AbpPro.OpenIddict.Sms.csproj" />
 
     <ProjectReference Include="..\..\modules\permission\RuiChen.AbpPro.PermissionManagement.Domain.OrganizationUnits\RuiChen.AbpPro.PermissionManagement.Domain.OrganizationUnits.csproj" />
     <ProjectReference Include="..\..\modules\permission\RuiChen.AbpPro.PermissionManagement.Application\RuiChen.AbpPro.PermissionManagement.Application.csproj" />

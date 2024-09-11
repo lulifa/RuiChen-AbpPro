@@ -12,6 +12,7 @@ using RuiChen.AbpPro.HttpClient.Wrapper;
 using RuiChen.AbpPro.Identity;
 using RuiChen.AbpPro.LocalizationManagement;
 using RuiChen.AbpPro.OpenIddict;
+using RuiChen.AbpPro.OpenIddict.Sms;
 using RuiChen.AbpPro.PermissionManagement;
 using RuiChen.AbpPro.Platform;
 using RuiChen.AbpPro.Saas;
@@ -61,6 +62,7 @@ namespace RuiChen.AbpPro.Admin.HttpApi.Host
         typeof(AbpProOpenIddictHttpApiModule),
         typeof(AbpProOpenIddictApplicationModule),
         typeof(AbpOpenIddictEntityFrameworkCoreModule),
+        typeof(AbpProOpenIddictSmsModule),
 
         typeof(AbpProPermissionManagementHttpApiModule),
         typeof(AbpProPermissionManagementApplicationModule),
