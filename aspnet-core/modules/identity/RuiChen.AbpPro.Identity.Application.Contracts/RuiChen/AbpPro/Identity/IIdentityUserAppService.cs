@@ -1,5 +1,6 @@
 ﻿using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
+using Volo.Abp.Identity;
 
 namespace RuiChen.AbpPro.Identity
 {
@@ -58,5 +59,14 @@ namespace RuiChen.AbpPro.Identity
         /// <param name="id"></param>
         /// <returns></returns>
         Task UnLockAsync(Guid id);
+
+        /// <summary>
+        /// 获取用户高级搜索查询
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<PagedResultDto<IdentityUserDto>> GetUserListAdvancedAsync(GetIdentityUsersAdvancedInput input);
+
+
     }
 }

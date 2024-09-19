@@ -118,9 +118,14 @@ namespace RuiChen.AbpPro.Identity
         /// 获取所有的组织单元列表
         /// </summary>
         /// <returns></returns>
-        public async virtual Task<ListResultDto<OrganizationUnitDto>> GetAllListAsync()
+        public async virtual Task<ListResultDto<OrganizationUnitDto>> GetAllListAsync(GetOrganizationUnitsAdvancedInput input)
         {
+
             var origanizationUnits = await organizationUnitRepository.GetListAsync(false);
+
+            origanizationUnits = origanizationUnits.WhereIf(!input.Filter.IsNullOrWhiteSpace(),
+                                                             item => item.DisplayName.Contains(input.Filter) || 
+                                                             item.Code.Contains(input.Filter)).ToList();
 
             var items = ObjectMapper.Map<List<OrganizationUnit>, List<OrganizationUnitDto>>(origanizationUnits);
 

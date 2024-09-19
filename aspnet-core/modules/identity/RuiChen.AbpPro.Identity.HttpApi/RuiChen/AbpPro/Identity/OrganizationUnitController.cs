@@ -94,9 +94,9 @@ namespace RuiChen.AbpPro.Identity
         /// <returns></returns>
         [HttpGet]
         [Route("all")]
-        public async virtual Task<ListResultDto<OrganizationUnitDto>> GetAllListAsync()
+        public async virtual Task<ListResultDto<OrganizationUnitDto>> GetAllListAsync(GetOrganizationUnitsAdvancedInput input)
         {
-            return await organizationUnitAppService.GetAllListAsync();
+            return await organizationUnitAppService.GetAllListAsync(input);
         }
 
         /// <summary>

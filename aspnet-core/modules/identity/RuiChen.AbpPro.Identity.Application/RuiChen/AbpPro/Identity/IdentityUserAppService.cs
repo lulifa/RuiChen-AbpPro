@@ -14,11 +14,13 @@ namespace RuiChen.AbpPro.Identity
     public class IdentityUserAppService : IdentityAppServiceBase, IIdentityUserAppService
     {
         private readonly IdentityUserManager userManager;
+        private readonly IIdentityUserRepository userRepository;
         private readonly IOptions<IdentityOptions> identityOptions;
 
-        public IdentityUserAppService(IdentityUserManager userManager, IOptions<IdentityOptions> identityOptions)
+        public IdentityUserAppService(IdentityUserManager userManager, IIdentityUserRepository userRepository, IOptions<IdentityOptions> identityOptions)
         {
             this.userManager = userManager;
+            this.userRepository = userRepository;
             this.identityOptions = identityOptions;
         }
 
@@ -148,7 +150,7 @@ namespace RuiChen.AbpPro.Identity
 
             await CurrentUnitOfWork.SaveChangesAsync();
         }
-        
+
 
         /// <summary>
         /// 更改用户密码
@@ -237,6 +239,23 @@ namespace RuiChen.AbpPro.Identity
             var user = await userManager.GetByIdAsync(id);
 
             return user;
+        }
+
+        /// <summary>
+        /// 获取用户列表高级查询
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [Authorize(Volo.Abp.Identity.IdentityPermissions.Users.Default)]
+        public async virtual Task<PagedResultDto<IdentityUserDto>> GetUserListAdvancedAsync(GetIdentityUsersAdvancedInput input)
+        {
+            var count = await userRepository.GetCountAsync(input.Filter, input.RoleId, input.OrganizationUnitId, input.UserName, input.PhoneNumber, input.EmailAddress, input.Name, input.SurName, input.IsLockedOut, input.NotActive, input.EmailConfirmed, input.IsExternal, input.MaxCreationTime, input.MinCreationTime, input.MaxModifitionTime, input.MinModificationTime);
+            var list = await userRepository.GetListAsync(input.Sorting, input.MaxResultCount, input.SkipCount, input.Filter, input.IncludeDetails, input.RoleId, input.OrganizationUnitId, input.UserName, input.PhoneNumber, input.EmailAddress, input.Name, input.SurName, input.IsLockedOut, input.NotActive, input.EmailConfirmed, input.IsExternal, input.MaxCreationTime, input.MinCreationTime, input.MaxModifitionTime, input.MinModificationTime);
+
+            return new PagedResultDto<IdentityUserDto>(
+                count,
+                ObjectMapper.Map<List<IdentityUser>, List<IdentityUserDto>>(list)
+            );
         }
 
     }

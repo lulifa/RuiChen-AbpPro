@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.Application.Dtos;
+using Volo.Abp.Identity;
 
 namespace RuiChen.AbpPro.Identity
 {
@@ -154,6 +155,19 @@ namespace RuiChen.AbpPro.Identity
         public async virtual Task UnLockAsync(Guid id)
         {
             await userAppService.UnLockAsync(id);
+        }
+
+
+        /// <summary>
+        /// 获取用户高级搜索查询
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("advanced-users")]
+        public async virtual Task<PagedResultDto<IdentityUserDto>> GetUserListAdvancedAsync(GetIdentityUsersAdvancedInput input)
+        {
+            return await userAppService.GetUserListAdvancedAsync(input);
         }
 
     }

@@ -11,7 +11,7 @@ namespace RuiChen.AbpPro.Identity
                         OrganizationUnitCreateDto,
                         OrganizationUnitUpdateDto>
     {
-        Task<ListResultDto<OrganizationUnitDto>> GetAllListAsync();
+        Task<ListResultDto<OrganizationUnitDto>> GetAllListAsync(GetOrganizationUnitsAdvancedInput input);
 
         Task<OrganizationUnitDto> GetLastChildOrNullAsync(Guid? parentId);
 
