@@ -9,7 +9,7 @@
     "Permissions:LocalizationManagement": "Localization",
     "Permissions:Language": "Language",
     "Permissions:Resource": "Resource",
-    "Permissions:Text": "Text",
+    "Permissions:LanguageText": "LanguageText",
     "Permissions:Create": "Create",
     "Permissions:Update": "Update",
     "Permissions:Delete": "Delete",

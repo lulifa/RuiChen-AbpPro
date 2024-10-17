@@ -3,6 +3,7 @@
   "texts": {
     "Permissions:Auditing": "内部审计",
     "Permissions:AuditLog": "审计日志",
+    "Permissions:SystemLog": "系统日志",
     "Permissions:SecurityLog": "安全日志",
     "Permissions:DeleteLog": "删除日志",
     "Features:Auditing": "内部审计",

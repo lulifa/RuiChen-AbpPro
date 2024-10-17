@@ -9,7 +9,7 @@
     "Permissions:LocalizationManagement": "本地化管理",
     "Permissions:Language": "语言管理",
     "Permissions:Resource": "资源管理",
-    "Permissions:Text": "文档管理",
+    "Permissions:LanguageText": "文档管理",
     "Permissions:Create": "新增",
     "Permissions:Update": "编辑",
     "Permissions:Delete": "删除",

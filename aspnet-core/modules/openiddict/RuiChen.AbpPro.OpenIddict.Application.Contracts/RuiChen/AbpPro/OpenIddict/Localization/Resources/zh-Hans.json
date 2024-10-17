@@ -9,6 +9,8 @@
     "Permissions:Update": "编辑",
     "Permissions:Delete": "删除",
     "Permissions:ManagePermissions": "管理权限",
+    "Permissions:ManageSecret": "管理密钥",
+    "Permissions:Authorizations": "授权",
     "OpenIddict:001001": "应用标识 {ClientId} 已经存在!",
     "OpenIddict:002001": "范围名称 {Name} 已经存在!",
     "DisplayName:ClientId": "客户端标识",

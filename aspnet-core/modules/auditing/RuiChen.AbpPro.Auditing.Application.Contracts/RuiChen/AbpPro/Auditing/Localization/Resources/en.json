@@ -3,6 +3,7 @@
   "texts": {
     "Permissions:Auditing": "Auditing",
     "Permissions:AuditLog": "Audit log",
+    "Permissions:SystemLog": "System log",
     "Permissions:SecurityLog": "Security log",
     "Permissions:DeleteLog": "Delete",
     "Features:Auditing": "Auditing",

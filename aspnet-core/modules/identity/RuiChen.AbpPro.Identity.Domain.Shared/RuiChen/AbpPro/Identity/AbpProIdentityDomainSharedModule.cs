@@ -21,7 +21,7 @@ namespace RuiChen.AbpPro.Identity
 
             Configure<AbpLocalizationOptions>(options =>
             {
-                options.Resources.Get<IdentityResource>().AddVirtualJson("/RuiChen/AbpPro/Identity/Localization");
+                options.Resources.Get<IdentityResource>().AddVirtualJson("/RuiChen/AbpPro/Identity/Localization/Resources");
             });
         }
     }

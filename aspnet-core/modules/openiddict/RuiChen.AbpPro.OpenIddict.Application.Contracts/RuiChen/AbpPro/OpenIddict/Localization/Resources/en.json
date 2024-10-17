@@ -9,6 +9,8 @@
     "Permissions:Update": "Update",
     "Permissions:Delete": "Delete",
     "Permissions:ManagePermissions": "Manage Permissions",
+    "Permissions:ManageSecret": "Manage Secret",
+    "Permissions:Authorizations": "Authorizations",
     "OpenIddict:001001": "The application client id {ClientId} already exists!",
     "OpenIddict:002001": "The scope name {Name} already exists!",
     "DisplayName:ClientId": "Client Id",
